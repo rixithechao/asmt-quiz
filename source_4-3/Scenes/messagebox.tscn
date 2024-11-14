@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://br2c4c84wn673"]
+
+[ext_resource type="Script" path="res://Scenes/typewriter.gd" id="1_7ah6r"]
+
+[node name="messagebox" type="RichTextLabel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "placeholder text lorem ipsum and all that"
+script = ExtResource("1_7ah6r")
+
+[node name="blip" type="AudioStreamPlayer" parent="."]

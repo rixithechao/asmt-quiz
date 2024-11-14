@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://d3q2cm81sw0ff"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_hpqns"]
+
+[resource]
+script = ExtResource("1_hpqns")
+name = "Backstories & Junk"

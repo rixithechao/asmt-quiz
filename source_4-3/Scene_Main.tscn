@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=3 uid="uid://12pgeltr7ar6"]
+
+[ext_resource type="PackedScene" uid="uid://divt0f1gvw0n2" path="res://Prefabs/Prefab_QuestionColumn.tscn" id="1_vmc50"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_fvxx3"]
+[ext_resource type="Resource" uid="uid://cc2rj53iuve" path="res://Data/QuestionCategory/QCat_ABCDs.tres" id="3_8hdm5"]
+
+[node name="Category Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "THE WHEEL OF FATE IS TURNING..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestionColumn" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+potential_categories = Array[ExtResource("2_fvxx3")]([ExtResource("3_8hdm5")])
+
+[node name="QuestionColumn2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestionColumn3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestionColumn4" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="QuestionColumn5" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Points"
+horizontal_alignment = 1
+
+[node name="PointsAmount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0/20"
+horizontal_alignment = 1

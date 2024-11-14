@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://cc2rj53iuve"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_ohcmi"]
+
+[resource]
+script = ExtResource("1_ohcmi")
+name = "Familiar Faces"

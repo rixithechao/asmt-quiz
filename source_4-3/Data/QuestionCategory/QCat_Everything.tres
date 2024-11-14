@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://x3fdj02imdmj"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_2d680"]
+
+[resource]
+script = ExtResource("1_2d680")
+name = "This is Canon"

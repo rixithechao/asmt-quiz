@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://bt2hfmlpif75"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_p7rhi"]
+
+[resource]
+script = ExtResource("1_p7rhi")
+name = "The Tempura Anomaly"

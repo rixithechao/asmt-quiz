@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://bd1i6471q3hhg"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_1bwr0"]
+
+[resource]
+script = ExtResource("1_1bwr0")
+name = "Colorful Critters"

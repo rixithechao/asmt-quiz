@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://divt0f1gvw0n2"]
+
+[ext_resource type="Script" path="res://Scripts/QuestionColumn.gd" id="1_to45p"]
+[ext_resource type="PackedScene" uid="uid://b4enc4fwv3f4i" path="res://Prefabs/Prefab_QuestionButton.tscn" id="1_w44ot"]
+
+[node name="QuestionColumn" type="MarginContainer" node_paths=PackedStringArray("title_label")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 8
+script = ExtResource("1_to45p")
+title_label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 24
+text = "Category Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Question1" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+layout_mode = 2
+
+[node name="Question2" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+layout_mode = 2
+
+[node name="Question3" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+layout_mode = 2
+
+[node name="Question4" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+layout_mode = 2
+
+[node name="Question5" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Question1" to="." method="_on_question_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Question2" to="." method="_on_question_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Question3" to="." method="_on_question_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/Question4" to="." method="_on_question_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Question5" to="." method="_on_question_5_pressed"]

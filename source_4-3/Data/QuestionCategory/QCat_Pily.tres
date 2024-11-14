@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://d23p7n5r8grgl"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_rl1nq"]
+
+[resource]
+script = ExtResource("1_rl1nq")
+name = "The Most Important Character"
