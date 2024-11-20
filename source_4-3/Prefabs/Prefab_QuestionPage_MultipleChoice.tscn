@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://36wh7awy2msy"]
+
+[ext_resource type="PackedScene" uid="uid://4nr3o7fmwodt" path="res://Prefabs/Prefab_QuestionPage.tscn" id="1_qxr4y"]
+[ext_resource type="Script" path="res://Scripts/QuestionPage_MultipleChoice.gd" id="2_2j78x"]
+
+[node name="QuestionPage_MultipleChoice" node_paths=PackedStringArray("choice_buttons") instance=ExtResource("1_qxr4y")]
+script = ExtResource("2_2j78x")
+choice_buttons = [NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceA"), NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceB"), NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceC"), NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceD")]
+
+[node name="HungryBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" index="5"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+
+[node name="ChoiceA" type="Button" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A"
+
+[node name="Space1" type="Control" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ChoiceB" type="Button" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "B"
+
+[node name="Space2" type="Control" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ChoiceC" type="Button" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "C"
+
+[node name="Space3" type="Control" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="ChoiceD" type="Button" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "D"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceA" to="." method="_on_choice_a_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceB" to="." method="_on_choice_b_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceC" to="." method="_on_choice_c_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceD" to="." method="_on_choice_d_pressed"]
