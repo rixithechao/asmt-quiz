@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CategoryGroup" load_steps=4 format=3 uid="uid://buh58v2jqwkcu"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_p661m"]
+[ext_resource type="Resource" uid="uid://chm8cjlcty42w" path="res://Data/QuestionCategory/QCat_Type_Microgame.tres" id="2_8te84"]
+[ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="3_uvldt"]
+
+[resource]
+script = ExtResource("3_uvldt")
+categories = Array[ExtResource("1_p661m")]([ExtResource("2_8te84")])

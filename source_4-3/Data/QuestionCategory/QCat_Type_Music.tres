@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=3 format=3 uid="uid://bhgxjbpeo5d5o"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_yf5a6"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_e8xv6"]
+
+[resource]
+script = ExtResource("2_e8xv6")
+name = "Extreme Recall Action"
+questions = Array[ExtResource("1_yf5a6")]([])

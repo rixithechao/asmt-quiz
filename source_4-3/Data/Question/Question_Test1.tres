@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Question" load_steps=2 format=3 uid="uid://du6bgi5m6j0ha"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_2eayd"]
+
+[resource]
+script = ExtResource("1_2eayd")
+author = ""
+text = ""
+right_answers = Array[String]([])
+wrong_answers = Array[String]([])

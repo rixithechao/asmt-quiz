@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=3 uid="uid://12pgeltr7ar6"]
+
+[ext_resource type="PackedScene" uid="uid://divt0f1gvw0n2" path="res://Prefabs/Prefab_QuestionColumn.tscn" id="1_vmc50"]
+[ext_resource type="Resource" uid="uid://ig1mbd28k4yi" path="res://Data/CategoryGroups/CategoryGroup_Trivia.tres" id="2_e36ci"]
+[ext_resource type="Resource" uid="uid://bx0ex8y5lirjx" path="res://Data/CategoryGroups/CategoryGroup_Visual.tres" id="3_8hhbi"]
+[ext_resource type="Resource" uid="uid://blnpcunteuqhp" path="res://Data/CategoryGroups/CategoryGroup_Trivia2.tres" id="4_4df48"]
+[ext_resource type="Resource" uid="uid://mvixmrfcg8di" path="res://Data/CategoryGroups/CategoryGroup_Audio.tres" id="5_jnyv8"]
+[ext_resource type="Resource" uid="uid://beuvst2dbe2cd" path="res://Data/CategoryGroups/CategoryGroup_GrabBag.tres" id="6_85cph"]
+[ext_resource type="Resource" uid="uid://buh58v2jqwkcu" path="res://Data/CategoryGroups/CategoryGroup_Interaction.tres" id="7_6yhnh"]
+
+[node name="Category Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "THE WHEEL OF FATE IS TURNING..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestionColumn" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("2_e36ci")
+
+[node name="QuestionColumn2" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("3_8hhbi")
+
+[node name="QuestionColumn3" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("4_4df48")
+
+[node name="QuestionColumn4" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("5_jnyv8")
+
+[node name="QuestionColumn5" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("6_85cph")
+
+[node name="QuestionColumn6" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("7_6yhnh")
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Points"
+horizontal_alignment = 1
+
+[node name="PointsAmount" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "0/20"
+horizontal_alignment = 1

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=3 format=3 uid="uid://cibmy6hay5cwj"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_m0urd"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_1iy8d"]
+
+[resource]
+script = ExtResource("2_1iy8d")
+name = "Who's That Thing?"
+questions = Array[ExtResource("1_m0urd")]([])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CategoryGroup" load_steps=5 format=3 uid="uid://bx0ex8y5lirjx"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_6omtt"]
+[ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="2_1bmcs"]
+[ext_resource type="Resource" uid="uid://d0ww6ikykbdp0" path="res://Data/QuestionCategory/QCat_Type_Memorize.tres" id="2_sx1e6"]
+[ext_resource type="Resource" uid="uid://cibmy6hay5cwj" path="res://Data/QuestionCategory/QCat_Type_Identify.tres" id="3_8wrk1"]
+
+[resource]
+script = ExtResource("2_1bmcs")
+categories = Array[ExtResource("1_6omtt")]([ExtResource("2_sx1e6"), ExtResource("3_8wrk1")])

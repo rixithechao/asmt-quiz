@@ -47,9 +47,3 @@ layout_mode = 2
 
 [node name="Question5" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
 layout_mode = 2
-
-[connection signal="pressed" from="VBoxContainer/Question1" to="." method="_on_question_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/Question2" to="." method="_on_question_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Question3" to="." method="_on_question_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/Question4" to="." method="_on_question_4_pressed"]
-[connection signal="pressed" from="VBoxContainer/Question5" to="." method="_on_question_5_pressed"]

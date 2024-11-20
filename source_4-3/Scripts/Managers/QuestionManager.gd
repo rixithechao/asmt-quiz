@@ -1,6 +1,7 @@
 extends ManagerParent
 
 
+
 var all_questions: Array[Question]
 
 var selected_categories: Array[QuestionCategory]
@@ -16,3 +17,8 @@ func _ready() -> void:
 	for path in all_question_paths:
 		var qRes = load(dir_path+path)
 		all_questions.append(qRes)
+
+
+
+func open_question(Question):
+	pass
