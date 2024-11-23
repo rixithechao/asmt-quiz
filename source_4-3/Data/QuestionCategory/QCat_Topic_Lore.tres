@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://d3q2cm81sw0ff"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://d3q2cm81sw0ff"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_hpqns"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_jo32w"]
+[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_lvh1y"]
+[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_ejp14"]
+[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_825lv"]
+[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_cer0d"]
+[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_cltat"]
+[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_a4tat"]
 
 [resource]
 script = ExtResource("1_hpqns")
 name = "Backstories & Junk"
+questions = Array[ExtResource("1_jo32w")]([ExtResource("2_lvh1y"), ExtResource("2_lvh1y"), ExtResource("3_ejp14"), ExtResource("3_ejp14"), ExtResource("4_825lv"), ExtResource("4_825lv"), ExtResource("5_cer0d"), ExtResource("5_cer0d"), ExtResource("6_cltat"), ExtResource("6_cltat"), ExtResource("7_a4tat"), ExtResource("7_a4tat")])

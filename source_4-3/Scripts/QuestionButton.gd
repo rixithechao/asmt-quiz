@@ -21,4 +21,5 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	QuestionManager.open_question(question)
+	QuestionManager.open_question(question, points)
+	disabled = true

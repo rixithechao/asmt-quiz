@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://b3kqvyvr1gnoh"]
+
+[ext_resource type="PackedScene" uid="uid://bm65qtom32mqa" path="res://Prefabs/Prefab_QuestionPage_MChoice_Image.tscn" id="1_1dn46"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_uxrks"]
+
+[resource]
+script = ExtResource("2_uxrks")
+right_answers = Array[String](["Right1", "Right2", "Right3", "Right4"])
+wrong_answers = Array[String](["Wrong1", "Wrong2", "Wrong3", "Wrong4"])
+minimum_right_answers = 1
+author = "The Screencap Scout"
+text = "This one has an image!"
+page_scene = ExtResource("1_1dn46")

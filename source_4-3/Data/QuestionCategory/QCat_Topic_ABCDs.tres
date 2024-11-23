@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://cc2rj53iuve"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://cc2rj53iuve"]
 
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_ielxj"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_ohcmi"]
+[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_hsjnh"]
+[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_71s2l"]
+[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_j6m04"]
+[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_o727i"]
+[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_bv166"]
+[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_ygsiq"]
 
 [resource]
 script = ExtResource("1_ohcmi")
 name = "Familiar Faces"
+questions = Array[ExtResource("1_ielxj")]([ExtResource("2_hsjnh"), ExtResource("2_hsjnh"), ExtResource("3_71s2l"), ExtResource("3_71s2l"), ExtResource("4_j6m04"), ExtResource("4_j6m04"), ExtResource("5_o727i"), ExtResource("5_o727i"), ExtResource("6_bv166"), ExtResource("6_bv166"), ExtResource("7_ygsiq"), ExtResource("7_ygsiq")])

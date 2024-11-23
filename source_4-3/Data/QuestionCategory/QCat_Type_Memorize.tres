@@ -1,9 +1,15 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=3 format=3 uid="uid://d0ww6ikykbdp0"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://d0ww6ikykbdp0"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_hhofu"]
 [ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_rmd2i"]
+[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_l410j"]
+[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="2_ovcba"]
+[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_07tja"]
+[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_n1owu"]
+[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_mfpgp"]
+[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_bp4dg"]
 
 [resource]
 script = ExtResource("1_hhofu")
 name = "Extreme Recall Action"
-questions = Array[ExtResource("1_rmd2i")]([])
+questions = Array[ExtResource("1_rmd2i")]([ExtResource("2_l410j"), ExtResource("2_l410j"), ExtResource("3_07tja"), ExtResource("3_07tja"), ExtResource("4_n1owu"), ExtResource("4_n1owu"), ExtResource("5_mfpgp"), ExtResource("5_mfpgp"), ExtResource("2_ovcba"), ExtResource("2_ovcba"), ExtResource("7_bp4dg"), ExtResource("7_bp4dg")])

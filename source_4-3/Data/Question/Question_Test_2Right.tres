@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://ctkn3je3y2yi3"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_yke1w"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_e6qx7"]
+
+[resource]
+script = ExtResource("2_e6qx7")
+right_answers = Array[String](["Right1", "Right2", "Right3", "Right4"])
+wrong_answers = Array[String](["Wrong1", "Wrong2", "Wrong3", "Wrong4"])
+minimum_right_answers = 2
+author = "Toasting"
+text = "Oh look, two correct answers"
+page_scene = ExtResource("1_yke1w")

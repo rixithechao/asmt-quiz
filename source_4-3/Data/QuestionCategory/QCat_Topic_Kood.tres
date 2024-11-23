@@ -1,7 +1,15 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=2 format=3 uid="uid://b01dcqlyen8qo"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://b01dcqlyen8qo"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_4as5o"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_ymb34"]
+[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_cywml"]
+[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_su0hq"]
+[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_2e68n"]
+[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_4ijh5"]
+[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_e74mc"]
+[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_1bqoy"]
 
 [resource]
 script = ExtResource("1_4as5o")
 name = "The 2nd Most Important Character"
+questions = Array[ExtResource("1_ymb34")]([ExtResource("2_cywml"), ExtResource("2_cywml"), ExtResource("3_su0hq"), ExtResource("3_su0hq"), ExtResource("4_2e68n"), ExtResource("4_2e68n"), ExtResource("5_4ijh5"), ExtResource("5_4ijh5"), ExtResource("6_e74mc"), ExtResource("6_e74mc"), ExtResource("7_1bqoy"), ExtResource("7_1bqoy")])

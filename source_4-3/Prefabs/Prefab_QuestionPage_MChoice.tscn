@@ -1,15 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://36wh7awy2msy"]
 
-[ext_resource type="PackedScene" uid="uid://4nr3o7fmwodt" path="res://Prefabs/Prefab_QuestionPage.tscn" id="1_qxr4y"]
-[ext_resource type="Script" path="res://Scripts/QuestionPage_MultipleChoice.gd" id="2_2j78x"]
+[ext_resource type="PackedScene" uid="uid://4nr3o7fmwodt" path="res://Prefabs/Prefab_QuestionPage.tscn" id="1_2uocm"]
+[ext_resource type="Script" path="res://Scripts/QuestionPage_MultipleChoice.gd" id="2_umeg0"]
 
-[node name="QuestionPage_MultipleChoice" node_paths=PackedStringArray("choice_buttons") instance=ExtResource("1_qxr4y")]
-script = ExtResource("2_2j78x")
+[node name="QuestionPage_MultipleChoice" node_paths=PackedStringArray("choice_buttons") instance=ExtResource("1_2uocm")]
+script = ExtResource("2_umeg0")
 choice_buttons = [NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceA"), NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceB"), NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceC"), NodePath("MarginContainer/VBoxContainer/HungryBoxContainer/ChoiceD")]
 
 [node name="HungryBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" index="5"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
+size_flags_vertical = 8
 
 [node name="ChoiceA" type="Button" parent="MarginContainer/VBoxContainer/HungryBoxContainer" index="0"]
 layout_mode = 2

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cddomjujgfasm"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_vn0xk"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_4o8kn"]
+
+[resource]
+script = ExtResource("2_4o8kn")
+right_answers = Array[String](["Right1", "Right2", "Right3", "Right4", "Right5", "Right6"])
+wrong_answers = Array[String](["Wrong1", "Wrong2", "Wrong3", "Wrong4", "Wrong5", "Wrong6", "Wrong7", "Wrong8"])
+minimum_right_answers = 3
+author = "Theodore Edward Testquire"
+text = "This question forces 3 of the 4 choices to be correct."
+page_scene = ExtResource("1_vn0xk")
