@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CategoryGroup" load_steps=5 format=3 uid="uid://bx0ex8y5lirjx"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_najmj"]
+[ext_resource type="Resource" uid="uid://bt2hfmlpif75" path="res://Data/QuestionCategory/QCat_Topic_Crossover.tres" id="2_uvvln"]
+[ext_resource type="Resource" uid="uid://bcqti8ququym0" path="res://Data/QuestionCategory/QCat_Topic_OtherChars.tres" id="3_oofyk"]
+[ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="4_v082y"]
+
+[resource]
+script = ExtResource("4_v082y")
+categories = Array[ExtResource("1_najmj")]([ExtResource("2_uvvln"), ExtResource("3_oofyk")])

@@ -14,9 +14,7 @@ static var style_correct : StyleBoxFlat = preload("res://Style_DisabledButton_Co
 static var style_wrong : StyleBoxFlat = preload("res://Style_DisabledButton_Wrong.tres")
 
 
-func setup(q: Question):
-	super(q)
-	
+func extra_setup(q: Question):
 	var q_mc = q as Question_MultipleChoice
 	var num_correct = min(q.minimum_right_answers, q.right_answers.size(), NUMBER_CHOICES)
 	
@@ -55,13 +53,18 @@ func give_answer(answer: Variant):
 func show_results(was_correct: bool):
 	super(was_correct)
 
+	var selected_text = choice_buttons[selected].text
+
+	if  image_rect.visible  and  question.specific_answer_images.has(selected_text):
+		image_rect.texture = question.specific_answer_images[selected_text]
+
 	for i in NUMBER_CHOICES:
 		var btn = choice_buttons[i]
 		btn.disabled = true
 
 		if  correctness[i]:
 			btn.add_theme_stylebox_override ("disabled", style_correct)
-		elif  not was_correct  and  i == selected:
+		elif  not was_correct  and  (i == selected  or  time_expired):
 			btn.add_theme_stylebox_override ("disabled", style_wrong)
 
 

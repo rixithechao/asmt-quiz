@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=11 format=3 uid="uid://tlc60iqqsow1"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_pieh8"]
+[ext_resource type="Resource" uid="uid://dfy7gtswf8y11" path="res://Data/Question/oddwrath/Question_ImHungry.tres" id="2_cnqo8"]
+[ext_resource type="Resource" uid="uid://bocsajcnrrid1" path="res://Data/Question/MilkAndRaspberry/Question_DemoSandwich.tres" id="2_csv75"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_x2sgk"]
+[ext_resource type="Resource" uid="uid://cjg1u1w747g18" path="res://Data/Question/MilkAndRaspberry/Question_WhiteCastle.tres" id="3_ig4aa"]
+[ext_resource type="Resource" uid="uid://d2um17wqsdqoa" path="res://Data/Question/MilkAndRaspberry/Question_ASMTTitleCart.tres" id="4_1xmwm"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="4_brdis"]
+[ext_resource type="Resource" uid="uid://civ0cwy41bccg" path="res://Data/Question/Rixi/Question_CyclopticFood.tres" id="4_s3lm8"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="5_7ekhb"]
+
+[sub_resource type="Resource" id="Resource_l8q2g"]
+resource_name = "Vars - Food Buffers"
+script = ExtResource("4_brdis")
+variants = Array[ExtResource("5_7ekhb")]([ExtResource("4_s3lm8")])
+
+[resource]
+script = ExtResource("2_x2sgk")
+name = "Them's Good Eats"
+name_size = 1.0
+questions = Array[ExtResource("1_pieh8")]([ExtResource("2_cnqo8"), ExtResource("4_1xmwm"), SubResource("Resource_l8q2g"), ExtResource("2_csv75"), ExtResource("3_ig4aa")])

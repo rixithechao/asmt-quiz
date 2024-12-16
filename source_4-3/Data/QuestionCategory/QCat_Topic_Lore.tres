@@ -1,15 +1,22 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://d3q2cm81sw0ff"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=11 format=3 uid="uid://d3q2cm81sw0ff"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_hpqns"]
-[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_jo32w"]
-[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_lvh1y"]
-[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_ejp14"]
-[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_825lv"]
-[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_cer0d"]
-[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_cltat"]
-[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_a4tat"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_rfx4a"]
+[ext_resource type="Resource" uid="uid://baga7acnqw2e6" path="res://Data/Question/PSINinja/Question_AATHoliday.tres" id="2_vuhdg"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="3_4bj2e"]
+[ext_resource type="Resource" uid="uid://cqqctsn5r0l05" path="res://Data/Question/MilkAndRaspberry/Question_RaocowGift.tres" id="3_5yi46"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="4_ics10"]
+[ext_resource type="Resource" uid="uid://bau23y6amw33e" path="res://Data/Question/MonkeyShrapnel/Question_CookForSerac.tres" id="4_u2b2t"]
+[ext_resource type="Resource" uid="uid://bbpqkkqcf8mth" path="res://Data/Question/Rixi/Question_ABCDStands.tres" id="5_6k3y1"]
+[ext_resource type="Resource" uid="uid://bcfoaigta3qc4" path="res://Data/Question/PSINinja/Question_PartyPooper.tres" id="5_k702m"]
+
+[sub_resource type="Resource" id="Resource_0sxx6"]
+resource_name = "Vars - Lore Buffers"
+script = ExtResource("3_4bj2e")
+variants = Array[ExtResource("4_ics10")]([ExtResource("5_6k3y1")])
 
 [resource]
 script = ExtResource("1_hpqns")
-name = "Backstories & Junk"
-questions = Array[ExtResource("1_jo32w")]([ExtResource("2_lvh1y"), ExtResource("2_lvh1y"), ExtResource("3_ejp14"), ExtResource("3_ejp14"), ExtResource("4_825lv"), ExtResource("4_825lv"), ExtResource("5_cer0d"), ExtResource("5_cer0d"), ExtResource("6_cltat"), ExtResource("6_cltat"), ExtResource("7_a4tat"), ExtResource("7_a4tat")])
+name = "This is an exposition thing, isn't it?"
+name_size = 1.0
+questions = Array[ExtResource("1_rfx4a")]([ExtResource("2_vuhdg"), SubResource("Resource_0sxx6"), ExtResource("3_5yi46"), ExtResource("4_u2b2t"), ExtResource("5_k702m")])

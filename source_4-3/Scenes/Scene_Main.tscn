@@ -1,45 +1,143 @@
-[gd_scene load_steps=19 format=3 uid="uid://12pgeltr7ar6"]
+[gd_scene load_steps=46 format=3 uid="uid://12pgeltr7ar6"]
 
 [ext_resource type="Script" path="res://Scripts/CategoryMenu.gd" id="1_6m3t6"]
 [ext_resource type="PackedScene" uid="uid://divt0f1gvw0n2" path="res://Prefabs/Prefab_QuestionColumn.tscn" id="1_vmc50"]
-[ext_resource type="Resource" uid="uid://ig1mbd28k4yi" path="res://Data/CategoryGroups/CategoryGroup_Trivia.tres" id="2_e36ci"]
+[ext_resource type="Resource" uid="uid://ig1mbd28k4yi" path="res://Data/CategoryGroups/CategoryGroup_Flavor.tres" id="2_e36ci"]
 [ext_resource type="Script" path="res://Scripts/RandomizedLabel.gd" id="2_qiyrp"]
-[ext_resource type="Resource" uid="uid://bx0ex8y5lirjx" path="res://Data/CategoryGroups/CategoryGroup_Visual.tres" id="3_8hhbi"]
-[ext_resource type="Resource" uid="uid://blnpcunteuqhp" path="res://Data/CategoryGroups/CategoryGroup_Trivia2.tres" id="4_4df48"]
-[ext_resource type="Resource" uid="uid://mvixmrfcg8di" path="res://Data/CategoryGroups/CategoryGroup_Audio.tres" id="5_jnyv8"]
+[ext_resource type="Resource" uid="uid://bx0ex8y5lirjx" path="res://Data/CategoryGroups/CategoryGroup_SecondaryChars.tres" id="3_8hhbi"]
+[ext_resource type="Resource" uid="uid://blnpcunteuqhp" path="res://Data/CategoryGroups/CategoryGroup_Lore.tres" id="4_4df48"]
+[ext_resource type="Resource" uid="uid://mvixmrfcg8di" path="res://Data/CategoryGroups/CategoryGroup_MainChars.tres" id="5_jnyv8"]
 [ext_resource type="Resource" uid="uid://beuvst2dbe2cd" path="res://Data/CategoryGroups/CategoryGroup_GrabBag.tres" id="6_85cph"]
-[ext_resource type="Resource" uid="uid://buh58v2jqwkcu" path="res://Data/CategoryGroups/CategoryGroup_Interaction.tres" id="7_6yhnh"]
+[ext_resource type="Texture2D" uid="uid://dinjgdqnhmqow" path="res://Textures/Masks/tex_mask_01.png" id="9_8saco"]
+[ext_resource type="Shader" uid="uid://cgkxl3rx4w6te" path="res://Shaders/shader_cutout.tres" id="9_utiiv"]
+[ext_resource type="AudioStream" uid="uid://52mmh63fyfpx" path="res://Sounds/sound_whoosh01.wav" id="10_m1mwe"]
+[ext_resource type="Texture2D" uid="uid://cdnc1guy3xplj" path="res://Textures/Masks/tex_mask_05.png" id="11_15bh6"]
+[ext_resource type="AudioStream" uid="uid://dpv8uitedg7wf" path="res://Sounds/sound_zipZipZwee01.wav" id="11_j7na3"]
+[ext_resource type="Texture2D" uid="uid://dlat14ajr2vum" path="res://Textures/Masks/tex_mask_06.png" id="11_onjc1"]
+[ext_resource type="Script" path="res://Scripts/MaskTransition.gd" id="11_wksgk"]
+[ext_resource type="AudioStream" uid="uid://586ebmr1y4xh" path="res://Sounds/sound_shatter01.wav" id="12_isha6"]
+[ext_resource type="AudioStream" uid="uid://c70o5se34fbt5" path="res://Sounds/sound_drumroll01.wav" id="12_lqm62"]
+[ext_resource type="Texture2D" uid="uid://dpwkhct7vpl28" path="res://Textures/Masks/tex_mask_02.png" id="12_xlegl"]
+[ext_resource type="AudioStream" uid="uid://x6xjov53aqrg" path="res://Sounds/sound_tubeThup01.wav" id="12_yp64a"]
+[ext_resource type="AudioStream" uid="uid://dxag8b7gcby4f" path="res://Sounds/sound_slideWhistleDown01.wav" id="13_yxas1"]
+[ext_resource type="AudioStream" uid="uid://chxicsci1ywc1" path="res://Sounds/sound_creak01.wav" id="14_5bcws"]
+[ext_resource type="Texture2D" uid="uid://rnind06g1ddj" path="res://Textures/tex_musicNote.png" id="14_u0efc"]
+[ext_resource type="AudioStream" uid="uid://dwgxdi2j5xl6l" path="res://Sounds/sound_slideWhistleHop01.wav" id="15_thkw1"]
+[ext_resource type="Texture2D" uid="uid://ciyb51ks35pvx" path="res://Textures/Masks/tex_mask_04.png" id="21_76jl1"]
+[ext_resource type="PackedScene" uid="uid://cie018fp7hfjk" path="res://Prefabs/Prefab_MusicPlayer.tscn" id="25_4oom5"]
 
-[sub_resource type="Animation" id="Animation_ujp1b"]
-length = 0.001
+[sub_resource type="ViewportTexture" id="ViewportTexture_qmdno"]
+viewport_path = NodePath("MaskAlpha")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ieyd"]
+shader = ExtResource("9_utiiv")
+shader_parameter/cutoff_point = 1.0
+shader_parameter/mask = ExtResource("9_8saco")
+
+[sub_resource type="Animation" id="Animation_p6fqs"]
+resource_name = "Open_Fade"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset/QPageTransform:scale")
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ikvf5"]
+resource_name = "Open_Mask1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
+"update": 1,
+"values": [ExtResource("9_8saco")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QPageOffset/QPageTransform:rotation")
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_klnle"]
+resource_name = "Open_Mask2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_xlegl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_x0uih"]
+resource_name = "Open_Pop"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("QPageOffset:rotation")
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -48,62 +146,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
-tracks/3/type = "value"
+tracks/3/type = "audio"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("QPageOffset/QPageTransform:modulate")
+tracks/3/path = NodePath("Sounds/General1")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("QPageOffset/QPageTransform:pivot_offset")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(576, 324)]
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("QPageOffset/QPageTransform:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_yp64a")
+}],
 "times": PackedFloat32Array(0)
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("QPageOffset:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
+tracks/3/use_blend = true
 
-[sub_resource type="Animation" id="Animation_mlev7"]
-resource_name = "Open_SlideTop"
+[sub_resource type="Animation" id="Animation_epcib"]
+resource_name = "Open_SlideBottom"
 length = 0.25
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset/QPageTransform:scale")
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -115,7 +181,175 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QPageOffset/QPageTransform:position")
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_m1mwe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_fovcc"]
+resource_name = "Open_SlideLeft"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_m1mwe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_y4805"]
+resource_name = "Open_SlideRight"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_m1mwe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_mlev7"]
+resource_name = "Open_SlideTop"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -127,7 +361,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("QPageOffset/QPageTransform:rotation")
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -136,14 +370,30 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_m1mwe")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_lr3ue"]
 resource_name = "Open_SpiralIn"
+length = 1.75
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset/QPageTransform:scale")
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -155,7 +405,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QPageOffset/QPageTransform:position")
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -167,7 +417,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("QPageOffset/QPageTransform:rotation")
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -179,7 +429,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("QPageOffset:position")
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -191,7 +441,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("QPageOffset:rotation")
+tracks/4/path = NodePath("BakedAlphaMask/QPageOffset:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -200,21 +450,32 @@ tracks/4/keys = {
 "update": 0,
 "values": [0.0, 6.28319]
 }
-
-[sub_resource type="Animation" id="Animation_p6fqs"]
-resource_name = "Open_Fade"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset/QPageTransform:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/General1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_lqm62")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:pivot_offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Vector2(576, 324)]
 }
 
 [sub_resource type="Animation" id="Animation_snpbt"]
@@ -224,7 +485,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset/QPageTransform:scale")
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -236,7 +497,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QPageOffset/QPageTransform:position")
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -248,7 +509,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("QPageOffset/QPageTransform:rotation")
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -257,77 +518,317 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ly1ss"]
-_data = {
-"Open_Fade": SubResource("Animation_p6fqs"),
-"Open_SlideTop": SubResource("Animation_mlev7"),
-"Open_SpiralIn": SubResource("Animation_lr3ue"),
-"Open_Zoom": SubResource("Animation_snpbt"),
-"RESET": SubResource("Animation_ujp1b")
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_m1mwe")
+}],
+"times": PackedFloat32Array(0)
 }
+tracks/3/use_blend = true
 
-[sub_resource type="Animation" id="Animation_xne6c"]
-resource_name = "Close_SwingDrop"
-step = 0.01
+[sub_resource type="Animation" id="Animation_ujp1b"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset:position")
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": []
+"values": [Vector2(1, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QPageOffset/QPageTransform:rotation")
-tracks/1/interp = 2
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0, 1.91986, 0.349066, 1.39626]
+"values": [0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("QPageOffset/QPageTransform:pivot_offset")
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:pivot_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 324)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_8saco")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ly1ss"]
+_data = {
+"Open_Fade": SubResource("Animation_p6fqs"),
+"Open_Mask1": SubResource("Animation_ikvf5"),
+"Open_Mask2": SubResource("Animation_klnle"),
+"Open_Pop": SubResource("Animation_x0uih"),
+"Open_SlideBottom": SubResource("Animation_epcib"),
+"Open_SlideLeft": SubResource("Animation_fovcc"),
+"Open_SlideRight": SubResource("Animation_y4805"),
+"Open_SlideTop": SubResource("Animation_mlev7"),
+"Open_SpiralIn": SubResource("Animation_lr3ue"),
+"Open_Zoom": SubResource("Animation_snpbt"),
+"RESET": SubResource("Animation_ujp1b")
+}
+
+[sub_resource type="Animation" id="Animation_0yh2c"]
+resource_name = "Close_Checkerboard"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_onjc1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4v0ba"]
+resource_name = "Close_Dissolve"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_76jl1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5aw2n"]
+resource_name = "Close_FFDeath"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_15bh6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xne6c"]
+resource_name = "Close_SwingDrop"
+length = 1.6
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.91986, 0.349066, 1.39626]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("QPageOffset/QPageTransform:position:x")
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(),
-"points": PackedFloat32Array(),
-"times": PackedFloat32Array()
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("QPageOffset/QPageTransform:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.139002, 5.36361, 800, -0.06, -192.058, 0.25, 0),
 "times": PackedFloat32Array(0, 0.450998, 0.85)
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/General1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_5bcws")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_isha6")
+}],
+"times": PackedFloat32Array(0, 0.85)
+}
+tracks/4/use_blend = true
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/General2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("15_thkw1")
+}],
+"times": PackedFloat32Array(0.46)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_yblu6"]
 resource_name = "Close_Zoom"
@@ -336,7 +837,7 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QPageOffset/QPageTransform:scale")
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -348,12 +849,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jmdjw"]
 _data = {
+"Close_Checkerboard": SubResource("Animation_0yh2c"),
+"Close_Dissolve": SubResource("Animation_4v0ba"),
+"Close_FFDeath": SubResource("Animation_5aw2n"),
 "Close_SwingDrop": SubResource("Animation_xne6c"),
 "Close_Zoom": SubResource("Animation_yblu6"),
 "RESET": SubResource("Animation_ujp1b")
 }
 
-[node name="CategoryMenu" type="Control" node_paths=PackedStringArray("prompt_label", "points_label", "page_transform", "player_opens", "player_closes")]
+[node name="CategoryMenu" type="Control" node_paths=PackedStringArray("prompt_label", "points_label", "page_transform", "player_opens", "player_closes", "block_mouse_rect", "bg_cover_rect", "exit_dialog", "debug_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -361,11 +865,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6m3t6")
-prompt_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Label")
-points_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PointsAmount")
-page_transform = NodePath("QPageOffset/QPageTransform")
+prompt_label = NodePath("MarginContainer/VBoxContainer/HeaderLabel")
+points_label = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PointsAmount")
+page_transform = NodePath("BakedAlphaMask/QPageOffset/QPageTransform")
 player_opens = NodePath("PageOpens")
 player_closes = NodePath("PageCloses")
+block_mouse_rect = NodePath("BlockMouse")
+bg_cover_rect = NodePath("BGCover")
+exit_dialog = NodePath("ExitConfirm")
+debug_button = NodePath("MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Debug")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -385,18 +893,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 64
+theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 64
+theme_override_constants/margin_bottom = 112
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HeaderLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(1088, 0)
 layout_mode = 2
 size_flags_vertical = 3
@@ -408,76 +913,108 @@ autowrap_mode = 3
 script = ExtResource("2_qiyrp")
 text_pool = Array[String](["THE WHEEL OF FATE IS TURNING...", "Pick a card, any card...", "What'cha going for next?", "Selecteth thine destiny.", "Moving on...", "And so it continues.", "Hello!", "So many questions, so little time...", "You should subscribe to raocow.", "Oh man, video games!", "This message has been approved by Garish.", "I can't measure your progress, are you winning?", "First come, first serve!", "Ooh, what does this button do?", "Leave no button unpressed.", "Boo!", "The average person would have to eat around 285 pounds of meat per day to maintain their weight if they had the metabolism of a hummingbird.", "Type 'sick' to go there now!", "And now, back to Family Feud."])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="QuestionColumn" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
-layout_mode = 2
-size_flags_horizontal = 3
-category_group = ExtResource("2_e36ci")
-
-[node name="QuestionColumn2" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
-layout_mode = 2
-size_flags_horizontal = 3
-category_group = ExtResource("3_8hhbi")
-
-[node name="QuestionColumn3" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
-layout_mode = 2
-size_flags_horizontal = 3
-category_group = ExtResource("4_4df48")
-
-[node name="QuestionColumn4" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+[node name="QuestionColumn" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
 layout_mode = 2
 size_flags_horizontal = 3
 category_group = ExtResource("5_jnyv8")
 
-[node name="QuestionColumn5" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+[node name="QuestionColumn2" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("3_8hhbi")
+
+[node name="QuestionColumn3" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("4_4df48")
+
+[node name="QuestionColumn4" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
+layout_mode = 2
+size_flags_horizontal = 3
+category_group = ExtResource("2_e36ci")
+
+[node name="QuestionColumn5" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
 layout_mode = 2
 size_flags_horizontal = 3
 category_group = ExtResource("6_85cph")
 
-[node name="QuestionColumn6" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_vmc50")]
-visible = false
-layout_mode = 2
-size_flags_horizontal = 3
-category_group = ExtResource("7_6yhnh")
-
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(32, 0)
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Space1" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Points"
 horizontal_alignment = 1
 
-[node name="PointsAmount" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="PointsAmount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "0/X"
 horizontal_alignment = 1
 
-[node name="QPageOffset" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(576, 324)
-mouse_filter = 2
-metadata/_edit_use_anchors_ = true
+[node name="Space2" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="QPageTransform" type="Control" parent="QPageOffset"]
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Settings"
+
+[node name="Debug" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "DEBUG
+FINAL
+QUESTION"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 18
+text = "Back to
+Title"
+
+[node name="BlockMouse" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="BakedAlphaMask" type="TextureRect" parent="."]
+clip_children = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_qmdno")
+
+[node name="QPageOffset" type="Control" parent="BakedAlphaMask"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -486,6 +1023,69 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(576, 324)
 mouse_filter = 2
+
+[node name="QPageTransform" type="Control" parent="BakedAlphaMask/QPageOffset"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="BakedAlphaMask"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_u0efc")
+stretch_mode = 1
+
+[node name="MaskAlpha" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1152, 648)
+
+[node name="MaskTransition" type="TextureRect" parent="MaskAlpha"]
+material = SubResource("ShaderMaterial_3ieyd")
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("9_8saco")
+script = ExtResource("11_wksgk")
+cutoff = 1.0
+
+[node name="MusicInfoPlayer" parent="." instance=ExtResource("25_4oom5")]
+layout_mode = 1
+
+[node name="BGCover" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.501961, 0.501961, 0.501961)
+
+[node name="ExitConfirm" type="ConfirmationDialog" parent="."]
+title = "Are you sure?"
+initial_position = 2
+size = Vector2i(308, 158)
+
+[node name="Text" type="Label" parent="ExitConfirm"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 300.0
+offset_bottom = 109.0
+text = "
+Do you really want to quit to the title?
+Your progress won't be saved!
+ "
+horizontal_alignment = 1
 
 [node name="PageOpens" type="AnimationPlayer" parent="."]
 libraries = {
@@ -496,3 +1096,47 @@ libraries = {
 libraries = {
 "": SubResource("AnimationLibrary_jmdjw")
 }
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="General1" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"SoundEffects"
+
+[node name="General2" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"SoundEffects"
+
+[node name="General3" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"SoundEffects"
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_m1mwe")
+bus = &"SoundEffects"
+
+[node name="ZipZwee" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_j7na3")
+bus = &"SoundEffects"
+
+[node name="Drumroll" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_lqm62")
+bus = &"SoundEffects"
+
+[node name="SlideWDown" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_yxas1")
+bus = &"SoundEffects"
+
+[node name="SlideWUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_yxas1")
+bus = &"SoundEffects"
+
+[node name="Creak" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_5bcws")
+bus = &"SoundEffects"
+
+[node name="SlideWHop" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_thkw1")
+bus = &"SoundEffects"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Debug" to="." method="_on_debug_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/Exit" to="." method="_on_exit_pressed"]
+[connection signal="canceled" from="ExitConfirm" to="." method="_on_exit_confirm_canceled"]
+[connection signal="confirmed" from="ExitConfirm" to="." method="_on_exit_confirm_confirmed"]

@@ -1,0 +1,125 @@
+[gd_scene load_steps=2 format=3 uid="uid://lta0cn43f4q5"]
+
+[ext_resource type="Script" path="res://Scripts/ResultsScreen.gd" id="1_e67gb"]
+
+[node name="Results" type="Control" node_paths=PackedStringArray("score_label", "win_close_label", "win_strong_label", "lose_close_label", "lose_strong_label", "reveal_timer", "reveal_nodes", "free_mode_dialog")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e67gb")
+score_label = NodePath("MarginContainer/VBoxContainer/Score")
+win_close_label = NodePath("MarginContainer/VBoxContainer/Rating/Win_Close")
+win_strong_label = NodePath("MarginContainer/VBoxContainer/Rating/Win_Strong")
+lose_close_label = NodePath("MarginContainer/VBoxContainer/Rating/Lose_Close")
+lose_strong_label = NodePath("MarginContainer/VBoxContainer/Rating/Lose_Strong")
+reveal_timer = NodePath("RevealTimer")
+reveal_nodes = [NodePath("MarginContainer/VBoxContainer/Header"), NodePath("MarginContainer/VBoxContainer/Score"), NodePath("MarginContainer/VBoxContainer/Rating"), NodePath("MarginContainer/VBoxContainer/BackToTitle")]
+reveal_times = Array[float]([0.5, 0.5, 1.0, 2.0])
+free_mode_dialog = NodePath("FreeModeDialog")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Space1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.25
+
+[node name="Header" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "FINAL SCORE:"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "X/20"
+horizontal_alignment = 1
+
+[node name="Rating" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Win_Close" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "You did it!  You beat the game!!"
+horizontal_alignment = 1
+
+[node name="Win_Strong" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Dang, you really know your stuff!"
+horizontal_alignment = 1
+
+[node name="Lose_Close" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Oof, so close!"
+horizontal_alignment = 1
+
+[node name="Lose_Strong" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Oh no!  Better study up!"
+horizontal_alignment = 1
+
+[node name="BackToTitle" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 40
+text = "Back 
+to Title"
+
+[node name="RevealTimer" type="Timer" parent="."]
+
+[node name="FreeModeDialog" type="AcceptDialog" parent="."]
+title = "This is not a drill!"
+initial_position = 1
+size = Vector2i(380, 262)
+ok_button_text = "Cool beans"
+dialog_text = "You've unlocked Flash Card mode!
+Or Question Select!
+Or whatever name I end up settling on.
+
+Freely peruse all of the questions implemented
+in the game without having to worry about
+score or anything like that!
+
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BackToTitle" to="." method="_on_back_to_title_pressed"]

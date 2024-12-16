@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://divt0f1gvw0n2"]
+[gd_scene load_steps=4 format=3 uid="uid://divt0f1gvw0n2"]
 
 [ext_resource type="Script" path="res://Scripts/QuestionColumn.gd" id="1_to45p"]
 [ext_resource type="PackedScene" uid="uid://b4enc4fwv3f4i" path="res://Prefabs/Prefab_QuestionButton.tscn" id="1_w44ot"]
+[ext_resource type="Script" path="res://addons/GameGUI/GGLabel.gd" id="2_5fpme"]
 
 [node name="QuestionColumn" type="MarginContainer" node_paths=PackedStringArray("title_label", "buttons_parent")]
 anchors_preset = 15
@@ -14,12 +15,13 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 8
 script = ExtResource("1_to45p")
 title_label = NodePath("VBoxContainer/Label")
-buttons_parent = NodePath("VBoxContainer")
+buttons_parent = NodePath("VBoxContainer/VBoxContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -34,18 +36,27 @@ text = "Category Name"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+script = ExtResource("2_5fpme")
+vertical_mode = 5
+layout_size = Vector2(0, 338)
+is_configured = true
 
-[node name="Question1" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Question1" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_w44ot")]
 layout_mode = 2
 
-[node name="Question2" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+[node name="Question2" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_w44ot")]
 layout_mode = 2
 
-[node name="Question3" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+[node name="Question3" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_w44ot")]
 layout_mode = 2
 
-[node name="Question4" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+[node name="Question4" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_w44ot")]
 layout_mode = 2
 
-[node name="Question5" parent="VBoxContainer" instance=ExtResource("1_w44ot")]
+[node name="Question5" parent="VBoxContainer/VBoxContainer" instance=ExtResource("1_w44ot")]
 layout_mode = 2

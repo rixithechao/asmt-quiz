@@ -1,15 +1,17 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://d3vpwxcocfrwd"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=10 format=3 uid="uid://d3vpwxcocfrwd"]
 
-[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_gdwtn"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_eaegf"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_73guh"]
-[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_w7grn"]
-[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_o1k3u"]
-[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_2hgma"]
-[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_ylgih"]
-[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_rce1e"]
-[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_4higb"]
+[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Test/Question_Test_Normal.tres" id="2_w7grn"]
+[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Test/Question_Test_2Right.tres" id="3_o1k3u"]
+[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Test/Question_Test_3Right.tres" id="4_2hgma"]
+[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Test/Question_Test_AllRight.tres" id="5_ylgih"]
+[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Test/Question_Test_Impossible.tres" id="6_rce1e"]
+[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Test/Question_Test_Image.tres" id="7_4higb"]
+[ext_resource type="Resource" uid="uid://bv7yke58m4gde" path="res://Data/Question/Test/Question_Test_Sound.tres" id="8_qqr71"]
 
 [resource]
 script = ExtResource("2_73guh")
 name = "Test Category"
-questions = Array[ExtResource("1_gdwtn")]([ExtResource("2_w7grn"), ExtResource("2_w7grn"), ExtResource("3_o1k3u"), ExtResource("3_o1k3u"), ExtResource("4_2hgma"), ExtResource("4_2hgma"), ExtResource("5_ylgih"), ExtResource("5_ylgih"), ExtResource("6_rce1e"), ExtResource("6_rce1e"), ExtResource("7_4higb"), ExtResource("7_4higb")])
+name_size = 1.0
+questions = Array[ExtResource("1_eaegf")]([ExtResource("2_w7grn"), ExtResource("2_w7grn"), ExtResource("3_o1k3u"), ExtResource("3_o1k3u"), ExtResource("4_2hgma"), ExtResource("4_2hgma"), ExtResource("5_ylgih"), ExtResource("5_ylgih"), ExtResource("6_rce1e"), ExtResource("6_rce1e"), ExtResource("7_4higb"), ExtResource("7_4higb"), ExtResource("8_qqr71"), ExtResource("8_qqr71"), ExtResource("8_qqr71"), ExtResource("8_qqr71")])

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="CategoryGroup" load_steps=4 format=3 uid="uid://bx0ex8y5lirjx"]
-
-[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_6omtt"]
-[ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="2_1bmcs"]
-[ext_resource type="Resource" uid="uid://cibmy6hay5cwj" path="res://Data/QuestionCategory/QCat_Type_Identify.tres" id="3_8wrk1"]
-
-[resource]
-script = ExtResource("2_1bmcs")
-categories = Array[ExtResource("1_6omtt")]([ExtResource("3_8wrk1")])

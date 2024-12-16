@@ -1,0 +1,11 @@
+
+SOUND EFFECTS
+- SONISS GCD AUDIO BUNDLES
+- FREESOUND
+	- Slide Whistle (sheepfilms)
+	- drumroll.wav (adriann)
+
+
+
+FOR THE TRANSITION TEXTURES:
+	always apply -10 contrast in Paint.net so it doesn't have any pure black and white;  it adds a necessary buffer for the cutout effect

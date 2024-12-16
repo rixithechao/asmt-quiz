@@ -1,7 +1,7 @@
 class_name RandomizedLabel
 extends Label
 
-
+@export var randomize_on_start: bool = false
 @export var text_pool: Array[String]
 
 var index: int = 0
@@ -9,6 +9,8 @@ var index: int = 0
 
 func _ready() -> void:
 	text_pool.shuffle()
+	if  randomize_on_start:
+		next()
 
 func next():
 	var current: String = text

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=4 format=3 uid="uid://bv7yke58m4gde"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_nr148"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_gmanb"]
+[ext_resource type="AudioStream" uid="uid://dpv8uitedg7wf" path="res://Sounds/sound_zipZipZwee01.wav" id="3_qkld4"]
+
+[resource]
+script = ExtResource("2_gmanb")
+right_answers = Array[String](["Correct", "Right", "Good", "Pick this"])
+wrong_answers = Array[String](["Wrong!", "Incorrect.", "Bad...", "Do not pick this"])
+minimum_right_answers = 1
+author = "Rixithechao"
+text = "This one has a music snippet"
+page_scene = ExtResource("1_nr148")
+sound = ExtResource("3_qkld4")

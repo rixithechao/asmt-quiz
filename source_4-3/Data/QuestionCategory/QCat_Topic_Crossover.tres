@@ -1,15 +1,25 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://bt2hfmlpif75"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=14 format=3 uid="uid://bt2hfmlpif75"]
 
-[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_jluiq"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_7a802"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_p7rhi"]
-[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_tes6d"]
-[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_vv7na"]
-[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_lpi5c"]
-[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_66wim"]
-[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_kbhea"]
-[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_moft7"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="2_ybgf0"]
+[ext_resource type="Resource" uid="uid://cshlwrr3oypn8" path="res://Data/Question/SiFi270/Question_VampireHunter.tres" id="3_42xsc"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="3_juhsb"]
+[ext_resource type="Resource" uid="uid://xjosv8gm6rlv" path="res://Data/Question/MonkeyShrapnel/Question_SheathAge.tres" id="4_ydwft"]
+[ext_resource type="Resource" uid="uid://beqdgk5k5m5y8" path="res://Data/Question/MonkeyShrapnel/Question_SheathAgeAlt.tres" id="5_2ynpb"]
+[ext_resource type="Resource" uid="uid://dpf5r7d1t28xw" path="res://Data/Question/PSINinja/Question_SheathBrotherName.tres" id="6_5yv6j"]
+[ext_resource type="Resource" uid="uid://dlg58cd0a870m" path="res://Data/Question/MilkAndRaspberry/Question_KoodCard.tres" id="7_8cghh"]
+[ext_resource type="Resource" uid="uid://dbyeurhhulctx" path="res://Data/Question/OwenLee/Question_TimeBomb.tres" id="7_nacee"]
+[ext_resource type="Resource" uid="uid://chompejh4a67j" path="res://Data/Question/MonkeyShrapnel/Question_KoodFirstLine.tres" id="8_b6swf"]
+[ext_resource type="Resource" uid="uid://c65fq6ra7ix4s" path="res://Data/Question/FusionWarrior/Question_MarioSpinJump.tres" id="10_ar16x"]
+
+[sub_resource type="Resource" id="Resource_5xwla"]
+resource_name = "Vars - Sheath Age"
+script = ExtResource("2_ybgf0")
+variants = Array[ExtResource("3_juhsb")]([ExtResource("4_ydwft"), ExtResource("5_2ynpb")])
 
 [resource]
 script = ExtResource("1_p7rhi")
 name = "The Tempura Anomaly"
-questions = Array[ExtResource("1_jluiq")]([ExtResource("2_tes6d"), ExtResource("2_tes6d"), ExtResource("3_vv7na"), ExtResource("3_vv7na"), ExtResource("4_lpi5c"), ExtResource("4_lpi5c"), ExtResource("5_66wim"), ExtResource("5_66wim"), ExtResource("6_kbhea"), ExtResource("6_kbhea"), ExtResource("7_moft7"), ExtResource("7_moft7")])
+name_size = 1.0
+questions = Array[ExtResource("1_7a802")]([SubResource("Resource_5xwla"), ExtResource("6_5yv6j"), ExtResource("7_nacee"), ExtResource("7_8cghh"), ExtResource("8_b6swf"), ExtResource("10_ar16x"), ExtResource("3_42xsc")])

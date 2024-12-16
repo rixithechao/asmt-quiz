@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfsxpeufg0w0q"]
+
+[ext_resource type="PackedScene" uid="uid://4nr3o7fmwodt" path="res://Prefabs/Prefab_QuestionPage.tscn" id="1_a6wxd"]
+[ext_resource type="Script" path="res://Scripts/QuestionPage_Microgame.gd" id="2_i5fju"]
+
+[node name="QuestionPage_Microgame" instance=ExtResource("1_a6wxd")]
+script = ExtResource("2_i5fju")
+current_win_state = 0
+
+[node name="HBoxContainer" parent="MarginContainer/InfoAndButtons" index="6"]
+visible = false
+
+[node name="Space3" parent="MarginContainer/InfoAndButtons" index="7"]
+visible = false

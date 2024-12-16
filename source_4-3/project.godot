@@ -11,13 +11,25 @@ config_version=5
 [application]
 
 config/name="ASMT Quiz"
-run/main_scene="res://Scenes/Scene_Main.tscn"
+config/version="0.1.0"
+run/main_scene="res://Scenes/Scene_Splash.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 QuestionManager="*res://Scripts/Managers/QuestionManager.gd"
+MusicManager="*res://Scripts/Managers/MusicManager.gd"
+SaveManager="*res://Scripts/Managers/SaveManager.gd"
+ProjectUISoundController="*res://addons/maaacks_ui_sound_controller/base/scenes/Autoloads/ProjectUISoundController.tscn"
+
+[display]
+
+window/size/resizable=false
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GameGUI/plugin.cfg", "res://addons/maaacks_ui_sound_controller/plugin.cfg", "res://addons/tnowe_extra_controls/plugin.cfg")
 
 [rendering]
 

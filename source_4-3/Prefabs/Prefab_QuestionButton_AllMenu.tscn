@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://clrcyqcpwfvfk"]
+
+[ext_resource type="PackedScene" uid="uid://b4enc4fwv3f4i" path="res://Prefabs/Prefab_QuestionButton.tscn" id="1_d8u3m"]
+
+[node name="Question" instance=ExtResource("1_d8u3m")]
+theme_override_font_sizes/font_size = 24

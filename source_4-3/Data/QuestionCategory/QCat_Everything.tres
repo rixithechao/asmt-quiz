@@ -1,15 +1,15 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=9 format=3 uid="uid://x3fdj02imdmj"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=8 format=3 uid="uid://x3fdj02imdmj"]
 
-[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="1_2axoh"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_2d680"]
-[ext_resource type="Resource" uid="uid://d3cw716b3wpw5" path="res://Data/Question/Question_Test_Normal.tres" id="2_57c4j"]
-[ext_resource type="Resource" uid="uid://ctkn3je3y2yi3" path="res://Data/Question/Question_Test_2Right.tres" id="3_mchd4"]
-[ext_resource type="Resource" uid="uid://cddomjujgfasm" path="res://Data/Question/Question_Test_3Right.tres" id="4_ip4k0"]
-[ext_resource type="Resource" uid="uid://tgwrvwbcus8y" path="res://Data/Question/Question_Test_AllRight.tres" id="5_nn5du"]
-[ext_resource type="Resource" uid="uid://du6bgi5m6j0ha" path="res://Data/Question/Question_Test_Impossible.tres" id="6_wpe5g"]
-[ext_resource type="Resource" uid="uid://b3kqvyvr1gnoh" path="res://Data/Question/Question_Test_Image.tres" id="7_i7fin"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_giepw"]
+[ext_resource type="Resource" uid="uid://dmy713r7cxae3" path="res://Data/Question/PSINinja/Question_ASMBXTSubtitle.tres" id="2_snog4"]
+[ext_resource type="Resource" uid="uid://di7avse5drkgq" path="res://Data/Question/neniu/Question_ThisQuizCanon.tres" id="3_abrht"]
+[ext_resource type="Resource" uid="uid://dctnyfdd6p062" path="res://Data/Question/PSINinja/Question_ASMTPostgame.tres" id="4_qjy06"]
+[ext_resource type="Resource" uid="uid://cwyoflyh38mg6" path="res://Data/Question/neniu/Question_PickRight.tres" id="5_870bf"]
+[ext_resource type="Resource" uid="uid://rurpgx0k7bwu" path="res://Data/Question/OwenLee/Question_Ep2DemoCount.tres" id="6_emuc2"]
 
 [resource]
 script = ExtResource("1_2d680")
-name = "This is Canon"
-questions = Array[ExtResource("1_2axoh")]([ExtResource("2_57c4j"), ExtResource("2_57c4j"), ExtResource("3_mchd4"), ExtResource("3_mchd4"), ExtResource("4_ip4k0"), ExtResource("4_ip4k0"), ExtResource("5_nn5du"), ExtResource("5_nn5du"), ExtResource("6_wpe5g"), ExtResource("6_wpe5g"), ExtResource("7_i7fin"), ExtResource("7_i7fin")])
+name = "Hey There raocow, This Is Everything"
+name_size = 1.0
+questions = Array[ExtResource("1_giepw")]([ExtResource("2_snog4"), ExtResource("3_abrht"), ExtResource("4_qjy06"), ExtResource("5_870bf"), ExtResource("6_emuc2")])

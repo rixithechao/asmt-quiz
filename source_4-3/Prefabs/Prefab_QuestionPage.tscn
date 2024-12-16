@@ -1,11 +1,135 @@
-[gd_scene load_steps=3 format=3 uid="uid://4nr3o7fmwodt"]
+[gd_scene load_steps=17 format=3 uid="uid://4nr3o7fmwodt"]
 
 [ext_resource type="Script" path="res://Scripts/QuestionPage.gd" id="1_j8gf5"]
+[ext_resource type="Script" path="res://Scripts/RandomizedLabel.gd" id="2_cln3n"]
+[ext_resource type="Texture2D" uid="uid://ldanyrvalkkf" path="res://icon.svg" id="2_uo3k0"]
+[ext_resource type="Texture2D" uid="uid://dbshyrkj5bvr4" path="res://Textures/tex_playButton.png" id="3_8bjmg"]
+[ext_resource type="Script" path="res://Scripts/SoundButton.gd" id="3_d3o2h"]
+[ext_resource type="Texture2D" uid="uid://c7x7py03h02in" path="res://Textures/tex_stopButton.png" id="5_0jbyi"]
+[ext_resource type="AudioStream" uid="uid://dpv8uitedg7wf" path="res://Sounds/sound_zipZipZwee01.wav" id="5_64jr4"]
+[ext_resource type="Texture2D" uid="uid://cqjf1b1b0iwyn" path="res://Textures/tex_soundButtonProgress.png" id="6_d1gof"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ir0x"]
 bg_color = Color(0.298039, 0.298039, 0.298039, 1)
 
-[node name="QuestionPage" type="PanelContainer" node_paths=PackedStringArray("question_label", "author_label", "prompt_node", "correct_node", "wrong_node", "back_button")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0vqe"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i8th2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vepqk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lx4s"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+corner_detail = 5
+
+[sub_resource type="Animation" id="Animation_qnias"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimeChallengeLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5sle8"]
+resource_name = "TimerStart"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TimeChallengeLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6srx"]
+_data = {
+"RESET": SubResource("Animation_qnias"),
+"TimerStart": SubResource("Animation_5sle8")
+}
+
+[node name="QuestionPage" type="PanelContainer" node_paths=PackedStringArray("question_label", "author_label", "prompt_node", "correct_node", "time_up_node", "wrong_node", "back_button", "image_rect", "sound_button", "timer_row", "timer_node", "timer_bar", "timer_animation", "info_and_buttons_container")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,12 +139,29 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_4ir0x")
 script = ExtResource("1_j8gf5")
-question_label = NodePath("MarginContainer/VBoxContainer/Prompt/Question")
-author_label = NodePath("MarginContainer/VBoxContainer/Prompt/Author")
-prompt_node = NodePath("MarginContainer/VBoxContainer/Prompt")
-correct_node = NodePath("MarginContainer/VBoxContainer/Correct")
-wrong_node = NodePath("MarginContainer/VBoxContainer/Wrong")
-back_button = NodePath("MarginContainer/VBoxContainer/BackButton")
+question_label = NodePath("MarginContainer/InfoAndButtons/Prompt/Question")
+author_label = NodePath("MarginContainer/InfoAndButtons/Prompt/Author")
+prompt_node = NodePath("MarginContainer/InfoAndButtons/Prompt")
+correct_node = NodePath("MarginContainer/InfoAndButtons/Correct")
+time_up_node = NodePath("MarginContainer/InfoAndButtons/TimeUp")
+wrong_node = NodePath("MarginContainer/InfoAndButtons/Wrong")
+back_button = NodePath("MarginContainer/InfoAndButtons/BackButton")
+image_rect = NodePath("MarginContainer/InfoAndButtons/HBoxContainer/Image")
+sound_button = NodePath("MarginContainer/InfoAndButtons/HBoxContainer/Sound")
+timer_row = NodePath("MarginContainer/InfoAndButtons/TimerRow")
+timer_node = NodePath("MarginContainer/InfoAndButtons/TimerRow/Timer")
+timer_bar = NodePath("MarginContainer/InfoAndButtons/TimerRow/Bar")
+timer_animation = NodePath("TimerAnimation")
+info_and_buttons_container = NodePath("MarginContainer/InfoAndButtons")
+
+[node name="TimeChallengeLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 72
+text = "TIME CHALLENGE!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -29,16 +170,16 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
+theme_override_constants/margin_bottom = 112
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="InfoAndButtons" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Prompt" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 160)
+[node name="Prompt" type="VBoxContainer" parent="MarginContainer/InfoAndButtons"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
-[node name="Question" type="Label" parent="MarginContainer/VBoxContainer/Prompt"]
+[node name="Question" type="Label" parent="MarginContainer/InfoAndButtons/Prompt"]
 custom_minimum_size = Vector2(1072, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -48,12 +189,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Space1" type="Control" parent="MarginContainer/VBoxContainer/Prompt"]
+[node name="Space1" type="Control" parent="MarginContainer/InfoAndButtons/Prompt"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Author" type="Label" parent="MarginContainer/VBoxContainer/Prompt"]
+[node name="Author" type="Label" parent="MarginContainer/InfoAndButtons/Prompt"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 20
@@ -61,12 +202,35 @@ text = "Submitted by: __"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Correct" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="TimerRow" type="HBoxContainer" parent="MarginContainer/InfoAndButtons"]
 visible = false
-custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/InfoAndButtons/TimerRow"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+script = ExtResource("2_cln3n")
+randomize_on_start = true
+text_pool = Array[String](["Time attack!", "Think fast!", "Counting down...", "Answer quickly!", "Hurry!", "Time limit!"])
+
+[node name="Bar" type="ProgressBar" parent="MarginContainer/InfoAndButtons/TimerRow"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 4.0
+value = 4.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="MarginContainer/InfoAndButtons/TimerRow"]
+
+[node name="Correct" type="VBoxContainer" parent="MarginContainer/InfoAndButtons"]
+visible = false
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
-[node name="CorrectLabel" type="Label" parent="MarginContainer/VBoxContainer/Correct"]
+[node name="CorrectLabel" type="Label" parent="MarginContainer/InfoAndButtons/Correct"]
 custom_minimum_size = Vector2(1072, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -76,12 +240,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Wrong" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="Wrong" type="VBoxContainer" parent="MarginContainer/InfoAndButtons"]
 visible = false
-custom_minimum_size = Vector2(0, 160)
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 
-[node name="WrongLabel" type="Label" parent="MarginContainer/VBoxContainer/Wrong"]
+[node name="WrongLabel" type="Label" parent="MarginContainer/InfoAndButtons/Wrong"]
 custom_minimum_size = Vector2(1072, 0)
 layout_mode = 2
 size_flags_vertical = 0
@@ -91,21 +255,98 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="Space2" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="TimeUp" type="VBoxContainer" parent="MarginContainer/InfoAndButtons"]
+visible = false
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+
+[node name="TimeUpLabel" type="Label" parent="MarginContainer/InfoAndButtons/TimeUp"]
+custom_minimum_size = Vector2(1072, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Time's up!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Space2" type="Control" parent="MarginContainer/InfoAndButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="Space3" type="Control" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/InfoAndButtons"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Image" type="TextureRect" parent="MarginContainer/InfoAndButtons/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+texture = ExtResource("2_uo3k0")
+stretch_mode = 5
+
+[node name="Sound" type="Button" parent="MarginContainer/InfoAndButtons/HBoxContainer" node_paths=PackedStringArray("player", "progress")]
+visible = false
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/focus = SubResource("StyleBoxFlat_b0vqe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i8th2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vepqk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0lx4s")
+icon = ExtResource("3_8bjmg")
+icon_alignment = 1
+script = ExtResource("3_d3o2h")
+player = NodePath("Audio")
+progress = NodePath("Progress")
+play_icon = ExtResource("3_8bjmg")
+stop_icon = ExtResource("5_0jbyi")
+
+[node name="Audio" type="AudioStreamPlayer" parent="MarginContainer/InfoAndButtons/HBoxContainer/Sound"]
+stream = ExtResource("5_64jr4")
+bus = &"Music"
+
+[node name="Progress" type="TextureProgressBar" parent="MarginContainer/InfoAndButtons/HBoxContainer/Sound"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+step = 0.001
+fill_mode = 4
+texture_progress = ExtResource("6_d1gof")
+
+[node name="Space3" type="Control" parent="MarginContainer/InfoAndButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.2
 
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Space4" type="Control" parent="MarginContainer/InfoAndButtons"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="BackButton" type="Button" parent="MarginContainer/InfoAndButtons"]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 36
 text = "Back"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[node name="TimerAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y6srx")
+}
+
+[connection signal="timeout" from="MarginContainer/InfoAndButtons/TimerRow/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="MarginContainer/InfoAndButtons/HBoxContainer/Sound" to="MarginContainer/InfoAndButtons/HBoxContainer/Sound" method="_on_pressed"]
+[connection signal="finished" from="MarginContainer/InfoAndButtons/HBoxContainer/Sound/Audio" to="MarginContainer/InfoAndButtons/HBoxContainer/Sound" method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="MarginContainer/InfoAndButtons/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="animation_finished" from="TimerAnimation" to="." method="_on_timer_animation_animation_finished"]

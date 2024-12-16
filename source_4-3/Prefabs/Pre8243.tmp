@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://36wh7awy2msy"]
+
+[ext_resource type="PackedScene" uid="uid://4nr3o7fmwodt" path="res://Prefabs/Prefab_QuestionPage.tscn" id="1_2uocm"]
+[ext_resource type="Script" path="res://Scripts/QuestionPage_MultipleChoice.gd" id="2_umeg0"]
+
+[node name="QuestionPage_MultipleChoice" node_paths=PackedStringArray("choice_buttons") instance=ExtResource("1_2uocm")]
+script = ExtResource("2_umeg0")
+choice_buttons = [null, null, null, null]
+
+[node name="MarginContainer_VBoxContainer_HungryBoxContainer#ChoiceA" type="Button" parent="." index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "A"
+
+[node name="MarginContainer_VBoxContainer_HungryBoxContainer#ChoiceB" type="Button" parent="." index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "B"
+
+[node name="MarginContainer_VBoxContainer_HungryBoxContainer#ChoiceC" type="Button" parent="." index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "C"
+
+[node name="MarginContainer_VBoxContainer_HungryBoxContainer#ChoiceD" type="Button" parent="." index="3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "D"
+
+[node name="MarginContainer_VBoxContainer#HungryBoxContainer" type="HBoxContainer" parent="." index="7"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 24

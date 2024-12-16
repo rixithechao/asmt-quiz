@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://dqcmio3lfvwmm"]
+
+[ext_resource type="Script" path="res://Scripts/QuestionSelectMenu.gd" id="1_6va2m"]
+[ext_resource type="PackedScene" uid="uid://cie018fp7hfjk" path="res://Prefabs/Prefab_MusicPlayer.tscn" id="1_aoc7p"]
+[ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="2_8fiim"]
+[ext_resource type="Script" path="res://Scripts/RandomizedLabel.gd" id="2_s3dtk"]
+[ext_resource type="Resource" uid="uid://ig1mbd28k4yi" path="res://Data/CategoryGroups/CategoryGroup_Flavor.tres" id="3_balrk"]
+[ext_resource type="PackedScene" uid="uid://cmnpgt2rnxapl" path="res://Prefabs/Prefab_AllQuestionsColumn.tscn" id="4_o8s05"]
+[ext_resource type="Resource" uid="uid://mvixmrfcg8di" path="res://Data/CategoryGroups/CategoryGroup_MainChars.tres" id="4_w4rv8"]
+[ext_resource type="Resource" uid="uid://bx0ex8y5lirjx" path="res://Data/CategoryGroups/CategoryGroup_SecondaryChars.tres" id="5_0xemy"]
+[ext_resource type="Resource" uid="uid://blnpcunteuqhp" path="res://Data/CategoryGroups/CategoryGroup_Lore.tres" id="6_ob2an"]
+[ext_resource type="Resource" uid="uid://beuvst2dbe2cd" path="res://Data/CategoryGroups/CategoryGroup_GrabBag.tres" id="8_vh8xn"]
+
+[node name="QuestionSelect" type="Control" node_paths=PackedStringArray("column_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6va2m")
+category_groups = Array[ExtResource("2_8fiim")]([ExtResource("4_w4rv8"), ExtResource("5_0xemy"), ExtResource("6_ob2an"), ExtResource("3_balrk"), ExtResource("8_vh8xn")])
+column_prefab = ExtResource("4_o8s05")
+column_container = NodePath("MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 112
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HeaderLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1088, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+theme_override_font_sizes/font_size = 32
+text = "Question Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_s3dtk")
+text_pool = Array[String](["Time to review your flash cards!", "All The Questions", "The Checklist"])
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_right = 16
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BackButton" type="Button" parent="MarginContainer"]
+custom_minimum_size = Vector2(120, 90)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="MusicInfoPlayer" parent="." instance=ExtResource("1_aoc7p")]
+layout_mode = 1
+
+[connection signal="pressed" from="MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

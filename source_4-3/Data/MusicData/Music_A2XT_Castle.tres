@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://dhnax47a2xdpy"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_15lrq"]
+[ext_resource type="AudioStream" uid="uid://ddc7ty3uyx6km" path="res://Music/level-a2xt-castle.ogg" id="2_36k6j"]
+
+[resource]
+script = ExtResource("1_15lrq")
+stream = ExtResource("2_36k6j")
+name = "Original: Castle"
+author = "SharkNurse"
+album = "A2XT Episode 1 OST"
