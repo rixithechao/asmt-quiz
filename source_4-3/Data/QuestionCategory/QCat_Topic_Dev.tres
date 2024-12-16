@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=12 format=3 uid="uid://buicjjipkhak"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=13 format=3 uid="uid://buicjjipkhak"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_k88c5"]
 [ext_resource type="Resource" uid="uid://c3adxxvma4ap5" path="res://Data/Question/cam&Tori/Question_ClerkDesign.tres" id="2_foen6"]
@@ -10,11 +10,12 @@
 [ext_resource type="Resource" uid="uid://bk3qlfnhfc5bv" path="res://Data/Question/Rixi/Question_CatllamaName.tres" id="7_kvkuk"]
 [ext_resource type="Resource" uid="uid://byu33npf55j8n" path="res://Data/Question/Rixi/Question_RShirt.tres" id="9_ar8td"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="9_hjm5v"]
+[ext_resource type="Resource" uid="uid://cu5ohxala5v04" path="res://Data/Question/neniu/Question_TheArtist.tres" id="10_tdngy"]
 
 [sub_resource type="Resource" id="Resource_338qo"]
 resource_name = "Vars - Dev Buffers"
 script = ExtResource("4_au47g")
-variants = Array[ExtResource("5_5kcxa")]([ExtResource("6_1ews1"), ExtResource("9_ar8td")])
+variants = Array[ExtResource("5_5kcxa")]([ExtResource("6_1ews1"), ExtResource("9_ar8td"), ExtResource("10_tdngy")])
 
 [resource]
 script = ExtResource("9_hjm5v")

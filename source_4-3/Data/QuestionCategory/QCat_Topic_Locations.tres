@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="QuestionCategory" load_steps=16 format=3 uid="uid://dwfjegdx1nig5"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_w3q4y"]
+[ext_resource type="Resource" uid="uid://dgpqo6c0vr0iw" path="res://Data/Question/oddwrath/Question_PortsLocation.tres" id="2_3jwlu"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_7frc2"]
 [ext_resource type="Resource" uid="uid://cjp0pjk63wv5b" path="res://Data/Question/oddwrath/Question_HowManyCoins.tres" id="2_wb85q"]
 [ext_resource type="Resource" uid="uid://ik3xcwigmoy3" path="res://Data/Question/PSINinja/Question_EpochName.tres" id="3_hyuht"]
-[ext_resource type="Resource" uid="uid://bf8bfq5h68rqi" path="res://Data/Question/oddwrath/Question_Playability.tres" id="4_1teg4"]
 [ext_resource type="Resource" uid="uid://cyfnr1t281smq" path="res://Data/Question/SAJewers/Question_DemoSistersLocation.tres" id="5_ntuec"]
 [ext_resource type="Resource" uid="uid://cxksdjkm6fjno" path="res://Data/Question/Rixi/Question_DemoWare.tres" id="5_qfflv"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="5_tutc3"]
@@ -24,4 +24,4 @@ variants = Array[ExtResource("6_ajnxx")]([ExtResource("11_p44i0"), ExtResource("
 script = ExtResource("2_7frc2")
 name = "Oh, the Places You've Been"
 name_size = 1.0
-questions = Array[ExtResource("1_w3q4y")]([ExtResource("2_wb85q"), ExtResource("3_hyuht"), ExtResource("4_1teg4"), ExtResource("5_ntuec"), SubResource("Resource_y7of3")])
+questions = Array[ExtResource("1_w3q4y")]([ExtResource("2_3jwlu"), ExtResource("3_hyuht"), ExtResource("5_ntuec"), ExtResource("2_wb85q"), SubResource("Resource_y7of3")])

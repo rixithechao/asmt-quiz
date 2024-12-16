@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="3_ke2py"]
 [ext_resource type="Resource" uid="uid://chmc1cx6bj3n3" path="res://Data/Question/oddwrath/Question_Silhouette_Catnip.tres" id="4_8eywb"]
 [ext_resource type="Resource" uid="uid://crjxjqwk8p6uf" path="res://Data/Question/oddwrath/Question_Silhouette_CatnipAlt.tres" id="5_2hfdp"]
+[ext_resource type="Resource" uid="uid://ctxc7x3qgqbf2" path="res://Data/Question/neniu/Question_BananaLeader.tres" id="6_0kbuk"]
 [ext_resource type="Resource" uid="uid://duhtbhogg4sv0" path="res://Data/Question/Rixi/Question_W5Roommate.tres" id="6_dgymq"]
-[ext_resource type="Resource" uid="uid://cu5ohxala5v04" path="res://Data/Question/neniu/Question_TheArtist.tres" id="6_fr7s8"]
 [ext_resource type="Resource" uid="uid://b0okrhuteuen4" path="res://Data/Question/neniu/Question_EnemyBehavior.tres" id="7_strp1"]
 [ext_resource type="Resource" uid="uid://ceiwh2ugdhtop" path="res://Data/Question/neniu/Question_SwitchFurbas.tres" id="8_ci3qm"]
 
@@ -20,4 +20,4 @@ variants = Array[ExtResource("3_ke2py")]([ExtResource("4_8eywb"), ExtResource("5
 script = ExtResource("2_wnq0v")
 name = "Friends and Foes"
 name_size = 1.0
-questions = Array[ExtResource("1_04p4h")]([SubResource("Resource_o1dcg"), ExtResource("6_fr7s8"), ExtResource("7_strp1"), ExtResource("6_dgymq"), ExtResource("8_ci3qm")])
+questions = Array[ExtResource("1_04p4h")]([SubResource("Resource_o1dcg"), ExtResource("6_0kbuk"), ExtResource("7_strp1"), ExtResource("6_dgymq"), ExtResource("8_ci3qm")])

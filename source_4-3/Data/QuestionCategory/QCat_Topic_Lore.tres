@@ -19,4 +19,4 @@ variants = Array[ExtResource("4_ics10")]([ExtResource("5_6k3y1")])
 script = ExtResource("1_hpqns")
 name = "This is an exposition thing, isn't it?"
 name_size = 1.0
-questions = Array[ExtResource("1_rfx4a")]([ExtResource("2_vuhdg"), SubResource("Resource_0sxx6"), ExtResource("3_5yi46"), ExtResource("4_u2b2t"), ExtResource("5_k702m")])
+questions = Array[ExtResource("1_rfx4a")]([ExtResource("2_vuhdg"), SubResource("Resource_0sxx6"), ExtResource("5_k702m"), ExtResource("3_5yi46"), ExtResource("4_u2b2t")])
