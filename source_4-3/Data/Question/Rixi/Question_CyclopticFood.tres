@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://civ0cwy41bccg"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_k2i14"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_kwomm"]
+
+[resource]
+script = ExtResource("2_kwomm")
+right_answers = Array[String](["Cycloptic Honey"])
+wrong_answers = Array[String](["Cycloptic Candy", "Cycloptic Chili", "Cycloptic Chutney", "Cycloptic Gravy", "Cycloptic Jelly"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "What type of food was the original ABCD race known for producing, according to Pily?"
+page_scene = ExtResource("1_k2i14")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

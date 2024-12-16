@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://chompejh4a67j"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="1_mfyg6"]
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_vfr5u"]
+
+[resource]
+script = ExtResource("1_mfyg6")
+right_answers = Array[String](["☺", ":)", "•ᴗ•"])
+wrong_answers = Array[String](["Isn't it great how we defeated Science and saved the universe and nothing bad happened?", "Okay, good, made it in time.", "Come in headquarters, this is agent K.", "Hey, everyone! We should play hide and seek!", "I'm a big stupid idiot who smells bad!", "It's me, Kood!"])
+minimum_right_answers = 1
+author = "MonkeyShrapnel"
+text = "What is the first thing Kood said in A2XT Episode 2?"
+page_scene = ExtResource("1_vfr5u")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

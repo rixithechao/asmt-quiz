@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://d2um17wqsdqoa"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_5ubav"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_xj3bi"]
+
+[resource]
+script = ExtResource("2_xj3bi")
+right_answers = Array[String](["An Apple"])
+wrong_answers = Array[String](["A Turnip", "A Cactus", "A Cheeseburger", "A Leek"])
+minimum_right_answers = 1
+author = "MilkandRaspberry"
+text = "What's the first thing Demo puts in her shopping cart on the ASMT title screen?"
+page_scene = ExtResource("1_5ubav")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

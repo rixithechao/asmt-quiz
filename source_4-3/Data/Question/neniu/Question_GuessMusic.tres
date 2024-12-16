@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=4 format=3 uid="uid://v1cxpqwltxqf"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_i647s"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_ji2jn"]
+[ext_resource type="AudioStream" uid="uid://brl4sq8ck4smm" path="res://Sounds/snippets/snippet_asmt-cloud9.ogg" id="3_cwr4u"]
+
+[resource]
+script = ExtResource("2_ji2jn")
+right_answers = Array[String](["ASMT - On Cloud Nine"])
+wrong_answers = Array[String](["ASMT - Ice Path", "ASMT - Trial of Space", "A2MT - Sky Utopia", "A2MT - A Something Theme", "A2XT - Just Be There"])
+minimum_right_answers = 1
+author = "Neniu"
+text = "What is the name of this music track?"
+page_scene = ExtResource("1_i647s")
+seconds = 0
+sound = ExtResource("3_cwr4u")
+pause_music = true
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://b427xjlu4e1y"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_0rkbs"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_j2e1e"]
+
+[resource]
+script = ExtResource("2_j2e1e")
+right_answers = Array[String](["\"uh oh\""])
+wrong_answers = Array[String](["\"oops!\"", "\"FUCK!\"", "\"help!\"", "\"ouch!\"", "\"oh my\"", "\"AAAAA\"", "A ton of stars, overflowing off the screen and wrapping around", "Jolpe's avatar, shrunken down to fit", "A game genie code for invulnerability", "A representation of the save state shortcut on SNES9X"])
+minimum_right_answers = 1
+author = "camwoodstock & Tori"
+text = "In And Another Thing, which unique difficulty rating was the level R.A.O.C.O.W. originally going to have?"
+page_scene = ExtResource("1_0rkbs")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cdpycv0841iqb"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_np6uo"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_nqj53"]
+
+[resource]
+script = ExtResource("2_nqj53")
+right_answers = Array[String](["A2XT Episode 1"])
+wrong_answers = Array[String](["ASMT", "A2MT", "ASMBXT"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "Which game featured the level \"Spin! Pierce the Heavens!\"?"
+page_scene = ExtResource("1_np6uo")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

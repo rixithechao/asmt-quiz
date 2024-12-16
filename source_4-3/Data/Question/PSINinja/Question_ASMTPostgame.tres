@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://dctnyfdd6p062"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_rkbvx"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_fomyg"]
+
+[resource]
+script = ExtResource("2_fomyg")
+right_answers = Array[String](["Beat King Charles"])
+wrong_answers = Array[String](["Click your heels three times", "Kneel before the Leek Goddess", "Solve Uncle Broadsword's riddle", "The Whole Game Is Postgame", "There is no postgame"])
+minimum_right_answers = 1
+author = "PSI Ninja"
+text = "How do you unlock the postgame in ASMT?"
+page_scene = ExtResource("1_rkbvx")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

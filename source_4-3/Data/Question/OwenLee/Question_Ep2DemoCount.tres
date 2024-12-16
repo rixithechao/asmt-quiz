@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://rurpgx0k7bwu"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_ebrhm"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_wlaj3"]
+
+[resource]
+script = ExtResource("2_wlaj3")
+right_answers = Array[String](["765"])
+wrong_answers = Array[String](["880", "951", "1003"])
+minimum_right_answers = 1
+author = "Owen Lee"
+text = "What was the final demo count for the LP of A2XT2?"
+page_scene = ExtResource("1_ebrhm")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

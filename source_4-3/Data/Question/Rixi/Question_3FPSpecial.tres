@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://tubw0fbdoc3h"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_tylh3"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_fdbu1"]
+
+[resource]
+script = ExtResource("2_fdbu1")
+right_answers = Array[String](["The 3-FP Special"])
+wrong_answers = Array[String](["Boots and Shoots", "The 8-BP Barrage", "Bring Out Catnip"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "Which of the following was a name used for the signature tag-team finisher Kood performed together with former MMA fighter The Great Gonzales?"
+page_scene = ExtResource("1_tylh3")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://di7avse5drkgq"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_1ir8r"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_6e1u4"]
+
+[resource]
+script = ExtResource("2_6e1u4")
+right_answers = Array[String](["Yes", "YES", "YESYES", "yes", "Absolutely", "Yessssssssssssss", "Yes?", "Yup", "Y.E.S."])
+wrong_answers = Array[String](["No", "no", "NO", "NOOOOOO", "NNNNNNNNO", "No?", "...no", "Yneos"])
+minimum_right_answers = 2
+author = "Neniu"
+text = "Is this quiz canon?"
+page_scene = ExtResource("1_1ir8r")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

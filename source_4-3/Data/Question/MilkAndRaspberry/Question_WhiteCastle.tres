@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cjg1u1w747g18"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_b12lg"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_buleh"]
+
+[resource]
+script = ExtResource("2_buleh")
+right_answers = Array[String](["3 Smoked Salmon Sliders with mint sauce", "a large jalapeno poppers", "a medium banana shake", "a raspberry muffin with white chocolate sprinkles"])
+wrong_answers = Array[String](["3 Veggie Sliders with honey mustard and pickles", "a small onion rings", "a medium chocolate shake", "a fudge dipped brownie"])
+minimum_right_answers = 1
+author = "MilkandRaspberry"
+text = "Which of these did Pily NOT order at White Castle in A2XT Gaiden 2?"
+page_scene = ExtResource("1_b12lg")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

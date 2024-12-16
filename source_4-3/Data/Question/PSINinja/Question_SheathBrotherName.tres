@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://dpf5r7d1t28xw"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_qh1ig"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_qlt0n"]
+
+[resource]
+script = ExtResource("2_qlt0n")
+right_answers = Array[String](["She doesn't have a younger brother"])
+wrong_answers = Array[String](["Brake", "Drift", "Feed", "Float", "Tear"])
+minimum_right_answers = 1
+author = "PSI Ninja"
+text = "What is the name of Sheath's younger brother?"
+page_scene = ExtResource("1_qh1ig")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://5bp2ryo1saci"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_imjwi"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_rc6ik"]
+
+[resource]
+script = ExtResource("2_rc6ik")
+right_answers = Array[String](["ATXS"])
+wrong_answers = Array[String](["XKCD", "SMBC", "ABHWB", "BITF", "OOTS", "MSPA"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "What is the webcomic by raocow and AOD that Sheath, Feed, and their former companions originated from?"
+page_scene = ExtResource("1_imjwi")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

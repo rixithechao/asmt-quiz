@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cjp0pjk63wv5b"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_n55cd"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_n0otj"]
+
+[resource]
+script = ExtResource("2_n0otj")
+right_answers = Array[String](["15", "At least 15."])
+wrong_answers = Array[String](["Trick question: first world levels can be done in any order.", "30", "23"])
+minimum_right_answers = 1
+author = "oddwrath"
+text = "How many coins can be found in the first level of ASMBXT?"
+page_scene = ExtResource("1_n55cd")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

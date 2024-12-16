@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://ctxc7x3qgqbf2"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_xv458"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_jp6d8"]
+
+[resource]
+script = ExtResource("2_jp6d8")
+right_answers = Array[String](["King Pineapple"])
+wrong_answers = Array[String](["Lord Sauerkraut", "Grand Duke of Potassium", "Master Cabbage", "Bigtown George"])
+minimum_right_answers = 1
+author = "Neniu"
+text = "What is the name of the Bananasnake ruler in Superb Demo Sisters?"
+page_scene = ExtResource("1_xv458")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

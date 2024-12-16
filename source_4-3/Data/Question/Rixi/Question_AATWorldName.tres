@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cilr3kyhyygls"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_mf8oh"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_2ldcd"]
+
+[resource]
+script = ExtResource("2_2ldcd")
+right_answers = Array[String](["The Horse Asylum", "Zebraspace", "Colonial Seattle", "Quirky Quarry"])
+wrong_answers = Array[String](["Piedmont Hill", "Food Desert Island", "De Pijp", "The Lost Woods", "Cosmic Heaven", "Resort City Banff", "The Fishmarket", "NEGATIVE ZONE", "One Last Thing"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "Which of the following is NOT a world name in And Another Thing?"
+page_scene = ExtResource("1_mf8oh")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://xjosv8gm6rlv"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_oaold"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_7ocob"]
+
+[resource]
+script = ExtResource("2_7ocob")
+right_answers = Array[String](["16", "sixteen", "XVI", "8*2"])
+wrong_answers = Array[String](["a", "b", "c", "d"])
+minimum_right_answers = 4
+author = "MonkeyShrapnel"
+text = "How old is Sheath?"
+page_scene = ExtResource("1_oaold")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

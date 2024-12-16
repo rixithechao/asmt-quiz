@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://dmy713r7cxae3"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_7102h"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_nbjxi"]
+
+[resource]
+script = ExtResource("2_nbjxi")
+right_answers = Array[String](["Prelude to the Stupid"])
+wrong_answers = Array[String](["A Superb Winterlude", "An ASMT Supplement", "Analog Funk", "Demo's Journey", "Digital Groove", "The Wrath of Con"])
+minimum_right_answers = 1
+author = "PSI Ninja"
+text = "What is the subtitle of ASMBXT?"
+page_scene = ExtResource("1_7102h")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

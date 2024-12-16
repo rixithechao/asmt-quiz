@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://bmc2u4enwhshe"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_t3vlo"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_lt8q0"]
+
+[resource]
+script = ExtResource("2_lt8q0")
+right_answers = Array[String](["A2MT"])
+wrong_answers = Array[String](["ASMBXT", "Superb Demo Sisters", "A2XT Episode 1", "What the Hell"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "What was the first game to use the lullaby raocow sang during his ASMT playthrough as a melody in its music?"
+page_scene = ExtResource("1_t3vlo")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

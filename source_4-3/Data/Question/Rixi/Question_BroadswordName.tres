@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://dxhpwo20o7fru"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_2ikl0"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_ykecw"]
+
+[resource]
+script = ExtResource("2_ykecw")
+right_answers = Array[String](["Uncle Greatsword"])
+wrong_answers = Array[String](["Uncle Longsword", "Uncle Bigblade", "Uncle Claymore", "Uncle Zweihänder"])
+minimum_right_answers = 1
+author = "TEST"
+text = "What was Uncle Broadsword's name when raocow first came up with his character?"
+page_scene = ExtResource("1_2ikl0")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

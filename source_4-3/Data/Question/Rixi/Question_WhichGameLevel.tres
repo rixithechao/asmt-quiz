@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cenk1c5iosq6i"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_2x00o"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_3033i"]
+
+[resource]
+script = ExtResource("2_3033i")
+right_answers = Array[String](["ASMT"])
+wrong_answers = Array[String](["ASMBXT", "A2MT", "A2XT Episode 1"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "Which game featured the level \"Noah's ARGH!\"?"
+page_scene = ExtResource("1_2x00o")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://bhor4iusa324x"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_1l8qq"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_26e4m"]
+
+[resource]
+script = ExtResource("2_26e4m")
+right_answers = Array[String](["Super Mario Infinity"])
+wrong_answers = Array[String](["Drama Mistery", "Mushroom Kingdom Meltdown", "The Second Reality Project", "Hyper V", "Lakitu's Adventure 2", "Super Challenge World", "VIP 3", "Chaos Complexx", "Kamek's Revenge", "Rise to the Challenge", "SMWCP"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "What romhack did Black Plague originate from?"
+page_scene = ExtResource("1_1l8qq")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

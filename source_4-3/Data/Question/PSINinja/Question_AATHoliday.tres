@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://baga7acnqw2e6"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_vgf21"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_s2aea"]
+
+[resource]
+script = ExtResource("2_s2aea")
+right_answers = Array[String](["Stocking Day"])
+wrong_answers = Array[String](["Chrimsly", "Christmas", "Life Day", "Samhain", "Socksmas", "None. They're atheist"])
+minimum_right_answers = 1
+author = "PSI Ninja"
+text = "Which holiday are Demo and Iris preparing for in AAT?"
+page_scene = ExtResource("1_vgf21")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

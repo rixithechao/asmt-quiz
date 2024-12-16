@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cdgwk0o13kbul"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_kpcre"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_etq3l"]
+
+[resource]
+script = ExtResource("2_etq3l")
+right_answers = Array[String](["Cadwyn"])
+wrong_answers = Array[String](["SAJewers", "Rixithechao", "raocow", "Kil", "docopopper", "8flight"])
+minimum_right_answers = 1
+author = "SAJewers"
+text = "Who made the 1st real level raocow played in ASMBXT (not counting cutscenes)?"
+page_scene = ExtResource("1_kpcre")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

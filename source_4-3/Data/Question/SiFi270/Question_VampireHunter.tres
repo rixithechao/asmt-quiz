@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cshlwrr3oypn8"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_f7svr"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_ml81n"]
+
+[resource]
+script = ExtResource("2_ml81n")
+right_answers = Array[String](["Bob and Bob"])
+wrong_answers = Array[String](["Etep Live and Evil Pete", "Agabatur and Rutabaga", "Notgniddup and Puddington", "Eugalp Kcalb and Black Plague"])
+minimum_right_answers = 1
+author = "SiFi270"
+text = "This famous vampire hunter adopted his father's name, but spelled backwards. What were their names again?"
+page_scene = ExtResource("1_f7svr")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

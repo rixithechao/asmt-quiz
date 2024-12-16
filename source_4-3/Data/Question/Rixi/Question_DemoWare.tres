@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cxksdjkm6fjno"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_oan1f"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_1c3gc"]
+
+[resource]
+script = ExtResource("2_1c3gc")
+right_answers = Array[String](["ENTER THE WARP TOKEN", "TAKE FLIGHT", "STEAL", "EXTERMINATE", "MAX & RELAX", "DODGE", "EXPECT THE UNEXPECTED", "PAY ONE DOLLAR", "REWRITE HISTORY", "CROSS THE BRIDGE", "NAVIGATE", "DESCEND", "BE FAITHFUL", "RAIN ON THEIR PARADE", "GET YOUR STUFF BACK"])
+wrong_answers = Array[String](["ENTER THE RED DOOR", "EAT", "TOUCH THE EDGE", "DESTROY THE WORLD", "JUMP!!", "USE YOUR HEAD!!", "MAKE SOME NOISE", "SOLVE THE PUZZLE", "TRUST YOURSELF", "REST", "TRY SOME NEW SHOES", "CELEBRATE", "SHOW NO FEAR", "CONTRIBUTE", "CATCH & THROW", "SIN", "OBEY THE LAW OF THE JUNGLE", "DESTROY THEM ALL!!", "DEEP BREATH", "THINK OUTSIDE THE BOX!!", "FINISH IT"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "Which of the following is NOT a command in the ASMBXT level DemoWare?"
+page_scene = ExtResource("1_oan1f")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://dbyeurhhulctx"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_7v6qq"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_vof6t"]
+
+[resource]
+script = ExtResource("2_vof6t")
+right_answers = Array[String](["Mario"])
+wrong_answers = Array[String](["Demo", "Boon", "Black Plague"])
+minimum_right_answers = 1
+author = "Owen Lee"
+text = "WHO DARES TO TRY TO STOP THE TIME BOMB!?"
+page_scene = ExtResource("1_7v6qq")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

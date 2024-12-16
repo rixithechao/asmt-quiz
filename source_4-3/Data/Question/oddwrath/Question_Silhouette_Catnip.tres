@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=5 format=3 uid="uid://chmc1cx6bj3n3"]
+
+[ext_resource type="Texture2D" uid="uid://c6ts660mtoow1" path="res://Textures/QuestionImages/qImg_silhouette_catnip.png" id="1_0pq8a"]
+[ext_resource type="Texture2D" uid="uid://cybuchq3e2y0" path="res://Textures/QuestionImages/qImg_reveal_catnipGreen.png" id="2_cexo2"]
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="3_3xokc"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="4_knw68"]
+
+[resource]
+script = ExtResource("4_knw68")
+right_answers = Array[String](["Catnip!"])
+wrong_answers = Array[String](["Pal!", "Horse!", "Con!"])
+minimum_right_answers = 1
+author = "oddwrath"
+text = "Who is this character?"
+page_scene = ExtResource("3_3xokc")
+seconds = 0
+pause_music = false
+image = ExtResource("1_0pq8a")
+image_answered = ExtResource("2_cexo2")
+specific_answer_images = {}

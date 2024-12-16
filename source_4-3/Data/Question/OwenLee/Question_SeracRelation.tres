@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cgo04ud21q4mb"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_ss6x6"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_pb5fd"]
+
+[resource]
+script = ExtResource("2_pb5fd")
+right_answers = Array[String](["Sister-in-law", "Aunt", "Grandmother", "It's different each time they meet"])
+wrong_answers = Array[String](["Second cousin twice removed", "Stepmother", "Half-sister", "Ex-wife", "Former roommate's girlfriend", "It's never been mentioned"])
+minimum_right_answers = 1
+author = "Owen Lee"
+text = "How is Serac related to Demo?"
+page_scene = ExtResource("1_ss6x6")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

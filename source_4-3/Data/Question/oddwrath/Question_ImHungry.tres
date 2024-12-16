@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://dfy7gtswf8y11"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_n85uo"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_g10ru"]
+
+[resource]
+script = ExtResource("2_g10ru")
+right_answers = Array[String](["The Mall in the Negative Zone. Turn to the left through the Purrtal and then right, you can't miss it."])
+wrong_answers = Array[String](["In a question block, you can find them anywhere.", "In the ground, it's good unwashed.", "Tim Hortons"])
+minimum_right_answers = 1
+author = "oddwrath"
+text = "I'm hungry, where can I get some good food?"
+page_scene = ExtResource("1_n85uo")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

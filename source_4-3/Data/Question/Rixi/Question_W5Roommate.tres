@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://duhtbhogg4sv0"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_l2rwi"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_oqa4b"]
+
+[resource]
+script = ExtResource("2_oqa4b")
+right_answers = Array[String](["Rachie"])
+wrong_answers = Array[String](["Yvonne", "Othello", "Sir Pennypants", "Famous Communist Grouchy Mark"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "Which of Coatlyn's \"roommates\" is with her in world 5 of A2XT Episode 2?"
+page_scene = ExtResource("1_l2rwi")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

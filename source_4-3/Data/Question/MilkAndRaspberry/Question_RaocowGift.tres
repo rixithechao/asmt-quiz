@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cqqctsn5r0l05"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_wtjj4"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_7lu8d"]
+
+[resource]
+script = ExtResource("2_7lu8d")
+right_answers = Array[String](["A Cartridge of \"What the Hell\""])
+wrong_answers = Array[String](["A Flock of Winged Strawberries", "A Hollywood Contract", "The Ultimate Chattery Teeth", "Everlasting Peace", "SUSHI 100", "A Remote-Controled Owl", "A Get Out of 100%ing Crash 4 Free card"])
+minimum_right_answers = 1
+author = "MilkandRaspberry"
+text = "What gift did Calleoca give Raocow during A2XT Gaiden?"
+page_scene = ExtResource("1_wtjj4")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

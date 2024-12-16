@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://bway3dnuxvfsa"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_3mfxj"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_djs7a"]
+
+[resource]
+script = ExtResource("2_djs7a")
+right_answers = Array[String](["With a few salads, absolutely", "Charlies are notoriously flammable", "Yes but it'd take a while"])
+wrong_answers = Array[String](["I mean, could YOU?", "probably not", "Fire pokemon are weak to Sports moves", "They'd cancel each other out"])
+minimum_right_answers = 1
+author = "NotKood"
+text = "Would Pily be able to defeat 1 billion Charlies?"
+page_scene = ExtResource("1_3mfxj")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=9 format=3 uid="uid://crjxjqwk8p6uf"]
+
+[ext_resource type="Texture2D" uid="uid://c6ts660mtoow1" path="res://Textures/QuestionImages/qImg_silhouette_catnip.png" id="1_rtpvw"]
+[ext_resource type="Texture2D" uid="uid://cybuchq3e2y0" path="res://Textures/QuestionImages/qImg_reveal_catnipGreen.png" id="2_nolj8"]
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="3_aaeef"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="4_ciuso"]
+[ext_resource type="Texture2D" uid="uid://xwn0bb7bddkb" path="res://Textures/QuestionImages/qImg_reveal_catnipRed.png" id="5_png04"]
+[ext_resource type="Texture2D" uid="uid://4abbj3ook18k" path="res://Textures/QuestionImages/qImg_reveal_catnipBlue.png" id="6_wwedv"]
+[ext_resource type="Texture2D" uid="uid://dlpi4mk4gri05" path="res://Textures/QuestionImages/qImg_reveal_catnipYellow.png" id="7_8odwi"]
+[ext_resource type="Texture2D" uid="uid://cmmvr437xvdub" path="res://Textures/QuestionImages/qImg_reveal_catnipRainbow.png" id="8_7yld4"]
+
+[resource]
+script = ExtResource("4_ciuso")
+right_answers = Array[String](["Green Catnip!", "Red Catnip!", "Blue Catnip!", "Yellow Catnip!", "Non-Monochromatic Catnip!"])
+wrong_answers = Array[String](["Pal!", "Horse!", "Con!"])
+minimum_right_answers = 4
+author = "oddwrath"
+text = "Who is this character?"
+page_scene = ExtResource("3_aaeef")
+seconds = 0
+pause_music = false
+image = ExtResource("1_rtpvw")
+image_answered = ExtResource("2_nolj8")
+specific_answer_images = {
+"Blue Catnip!": ExtResource("6_wwedv"),
+"Green Catnip!": ExtResource("2_nolj8"),
+"Non-Monochromatic Catnip!": ExtResource("8_7yld4"),
+"Red Catnip!": ExtResource("5_png04"),
+"Yellow Catnip!": ExtResource("7_8odwi")
+}

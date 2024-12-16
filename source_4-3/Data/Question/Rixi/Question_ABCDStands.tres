@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://bbpqkkqcf8mth"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_rp7lh"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_u2sud"]
+
+[resource]
+script = ExtResource("2_u2sud")
+right_answers = Array[String](["Specialization"])
+wrong_answers = Array[String](["Indigestion", "Domain Expansion", "Actualization", "Adaptation"])
+minimum_right_answers = 1
+author = "Rixitic"
+text = "What is the term for the gradual process ABCDs undergo in which they manifest their own unique abilities?"
+page_scene = ExtResource("1_rp7lh")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://beqdgk5k5m5y8"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_s8wv2"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_hrrpj"]
+
+[resource]
+script = ExtResource("2_hrrpj")
+right_answers = Array[String](["sixteen"])
+wrong_answers = Array[String](["sick teens", "six tens", "sextant", "sekiro shadows dies twice"])
+minimum_right_answers = 1
+author = "MonkeyShrapnel"
+text = "How old is Sheath?"
+page_scene = ExtResource("1_s8wv2")
+seconds = 0
+pause_music = false
+specific_answer_images = {}
