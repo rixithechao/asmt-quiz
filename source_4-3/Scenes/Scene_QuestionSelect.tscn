@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqcmio3lfvwmm"]
+[gd_scene load_steps=12 format=3 uid="uid://dqcmio3lfvwmm"]
 
 [ext_resource type="Script" path="res://Scripts/QuestionSelectMenu.gd" id="1_6va2m"]
 [ext_resource type="PackedScene" uid="uid://cie018fp7hfjk" path="res://Prefabs/Prefab_MusicPlayer.tscn" id="1_aoc7p"]
@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://mvixmrfcg8di" path="res://Data/CategoryGroups/CategoryGroup_MainChars.tres" id="4_w4rv8"]
 [ext_resource type="Resource" uid="uid://bx0ex8y5lirjx" path="res://Data/CategoryGroups/CategoryGroup_SecondaryChars.tres" id="5_0xemy"]
 [ext_resource type="Resource" uid="uid://blnpcunteuqhp" path="res://Data/CategoryGroups/CategoryGroup_Lore.tres" id="6_ob2an"]
+[ext_resource type="Resource" uid="uid://copl5gpfxpqvo" path="res://Data/CategoryGroups/CategoryGroup_Bonus.tres" id="8_phteu"]
 [ext_resource type="Resource" uid="uid://beuvst2dbe2cd" path="res://Data/CategoryGroups/CategoryGroup_GrabBag.tres" id="8_vh8xn"]
 
 [node name="QuestionSelect" type="Control" node_paths=PackedStringArray("column_container")]
@@ -19,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6va2m")
-category_groups = Array[ExtResource("2_8fiim")]([ExtResource("4_w4rv8"), ExtResource("5_0xemy"), ExtResource("6_ob2an"), ExtResource("3_balrk"), ExtResource("8_vh8xn")])
+category_groups = Array[ExtResource("2_8fiim")]([ExtResource("4_w4rv8"), ExtResource("5_0xemy"), ExtResource("6_ob2an"), ExtResource("3_balrk"), ExtResource("8_vh8xn"), ExtResource("8_phteu")])
 column_prefab = ExtResource("4_o8s05")
 column_container = NodePath("MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/HFlowContainer")
 

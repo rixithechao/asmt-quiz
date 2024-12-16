@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=8 format=3 uid="uid://x3fdj02imdmj"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=10 format=3 uid="uid://x3fdj02imdmj"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_2d680"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_giepw"]
@@ -6,10 +6,12 @@
 [ext_resource type="Resource" uid="uid://di7avse5drkgq" path="res://Data/Question/neniu/Question_ThisQuizCanon.tres" id="3_abrht"]
 [ext_resource type="Resource" uid="uid://dctnyfdd6p062" path="res://Data/Question/PSINinja/Question_ASMTPostgame.tres" id="4_qjy06"]
 [ext_resource type="Resource" uid="uid://cwyoflyh38mg6" path="res://Data/Question/neniu/Question_PickRight.tres" id="5_870bf"]
+[ext_resource type="Resource" uid="uid://cyjhr0w171h2f" path="res://Data/Question/PizzaPony/Question_ASMTReleaseYear.tres" id="5_t8kb6"]
 [ext_resource type="Resource" uid="uid://rurpgx0k7bwu" path="res://Data/Question/OwenLee/Question_Ep2DemoCount.tres" id="6_emuc2"]
+[ext_resource type="Resource" uid="uid://bf8bfq5h68rqi" path="res://Data/Question/oddwrath/Question_Playability.tres" id="8_qqx2e"]
 
 [resource]
 script = ExtResource("1_2d680")
 name = "Hey There raocow, This Is Everything"
 name_size = 1.0
-questions = Array[ExtResource("1_giepw")]([ExtResource("2_snog4"), ExtResource("3_abrht"), ExtResource("4_qjy06"), ExtResource("5_870bf"), ExtResource("6_emuc2")])
+questions = Array[ExtResource("1_giepw")]([ExtResource("2_snog4"), ExtResource("3_abrht"), ExtResource("4_qjy06"), ExtResource("5_t8kb6"), ExtResource("5_870bf"), ExtResource("6_emuc2"), ExtResource("8_qqx2e")])

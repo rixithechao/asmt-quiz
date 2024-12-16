@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=12 format=3 uid="uid://cbd5ucevw2o8c"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_7s8o7"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_m8hf6"]
+[ext_resource type="Resource" uid="uid://c6cyr2c0xk2bm" path="res://Data/Question/neniu/Question_A2XT2Minigames.tres" id="2_rlffl"]
+[ext_resource type="Resource" uid="uid://tubw0fbdoc3h" path="res://Data/Question/Rixi/Question_3FPSpecial.tres" id="3_pgdm6"]
+[ext_resource type="Resource" uid="uid://bhor4iusa324x" path="res://Data/Question/Rixi/Question_BPOriginalHack.tres" id="4_qock1"]
+[ext_resource type="Resource" uid="uid://w0pp0pmw4pfy" path="res://Data/Question/Rixi/Question_CatPlanetYear.tres" id="5_2ess2"]
+[ext_resource type="Resource" uid="uid://bkipgg5dxyuug" path="res://Data/Question/Rixi/Question_FirstSibling.tres" id="6_1t7ar"]
+[ext_resource type="Resource" uid="uid://0cnnvfbt0ka6" path="res://Data/Question/Rixi/Question_GreenDemo.tres" id="7_00a8e"]
+[ext_resource type="Resource" uid="uid://bgyn7xknal13" path="res://Data/Question/Rixi/Question_KoodOriginalHack.tres" id="8_pejoh"]
+[ext_resource type="Resource" uid="uid://5bp2ryo1saci" path="res://Data/Question/Rixi/Question_SheathComic.tres" id="9_y0qak"]
+[ext_resource type="Resource" uid="uid://brwn30o3s4xhk" path="res://Data/Question/Rixi/Question_Wart.tres" id="10_h512j"]
+
+[resource]
+script = ExtResource("2_m8hf6")
+name = "Surprise! Bonus questions!"
+name_size = 1.0
+questions = Array[ExtResource("1_7s8o7")]([ExtResource("2_rlffl"), ExtResource("3_pgdm6"), ExtResource("4_qock1"), ExtResource("5_2ess2"), ExtResource("6_1t7ar"), ExtResource("7_00a8e"), ExtResource("8_pejoh"), ExtResource("9_y0qak"), ExtResource("10_h512j")])

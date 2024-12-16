@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cyjhr0w171h2f"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="1_28s6r"]
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_fciii"]
+
+[resource]
+script = ExtResource("1_28s6r")
+right_answers = Array[String](["2010"])
+wrong_answers = Array[String](["2008", "2009", "2011"])
+minimum_right_answers = 1
+author = "Pizza Pony"
+text = "What year did ASMT come out?"
+page_scene = ExtResource("1_fciii")
+seconds = 0
+pause_music = false
+specific_answer_images = {}
