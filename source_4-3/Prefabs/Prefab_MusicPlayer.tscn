@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cie018fp7hfjk"]
+[gd_scene load_steps=4 format=3 uid="uid://cie018fp7hfjk"]
 
 [ext_resource type="Script" path="res://Scripts/MusicDisplay.gd" id="1_2d124"]
 [ext_resource type="Texture2D" uid="uid://rnind06g1ddj" path="res://Textures/tex_musicNote.png" id="2_8j6sw"]
+[ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="3_nhl12"]
 
 [node name="MusicInfoPlayer" type="PanelContainer" node_paths=PackedStringArray("name_label", "author_label", "time_label", "length_label", "progress", "player")]
 anchors_preset = 12
@@ -60,6 +61,7 @@ size_flags_vertical = 2
 [node name="Name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_nhl12")
 theme_override_font_sizes/font_size = 24
 text = "Testing"
 text_overrun_behavior = 1
@@ -71,24 +73,28 @@ layout_mode = 2
 [node name="CurrentTime" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("3_nhl12")
 theme_override_font_sizes/font_size = 24
 text = "00:00"
 
 [node name="Slash" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("3_nhl12")
 theme_override_font_sizes/font_size = 24
 text = " / "
 
 [node name="SongLength" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("3_nhl12")
 theme_override_font_sizes/font_size = 24
 text = "00:00"
 
 [node name="AuthorAlbum" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
+theme = ExtResource("3_nhl12")
 theme_override_font_sizes/font_size = 18
 text = "Author - Album"
 

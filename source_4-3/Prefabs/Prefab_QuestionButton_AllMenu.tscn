@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://clrcyqcpwfvfk"]
+[gd_scene load_steps=6 format=3 uid="uid://clrcyqcpwfvfk"]
 
 [ext_resource type="PackedScene" uid="uid://b4enc4fwv3f4i" path="res://Prefabs/Prefab_QuestionButton.tscn" id="1_d8u3m"]
+[ext_resource type="Script" path="res://Scripts/QuestionButton_SelectMode.gd" id="2_tggrw"]
+[ext_resource type="Texture2D" uid="uid://dhp4iav2wscmy" path="res://Textures/tex_icon_checkmark.png" id="3_hd4u1"]
+[ext_resource type="Texture2D" uid="uid://dpfn4lovxhcq4" path="res://Textures/tex_icon_x.png" id="4_d8ytq"]
+[ext_resource type="Texture2D" uid="uid://cf2rji7f18guh" path="res://Textures/tex_icon_emptybox.png" id="5_ofk23"]
 
 [node name="Question" instance=ExtResource("1_d8u3m")]
 theme_override_font_sizes/font_size = 24
+script = ExtResource("2_tggrw")
+icon_check = ExtResource("3_hd4u1")
+icon_x = ExtResource("4_d8ytq")
+icon_box = ExtResource("5_ofk23")

@@ -8,6 +8,7 @@ script = ExtResource("2_6botc")
 right_answers = Array[String](["Po' Boy"])
 wrong_answers = Array[String](["Croque monsieur", "Muffuletta", "Jucy Lucy", "Hot Brown", "Camel rider", "Beef on weck", "Tongue toast", "Pasty barm", "Gerber", "Monte Cristo"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "MilkandRaspberry"
 text = "What is Demo's favouite sandwich?"
 page_scene = ExtResource("1_wg3tm")

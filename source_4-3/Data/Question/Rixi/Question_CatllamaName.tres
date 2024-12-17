@@ -8,6 +8,7 @@ script = ExtResource("2_allyc")
 right_answers = Array[String](["Gastrodon"])
 wrong_answers = Array[String](["Smart Horse", "Hungry Jimbone", "Stripecat"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "What was Catnip's species called before it was changed to Catllama?"
 page_scene = ExtResource("1_lrjj4")

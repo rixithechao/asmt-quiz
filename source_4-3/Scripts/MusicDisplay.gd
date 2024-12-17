@@ -2,6 +2,9 @@ class_name MusicDisplay
 extends PanelContainer
 
 
+@export var tracks: Array[MusicData]
+
+@export_group("Node References")
 @export var name_label: Label
 @export var author_label: Label
 @export var time_label: Label
@@ -20,6 +23,8 @@ func get_time_string(secs: float) -> String:
 func _ready() -> void:
 	MusicManager.player = player
 	MusicManager.info = self
+	MusicManager.queue = tracks
+	MusicManager.queue_played.clear()
 	MusicManager.next()
 
 

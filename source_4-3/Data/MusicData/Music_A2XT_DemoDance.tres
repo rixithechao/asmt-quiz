@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://c25dkbu02745d"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_hanng"]
+[ext_resource type="AudioStream" uid="uid://cc4epx0urcyny" path="res://Music/event-a2xt-demodance.ogg" id="2_gklhj"]
+
+[resource]
+script = ExtResource("1_hanng")
+stream = ExtResource("2_gklhj")
+name = "Demo Dance"
+author = "Avojaifnot"
+album = "A2XT Episode 1 OST"

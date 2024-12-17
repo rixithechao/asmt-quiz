@@ -8,6 +8,7 @@ script = ExtResource("2_3033i")
 right_answers = Array[String](["ASMT"])
 wrong_answers = Array[String](["ASMBXT", "A2MT", "A2XT Episode 1"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "Which game featured the level \"Noah's ARGH!\"?"
 page_scene = ExtResource("1_2x00o")

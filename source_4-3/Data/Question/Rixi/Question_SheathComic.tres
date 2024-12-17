@@ -8,6 +8,7 @@ script = ExtResource("2_rc6ik")
 right_answers = Array[String](["ATXS"])
 wrong_answers = Array[String](["XKCD", "SMBC", "ABHWB", "BITF", "OOTS", "MSPA"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "What is the webcomic by raocow and AOD that Sheath, Feed, and their former companions originated from?"
 page_scene = ExtResource("1_imjwi")

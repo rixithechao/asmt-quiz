@@ -8,6 +8,7 @@ script = ExtResource("2_ml81n")
 right_answers = Array[String](["Bob and Bob"])
 wrong_answers = Array[String](["Etep Live and Evil Pete", "Agabatur and Rutabaga", "Notgniddup and Puddington", "Eugalp Kcalb and Black Plague"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "SiFi270"
 text = "This famous vampire hunter adopted his father's name, but spelled backwards. What were their names again?"
 page_scene = ExtResource("1_f7svr")

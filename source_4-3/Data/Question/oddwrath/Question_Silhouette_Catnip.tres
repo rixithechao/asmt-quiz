@@ -10,6 +10,7 @@ script = ExtResource("4_knw68")
 right_answers = Array[String](["Catnip!"])
 wrong_answers = Array[String](["Pal!", "Horse!", "Con!"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "oddwrath"
 text = "Who is this character?"
 page_scene = ExtResource("3_3xokc")

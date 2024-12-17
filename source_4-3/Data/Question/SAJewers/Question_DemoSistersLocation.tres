@@ -8,6 +8,7 @@ script = ExtResource("1_3rl3q")
 right_answers = Array[String](["Vegetable Planet"])
 wrong_answers = Array[String](["The Castle of No Significance", "Planet Easy Peasy", "The Mushroom Kingdom"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "SAJewers"
 text = "Where did Superb Demo Sister take place?"
 page_scene = ExtResource("1_at3kc")

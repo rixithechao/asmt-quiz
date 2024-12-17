@@ -9,6 +9,7 @@ script = ExtResource("2_ji2jn")
 right_answers = Array[String](["ASMT - On Cloud Nine"])
 wrong_answers = Array[String](["ASMT - Ice Path", "ASMT - Trial of Space", "A2MT - Sky Utopia", "A2MT - A Something Theme", "A2XT - Just Be There"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Neniu"
 text = "What is the name of this music track?"
 page_scene = ExtResource("1_i647s")

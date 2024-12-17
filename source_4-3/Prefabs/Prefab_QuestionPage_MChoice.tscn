@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://36wh7awy2msy"]
+[gd_scene load_steps=5 format=3 uid="uid://36wh7awy2msy"]
 
 [ext_resource type="PackedScene" uid="uid://4nr3o7fmwodt" path="res://Prefabs/Prefab_QuestionPage.tscn" id="1_2uocm"]
 [ext_resource type="Script" path="res://Scripts/QuestionPage_MultipleChoice.gd" id="2_umeg0"]
 [ext_resource type="Script" path="res://addons/GameGUI/GGButton.gd" id="3_f5dxx"]
+[ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="3_jpp1h"]
 
 [node name="QuestionPage_MultipleChoice" node_paths=PackedStringArray("choice_buttons") instance=ExtResource("1_2uocm")]
 script = ExtResource("2_umeg0")
 choice_buttons = [NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceA"), NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceB"), NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceC"), NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceD")]
+
+[node name="ShakerComponent2D" parent="Node2D" index="0"]
+is_playing = false
 
 [node name="HungryBoxContainer" type="HBoxContainer" parent="MarginContainer/InfoAndButtons" index="10"]
 custom_minimum_size = Vector2(0, 200)
@@ -17,29 +21,61 @@ theme_override_constants/separation = 24
 [node name="ChoiceA" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_jpp1h")
+theme_override_font_sizes/font_size = 32
 text = "A"
+autowrap_mode = 3
 script = ExtResource("3_f5dxx")
+text_size_mode = 1
+reference_font_size = 32
+horizontal_mode = 4
+vertical_mode = 4
+layout_size = Vector2(1, 1)
 is_configured = true
 
 [node name="ChoiceB" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="1"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_jpp1h")
+theme_override_font_sizes/font_size = 32
 text = "B"
+autowrap_mode = 3
 script = ExtResource("3_f5dxx")
+text_size_mode = 1
+reference_font_size = 32
+horizontal_mode = 4
+vertical_mode = 4
+layout_size = Vector2(1, 1)
 is_configured = true
 
 [node name="ChoiceC" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_jpp1h")
+theme_override_font_sizes/font_size = 32
 text = "C"
+autowrap_mode = 3
 script = ExtResource("3_f5dxx")
+text_size_mode = 1
+reference_font_size = 32
+horizontal_mode = 4
+vertical_mode = 4
+layout_size = Vector2(1, 1)
 is_configured = true
 
 [node name="ChoiceD" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="3"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_jpp1h")
+theme_override_font_sizes/font_size = 32
 text = "D"
+autowrap_mode = 3
 script = ExtResource("3_f5dxx")
+text_size_mode = 1
+reference_font_size = 32
+horizontal_mode = 4
+vertical_mode = 4
+layout_size = Vector2(1, 1)
 is_configured = true
 
 [connection signal="pressed" from="MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceA" to="." method="_on_choice_a_pressed"]

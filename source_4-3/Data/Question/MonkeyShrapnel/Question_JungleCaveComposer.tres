@@ -8,6 +8,7 @@ script = ExtResource("2_mlard")
 right_answers = Array[String](["SNN"])
 wrong_answers = Array[String](["Generic CAW", "Proloe", "Rixithechao", "Maiku Wotaharu", "Chrom1um", "tangy", "Prsynth1111", "Wyatt Croucher"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "MonkeyShrapnel"
 text = "Who composed \"Jungle Cave\", the song that plays in like every level in the Subterranean Epoch?"
 page_scene = ExtResource("1_n4hhg")

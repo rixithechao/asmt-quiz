@@ -8,6 +8,7 @@ script = ExtResource("2_n0otj")
 right_answers = Array[String](["15", "At least 15."])
 wrong_answers = Array[String](["Trick question: first world levels can be done in any order.", "30", "23"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "oddwrath"
 text = "How many coins can be found in the first level of ASMBXT?"
 page_scene = ExtResource("1_n55cd")

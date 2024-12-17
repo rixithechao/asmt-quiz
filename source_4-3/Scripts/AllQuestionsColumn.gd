@@ -3,9 +3,6 @@ extends MarginContainer
 
 @export_group("Prefab References")
 @export var button_prefab: PackedScene
-@export var icon_check: Texture2D
-@export var icon_x: Texture2D
-@export var icon_box: Texture2D
 
 @export_group("Node References")
 @export var title_label: Label
@@ -13,13 +10,17 @@ extends MarginContainer
 
 
 func add_button(number_text: String, q: Question):
-	var new_b = button_prefab.instantiate() as QuestionButton
+	var new_b = button_prefab.instantiate() as QuestionButton_SelectMode
 	buttons_parent.add_child(new_b)
-	new_b.text = number_text + " (" + q.author + ")"
-	if  SaveManager.progress.questions_seen.has(q.resource_path):
-		new_b.icon = icon_check if SaveManager.progress.questions_seen[q.resource_path] else icon_x
+	if  q.author != "Rixitic":
+		new_b.text = number_text + " (" + q.author + ")"
 	else:
-		new_b.icon = icon_box
+		new_b.text = number_text
+	new_b.question = q
+	new_b.set_icon()
+	new_b.disable_after_click = false
+	QuestionSelectMenu.instance.cleared_answer_data.connect(new_b._on_answer_data_cleared)
+	QuestionSelectMenu.total_questions += 1
 
 func populate(category: QuestionCategory):
 	title_label.text = category.name
@@ -28,6 +29,6 @@ func populate(category: QuestionCategory):
 		if  q is QuestionVariantSet:
 			for  j in q.variants.size():
 				var q2 = q.variants[j]
-				add_button(str(i+1)+"-"+str(j+1), q2)
+				add_button(str(i+1)+"-"+String.chr(65+j), q2)
 		else:
 			add_button(str(i+1), q)

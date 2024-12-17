@@ -8,6 +8,7 @@ script = ExtResource("2_cef8x")
 right_answers = Array[String](["Garlic"])
 wrong_answers = Array[String](["Chlorine", "Copper", "Burnt Toast", "Cinnamon", "Butter"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "MilkandRaspberry"
 text = "What does Iris smell like?"
 page_scene = ExtResource("1_yph7x")

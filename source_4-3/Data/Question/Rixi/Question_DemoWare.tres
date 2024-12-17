@@ -8,6 +8,7 @@ script = ExtResource("2_1c3gc")
 right_answers = Array[String](["ENTER THE WARP TOKEN", "TAKE FLIGHT", "STEAL", "EXTERMINATE", "MAX & RELAX", "DODGE", "EXPECT THE UNEXPECTED", "PAY ONE DOLLAR", "REWRITE HISTORY", "CROSS THE BRIDGE", "NAVIGATE", "DESCEND", "BE FAITHFUL", "RAIN ON THEIR PARADE", "GET YOUR STUFF BACK"])
 wrong_answers = Array[String](["ENTER THE RED DOOR", "EAT", "TOUCH THE EDGE", "DESTROY THE WORLD", "JUMP!!", "USE YOUR HEAD!!", "MAKE SOME NOISE", "SOLVE THE PUZZLE", "TRUST YOURSELF", "REST", "TRY SOME NEW SHOES", "CELEBRATE", "SHOW NO FEAR", "CONTRIBUTE", "CATCH & THROW", "SIN", "OBEY THE LAW OF THE JUNGLE", "DESTROY THEM ALL!!", "DEEP BREATH", "THINK OUTSIDE THE BOX!!", "FINISH IT"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "Which of the following is NOT a command in the ASMBXT level DemoWare?"
 page_scene = ExtResource("1_oan1f")

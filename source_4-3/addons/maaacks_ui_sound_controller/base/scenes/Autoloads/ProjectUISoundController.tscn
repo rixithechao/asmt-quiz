@@ -26,5 +26,11 @@ stream_6/weight = 0.1
 
 [node name="ProjectUISoundController" type="Node"]
 script = ExtResource("1_dmagn")
+audio_bus = &"SoundEffects"
 button_hovered = ExtResource("2_vsqlw")
 button_pressed = SubResource("AudioStreamRandomizer_dg6oh")
+tab_hovered = ExtResource("2_vsqlw")
+tab_selected = SubResource("AudioStreamRandomizer_dg6oh")
+slider_hovered = ExtResource("2_vsqlw")
+slider_drag_started = SubResource("AudioStreamRandomizer_dg6oh")
+slider_drag_ended = SubResource("AudioStreamRandomizer_dg6oh")

@@ -3,6 +3,7 @@ extends Button
 
 
 
+var disable_after_click: bool = true
 var question: Question
 
 var question_number: int:
@@ -28,4 +29,5 @@ func _on_pressed() -> void:
 	print(question)
 	print("REMAINING QUESTIONS: ", CategoryMenu.remaining_questions)
 	QuestionManager.open_question(question, points)
-	disabled = true
+	if  disable_after_click:
+		disabled = true

@@ -8,6 +8,7 @@ script = ExtResource("2_u2sud")
 right_answers = Array[String](["Specialization"])
 wrong_answers = Array[String](["Indigestion", "Domain Expansion", "Actualization", "Adaptation"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "What is the term for the gradual process ABCDs undergo in which they manifest their own unique abilities?"
 page_scene = ExtResource("1_rp7lh")

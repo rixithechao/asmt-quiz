@@ -17,10 +17,13 @@ extends PanelContainer
 @export var timer_bar: ProgressBar
 @export var timer_animation: AnimationPlayer
 @export var info_and_buttons_container: VBoxContainer
+@export var correct_sound: AudioStreamPlayer
+@export var wrong_sound: AudioStreamPlayer
 
 var question: Question
 var points: int
 var time_expired: bool = false
+var timer_started: bool = false
 
 func setup(q: Question):
 	if  not SaveManager.progress.questions_seen.has(q.resource_path): 
@@ -43,14 +46,17 @@ func setup(q: Question):
 	if  question.seconds > 0:
 		info_and_buttons_container.visible = false
 		timer_bar.max_value = question.seconds
+		timer_bar.value = timer_bar.max_value
 		timer_node.wait_time = question.seconds+1
-		timer_row.visible = true
+	else:
+		timer_row.visible = false
 
 	extra_setup(q)
 	await CategoryMenu.instance.player_opens.animation_finished
 
 	if  question.seconds > 0:
-		timer_animation.play()
+		timer_started = true
+		timer_animation.play("TimerStart")
 
 
 func extra_setup(_q: Question):
@@ -71,12 +77,16 @@ func show_results(was_correct: bool):
 		image_rect.texture = question.image_answered
 	
 	if  was_correct:
+		correct_sound.play()
 		correct_node.visible = true
-		CategoryMenu.change_score(points)
+		if  GameplayScene.instance is CategoryMenu:
+			CategoryMenu.change_score(points)
 	else:
+		wrong_sound.play()
 		if  not time_up_node.visible:
 			wrong_node.visible = true
-		CategoryMenu.change_score(0)
+		if  GameplayScene.instance is CategoryMenu:
+			CategoryMenu.change_score(0)
 	back_button.visible = true
 
 
@@ -84,18 +94,22 @@ func close():
 	if  question.sound != null:
 		MusicManager.unpause()
 
-	if  CategoryMenu.remaining_questions > 0:
-		CategoryMenu.transition_close()
-		await CategoryMenu.instance.player_closes.animation_finished
-		queue_free()
-	else:
+	if  GameplayScene.instance is CategoryMenu  and  CategoryMenu.remaining_questions <= 0:
 		get_tree().change_scene_to_file("res://Scenes/Scene_Results.tscn")
+	else:
+		GameplayScene.instance.transition_close()
+		await GameplayScene.instance.player_closes.animation_finished
+		queue_free()
+
 
 
 
 func _process(_delta: float) -> void:
-	if  question.seconds > 0:
-		timer_bar.value = timer_node.time_left
+	if  question.seconds > 0  and  timer_started:
+		if  not timer_node.is_stopped():
+			timer_bar.value = timer_node.time_left
+		else:
+			pass
 
 
 func _on_timer_timeout() -> void:

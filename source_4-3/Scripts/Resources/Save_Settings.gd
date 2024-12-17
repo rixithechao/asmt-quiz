@@ -6,11 +6,9 @@ class_name Save_Settings
 @export var music_volume: float = 0.7
 @export var sound_volume: float = 0.7
 
-@export var show_highlights: bool = true
+@export var recording_check: int = 0
 
 @export var fullscreen: bool = false
-@export var screen_scale: int = 1
-@export var vsync: int = 0
 
 
 

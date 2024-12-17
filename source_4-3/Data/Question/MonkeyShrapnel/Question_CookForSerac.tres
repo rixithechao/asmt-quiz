@@ -8,6 +8,7 @@ script = ExtResource("2_qhjaf")
 right_answers = Array[String](["A gun that shoots zebras"])
 wrong_answers = Array[String](["A gun that shoots demos", "A stern lecture", "Her trademark annoyed glare", "Kood", "The 4th Wall", "A kick to the head", "cat planet cat planet", "A zebra that shoots guns", "Tuna Casserole", "Hopes and Dreams"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "MonkeyShrapnel"
 text = "What does Iris use to defeat cook a delicious meal for Serac in Zebraspace?"
 page_scene = ExtResource("1_b1nbj")

@@ -22,10 +22,10 @@ func _ready() -> void:
 
 
 func open_question(q: Question, points: int):
-	CategoryMenu.transition_reset()
+	GameplayScene.transition_reset()
 	#await get_tree().create_timer(0.01).timeout
 	var page = q.page_scene.instantiate()
 	page.points = points
 	page.setup(q)
-	CategoryMenu.instance.page_transform.add_child(page)
-	CategoryMenu.transition_open()
+	GameplayScene.instance.page_transform.add_child(page)
+	GameplayScene.transition_open()

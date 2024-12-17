@@ -8,6 +8,7 @@ script = ExtResource("2_nqj53")
 right_answers = Array[String](["A2XT Episode 1"])
 wrong_answers = Array[String](["ASMT", "A2MT", "ASMBXT"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "Which game featured the level \"Spin! Pierce the Heavens!\"?"
 page_scene = ExtResource("1_np6uo")

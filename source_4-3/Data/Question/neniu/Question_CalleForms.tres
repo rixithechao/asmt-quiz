@@ -8,6 +8,7 @@ script = ExtResource("2_ld171")
 right_answers = Array[String](["Thwomp", "ABCD"])
 wrong_answers = Array[String](["Fishing Fish Guy", "Rocket"])
 minimum_right_answers = 2
+answer_sizes = {}
 author = "Neniu"
 text = "Which of the following forms did Calleoca first take during her fight in A2XT Episode 1?"
 page_scene = ExtResource("1_lhxgv")

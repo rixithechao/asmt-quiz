@@ -8,6 +8,9 @@ script = ExtResource("2_g10ru")
 right_answers = Array[String](["The Mall in the Negative Zone. Turn to the left through the Purrtal and then right, you can't miss it."])
 wrong_answers = Array[String](["In a question block, you can find them anywhere.", "In the ground, it's good unwashed.", "Tim Hortons"])
 minimum_right_answers = 1
+answer_sizes = {
+"The Mall in the Negative Zone. Turn to the left through the Purrtal and then right, you can't miss it.": 0.7
+}
 author = "oddwrath"
 text = "I'm hungry, where can I get some good food?"
 page_scene = ExtResource("1_n85uo")

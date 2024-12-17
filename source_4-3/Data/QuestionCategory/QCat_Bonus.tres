@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_7s8o7"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="2_m8hf6"]
-[ext_resource type="Resource" uid="uid://c6cyr2c0xk2bm" path="res://Data/Question/neniu/Question_A2XT2Minigames.tres" id="2_rlffl"]
+[ext_resource type="Resource" uid="uid://c6cyr2c0xk2bm" path="res://Data/Question/Rixi/Question_A2XT2Minigames.tres" id="2_rlffl"]
 [ext_resource type="Resource" uid="uid://tubw0fbdoc3h" path="res://Data/Question/Rixi/Question_3FPSpecial.tres" id="3_pgdm6"]
 [ext_resource type="Resource" uid="uid://bhor4iusa324x" path="res://Data/Question/Rixi/Question_BPOriginalHack.tres" id="4_qock1"]
 [ext_resource type="Resource" uid="uid://w0pp0pmw4pfy" path="res://Data/Question/Rixi/Question_CatPlanetYear.tres" id="5_2ess2"]

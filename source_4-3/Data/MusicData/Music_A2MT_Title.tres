@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://hnv4sb18sbgc"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_58wme"]
+[ext_resource type="AudioStream" uid="uid://dlb0r5b2eh64c" path="res://Music/scene-a2mt-title.ogg" id="2_wot8d"]
+
+[resource]
+script = ExtResource("1_58wme")
+stream = ExtResource("2_wot8d")
+name = "New Horizons"
+author = "Chrom1um"
+album = "A2MT OST"

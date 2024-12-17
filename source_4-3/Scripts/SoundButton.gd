@@ -15,11 +15,11 @@ func _process(_delta: float) -> void:
 
 func _on_pressed() -> void:
 	if  player.playing:
-		icon = stop_icon
+		icon = play_icon
 		player.stop()
 	else:
-		icon = play_icon
+		icon = stop_icon
 		player.play()
 
 func _on_audio_stream_player_finished() -> void:
-	icon = stop_icon
+	icon = play_icon

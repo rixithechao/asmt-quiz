@@ -8,6 +8,7 @@ script = ExtResource("2_qlt0n")
 right_answers = Array[String](["She doesn't have a younger brother"])
 wrong_answers = Array[String](["Brake", "Drift", "Feed", "Float", "Tear"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "PSI Ninja"
 text = "What is the name of Sheath's younger brother?"
 page_scene = ExtResource("1_qh1ig")

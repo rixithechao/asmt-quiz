@@ -8,6 +8,7 @@ script = ExtResource("2_etq3l")
 right_answers = Array[String](["Cadwyn"])
 wrong_answers = Array[String](["SAJewers", "Rixithechao", "raocow", "Kil", "docopopper", "8flight"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "SAJewers"
 text = "Who made the 1st real level raocow played in ASMBXT (not counting cutscenes)?"
 page_scene = ExtResource("1_kpcre")

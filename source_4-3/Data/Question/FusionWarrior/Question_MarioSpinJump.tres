@@ -5,11 +5,12 @@
 
 [resource]
 script = ExtResource("2_6mp2d")
-right_answers = Array[String](["Vegetable Planet"])
-wrong_answers = Array[String](["The Castle of No Significance", "Planet Easy Peasy", "The Mushroom Kingdom"])
+right_answers = Array[String](["Beanbean Kingdom", "Boggly Woods"])
+wrong_answers = Array[String](["Mushroom Kingdom", "Brooklyn", "Flipswitch Galaxy", "Isle Delfino", "Flowery Field", "North Edmonton Mall", "Radical Highway", "Dinosaur World"])
 minimum_right_answers = 1
-author = "SAJewers"
-text = "Where did Superb Demo Sister take place?"
+answer_sizes = {}
+author = "FusionWarrior"
+text = "In what realm did Mario learn how to Spin Jump?"
 page_scene = ExtResource("1_f0lvb")
 seconds = 0
 pause_music = false

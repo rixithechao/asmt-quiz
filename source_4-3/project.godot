@@ -22,6 +22,7 @@ QuestionManager="*res://Scripts/Managers/QuestionManager.gd"
 MusicManager="*res://Scripts/Managers/MusicManager.gd"
 SaveManager="*res://Scripts/Managers/SaveManager.gd"
 ProjectUISoundController="*res://addons/maaacks_ui_sound_controller/base/scenes/Autoloads/ProjectUISoundController.tscn"
+Shaker="*res://addons/shaker/src/Shaker.gd"
 
 [display]
 
@@ -29,7 +30,7 @@ window/size/resizable=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GameGUI/plugin.cfg", "res://addons/maaacks_ui_sound_controller/plugin.cfg", "res://addons/tnowe_extra_controls/plugin.cfg")
+enabled=PackedStringArray("res://addons/GameGUI/plugin.cfg", "res://addons/maaacks_ui_sound_controller/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/tnowe_extra_controls/plugin.cfg")
 
 [rendering]
 

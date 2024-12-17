@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://lta0cn43f4q5"]
+[gd_scene load_steps=4 format=3 uid="uid://lta0cn43f4q5"]
 
 [ext_resource type="Script" path="res://Scripts/ResultsScreen.gd" id="1_e67gb"]
+[ext_resource type="Texture2D" uid="uid://scei5bdbxyvc" path="res://Textures/BGArt/tex_bg_calleoca.png" id="2_pj0a4"]
+[ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="3_fyydn"]
 
 [node name="Results" type="Control" node_paths=PackedStringArray("score_label", "win_close_label", "win_strong_label", "lose_close_label", "lose_strong_label", "reveal_timer", "reveal_nodes", "free_mode_dialog")]
 layout_mode = 3
@@ -32,6 +34,13 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 16
 
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+modulate = Color(1, 1, 1, 0.25098)
+layout_mode = 2
+texture = ExtResource("2_pj0a4")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 24
@@ -46,6 +55,7 @@ size_flags_stretch_ratio = 0.25
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
 text = "FINAL SCORE:"
 horizontal_alignment = 1
@@ -54,12 +64,12 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 80
 text = "X/20"
 horizontal_alignment = 1
 
 [node name="Rating" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
@@ -67,6 +77,7 @@ size_flags_vertical = 0
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
 text = "You did it!  You beat the game!!"
 horizontal_alignment = 1
@@ -75,6 +86,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
 text = "Dang, you really know your stuff!"
 horizontal_alignment = 1
@@ -83,6 +95,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
 text = "Oof, so close!"
 horizontal_alignment = 1
@@ -91,6 +104,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
 text = "Oh no!  Better study up!"
 horizontal_alignment = 1
@@ -111,6 +125,7 @@ to Title"
 title = "This is not a drill!"
 initial_position = 1
 size = Vector2i(380, 262)
+theme = ExtResource("3_fyydn")
 ok_button_text = "Cool beans"
 dialog_text = "You've unlocked Flash Card mode!
 Or Question Select!

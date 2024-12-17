@@ -8,6 +8,7 @@ script = ExtResource("2_jp6d8")
 right_answers = Array[String](["King Pineapple"])
 wrong_answers = Array[String](["Lord Sauerkraut", "Grand Duke of Potassium", "Master Cabbage", "Bigtown George"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Neniu"
 text = "What is the name of the Bananasnake ruler in Superb Demo Sisters?"
 page_scene = ExtResource("1_xv458")

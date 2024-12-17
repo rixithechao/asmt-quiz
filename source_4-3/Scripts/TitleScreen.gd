@@ -5,6 +5,7 @@ extends Control
 @export var title_tex: TextureRect
 @export var bg_cover: ColorRect
 @export var about_popup: AcceptDialog
+@export var settings_popup: SettingsPanel
 @export var question_select: Button
 @export var version_label: Label
 
@@ -27,7 +28,9 @@ func _on_about_pressed() -> void:
 	bg_cover.visible = true
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	settings_popup.reset_controls()
+	settings_popup.visible = true
+	bg_cover.visible = true
 
 func _on_question_select_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Scene_QuestionSelect.tscn")
@@ -41,4 +44,12 @@ func _on_quit_pressed() -> void:
 
 func _on_about_confirmed() -> void:
 	about_popup.visible = false
+	bg_cover.visible = false
+func _on_about_canceled() -> void:
+	about_popup.visible = false
+	bg_cover.visible = false
+
+
+func _on_settings_close_pressed() -> void:
+	settings_popup.visible = false
 	bg_cover.visible = false

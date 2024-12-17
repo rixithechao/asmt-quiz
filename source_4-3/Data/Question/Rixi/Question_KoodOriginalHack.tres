@@ -8,6 +8,7 @@ script = ExtResource("2_2g4y4")
 right_answers = Array[String](["Drama Mistery"])
 wrong_answers = Array[String](["Luigi's Adventure", "Mushroom Kingdom Meltdown", "The Second Reality Project", "Hyper V", "Lakitu's Adventure 2", "Super Challenge World", "VIP 3", "Chaos Complexx", "Kamek's Revenge", "Rise to the Challenge", "SMWCP"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "What romhack did Kood originate from?"
 page_scene = ExtResource("1_xntmx")

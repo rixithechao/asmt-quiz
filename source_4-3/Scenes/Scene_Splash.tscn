@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cb27tfn65nht4"]
+[gd_scene load_steps=19 format=3 uid="uid://cb27tfn65nht4"]
 
 [ext_resource type="Script" path="res://Scripts/SplashScreens.gd" id="1_lni8s"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/radial_container.gd" id="1_sfw72"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://c368i2deyd1hn" path="res://Textures/LoadingSprites/moonwalk.png" id="2_prha8"]
 [ext_resource type="Texture2D" uid="uid://f7o5qcky36pv" path="res://Textures/Splashes/tex_logo_spotzone.png" id="3_qxi0y"]
 [ext_resource type="Texture2D" uid="uid://cee7rnd601xw2" path="res://Textures/Splashes/tex_logo_asmtserver.png" id="4_rtvxm"]
+[ext_resource type="Script" path="res://addons/GameGUI/GGTextureRect.gd" id="5_ao1ud"]
 [ext_resource type="AudioStream" uid="uid://tsluh8mfgrus" path="res://Sounds/sound_whoosh2.ogg" id="6_txut0"]
 [ext_resource type="AudioStream" uid="uid://dg4ff5c4b67u5" path="res://Sounds/sound_splashesSwirl.ogg" id="7_5uo3y"]
+[ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="8_etneq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yy6bd"]
 atlas = ExtResource("2_prha8")
@@ -40,7 +42,6 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_k6nbs"]
 resource_name = "Intro"
-length = 7.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -54,97 +55,113 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(256, 160), Vector2(256, -800)]
 }
-tracks/1/type = "value"
+tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MarginContainer/RadialContainer:modulate")
+tracks/1/path = NodePath("AudioStreamPlayer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 1.5, 3, 3.75),
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_txut0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RecordButton:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qd3gs"]
+resource_name = "Intro_2"
+length = 6.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/RadialContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 2.75),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/2/type = "bezier"
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/RadialContainer:progress_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-0.5, -0.25, 0, 0.1, 1.19607, 1.29278, -0.350968, -0.0808718, 0.160681, 0.037025, 1.4, -0.172652, -0.0384562, 0.368662, 0.082115, 3.5, -0.161378, -0.686434, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.75)
+}
+tracks/2/type = "method"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("MarginContainer/RadialContainer:progress_offset")
+tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 2, 0, 0),
-"points": PackedFloat32Array(-0.5, -0.25, 0, 0.1, 1.19607, 1.29278, -0.350968, -0.0808718, 0.160681, 0.037025, 1.4, -0.172652, -0.0384562, 0.368662, 0.082115, 3.5, -0.161378, -0.686434, 0.25, 0),
-"times": PackedFloat32Array(1, 2, 3, 3.75)
-}
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(7),
+"times": PackedFloat32Array(6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"to_title"
 }]
 }
-tracks/4/type = "audio"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AudioStreamPlayer")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("6_txut0")
-}, {
 "end_offset": 0.0,
 "start_offset": 0.0,
 "stream": ExtResource("7_5uo3y")
 }],
-"times": PackedFloat32Array(0, 1)
+"times": PackedFloat32Array(0)
 }
-tracks/4/use_blend = true
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MarginContainer/Loading:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 5, 5.6),
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/Loading:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 4, 4.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/Loading:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 5),
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MarginContainer/Loading:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("RecordButton:disabled")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_xpjlr"]
@@ -224,6 +241,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_so8yr"]
 _data = {
 "Intro": SubResource("Animation_k6nbs"),
+"Intro_2": SubResource("Animation_qd3gs"),
 "RESET": SubResource("Animation_xpjlr")
 }
 
@@ -270,7 +288,8 @@ size_flags_vertical = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginContainer/Loading/Control"]
 texture_filter = 1
-position = Vector2(-32, -32)
+position = Vector2(-64, -64)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fo2e5")
 autoplay = "default"
 frame_progress = 0.0158458
@@ -279,7 +298,11 @@ frame_progress = 0.0158458
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme = ExtResource("8_etneq")
+theme_override_font_sizes/font_size = 24
 text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RadialContainer" type="Container" parent="MarginContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -289,14 +312,20 @@ script = ExtResource("1_sfw72")
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/RadialContainer"]
 layout_mode = 2
 texture = ExtResource("2_hgk65")
+script = ExtResource("5_ao1ud")
+is_configured = true
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/RadialContainer"]
 layout_mode = 2
 texture = ExtResource("3_qxi0y")
+script = ExtResource("5_ao1ud")
+is_configured = true
 
 [node name="TextureRect3" type="TextureRect" parent="MarginContainer/RadialContainer"]
 layout_mode = 2
 texture = ExtResource("4_rtvxm")
+script = ExtResource("5_ao1ud")
+is_configured = true
 
 [node name="RecordButton" type="Button" parent="."]
 custom_minimum_size = Vector2(640, 328)
@@ -314,9 +343,13 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_stretch_ratio = 0.5
 focus_mode = 0
+theme = ExtResource("8_etneq")
 theme_override_font_sizes/font_size = 32
 text = "If you're recording or streaming,
-click this once everything's set up."
+click this once everything's set up.
+
+(This check can be disabled
+ in the settings.)"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -329,3 +362,4 @@ libraries = {
 
 [connection signal="mouse_entered" from="RecordButton" to="." method="_on_record_button_mouse_entered"]
 [connection signal="pressed" from="RecordButton" to="." method="_on_record_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

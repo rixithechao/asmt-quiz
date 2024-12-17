@@ -8,6 +8,7 @@ script = ExtResource("2_fomyg")
 right_answers = Array[String](["Beat King Charles"])
 wrong_answers = Array[String](["Click your heels three times", "Kneel before the Leek Goddess", "Solve Uncle Broadsword's riddle", "The Whole Game Is Postgame", "There is no postgame"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "PSI Ninja"
 text = "How do you unlock the postgame in ASMT?"
 page_scene = ExtResource("1_rkbvx")

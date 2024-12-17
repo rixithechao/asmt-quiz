@@ -40,6 +40,10 @@ func extra_setup(q: Question):
 			button_text = wrong_answers[min(wrong_index, wrong_answers.size()-1)]
 			wrong_index += 1
 		choice_buttons[i].text = button_text
+		var text_size = 1
+		if  q_mc.answer_sizes.has(button_text):
+			text_size = q_mc.answer_sizes[button_text]
+			choice_buttons[i].add_theme_font_size_override("font_size",32*text_size)
 
 
 func give_answer(answer: Variant):

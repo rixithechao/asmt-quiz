@@ -8,6 +8,7 @@ script = ExtResource("2_6e1u4")
 right_answers = Array[String](["Yes", "YES", "YESYES", "yes", "Absolutely", "Yessssssssssssss", "Yes?", "Yup", "Y.E.S."])
 wrong_answers = Array[String](["No", "no", "NO", "NOOOOOO", "NNNNNNNNO", "No?", "...no", "Yneos"])
 minimum_right_answers = 2
+answer_sizes = {}
 author = "Neniu"
 text = "Is this quiz canon?"
 page_scene = ExtResource("1_1ir8r")

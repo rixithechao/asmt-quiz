@@ -8,6 +8,7 @@ script = ExtResource("2_r4a5v")
 right_answers = Array[String](["2009"])
 wrong_answers = Array[String](["2008", "2010", "2007", "2011"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "What year was Cat Planet released?"
 page_scene = ExtResource("1_knqbt")

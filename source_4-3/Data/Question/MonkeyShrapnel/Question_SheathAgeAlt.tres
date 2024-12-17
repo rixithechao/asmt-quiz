@@ -6,8 +6,9 @@
 [resource]
 script = ExtResource("2_hrrpj")
 right_answers = Array[String](["sixteen"])
-wrong_answers = Array[String](["sick teens", "six tens", "sextant", "sekiro shadows dies twice"])
+wrong_answers = Array[String](["sick teens", "six tens", "sextant", "sekiro shadows die twice"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "MonkeyShrapnel"
 text = "How old is Sheath?"
 page_scene = ExtResource("1_s8wv2")

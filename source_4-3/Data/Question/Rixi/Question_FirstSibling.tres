@@ -8,6 +8,7 @@ script = ExtResource("2_r33gt")
 right_answers = Array[String](["Pily"])
 wrong_answers = Array[String](["Science", "Garish", "Calleoca"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "Who was the first of the Siblings to appear in the series?"
 page_scene = ExtResource("1_whyu2")

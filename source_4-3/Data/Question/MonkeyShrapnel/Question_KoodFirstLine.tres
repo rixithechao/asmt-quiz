@@ -8,6 +8,9 @@ script = ExtResource("1_mfyg6")
 right_answers = Array[String](["☺", ":)", "•ᴗ•"])
 wrong_answers = Array[String](["Isn't it great how we defeated Science and saved the universe and nothing bad happened?", "Okay, good, made it in time.", "Come in headquarters, this is agent K.", "Hey, everyone! We should play hide and seek!", "I'm a big stupid idiot who smells bad!", "It's me, Kood!"])
 minimum_right_answers = 1
+answer_sizes = {
+"Isn't it great how we defeated Science and saved the universe and nothing bad happened?": 0.7
+}
 author = "MonkeyShrapnel"
 text = "What is the first thing Kood said in A2XT Episode 2?"
 page_scene = ExtResource("1_vfr5u")

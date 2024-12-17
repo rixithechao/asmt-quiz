@@ -1,0 +1,1012 @@
+[gd_scene load_steps=45 format=3 uid="uid://b7mitgwofqhwk"]
+
+[ext_resource type="Script" path="res://Scripts/GameplayScene.gd" id="1_hglrf"]
+[ext_resource type="Texture2D" uid="uid://rnind06g1ddj" path="res://Textures/tex_musicNote.png" id="2_afesu"]
+[ext_resource type="Shader" uid="uid://cgkxl3rx4w6te" path="res://Shaders/shader_cutout.tres" id="3_gy870"]
+[ext_resource type="Texture2D" uid="uid://dinjgdqnhmqow" path="res://Textures/Masks/tex_mask_01.png" id="4_35j85"]
+[ext_resource type="Script" path="res://Scripts/MaskTransition.gd" id="5_jje70"]
+[ext_resource type="PackedScene" uid="uid://cie018fp7hfjk" path="res://Prefabs/Prefab_MusicPlayer.tscn" id="6_wlhtn"]
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="7_jqql7"]
+[ext_resource type="Resource" uid="uid://ewd2musaitk" path="res://Data/MusicData/Music_A2MT_Mansion.tres" id="8_ddhvj"]
+[ext_resource type="Resource" uid="uid://cyrww33t8iewt" path="res://Data/MusicData/Music_A2XT2_CityMap.tres" id="9_hablf"]
+[ext_resource type="Resource" uid="uid://dhnax47a2xdpy" path="res://Data/MusicData/Music_A2XT_Castle.tres" id="10_iu0yh"]
+[ext_resource type="Texture2D" uid="uid://dpwkhct7vpl28" path="res://Textures/Masks/tex_mask_02.png" id="11_0jcao"]
+[ext_resource type="AudioStream" uid="uid://x6xjov53aqrg" path="res://Sounds/sound_tubeThup01.wav" id="12_lfcnh"]
+[ext_resource type="AudioStream" uid="uid://52mmh63fyfpx" path="res://Sounds/sound_whoosh01.wav" id="13_rplga"]
+[ext_resource type="AudioStream" uid="uid://c70o5se34fbt5" path="res://Sounds/sound_drumroll01.wav" id="14_j2w8g"]
+[ext_resource type="Texture2D" uid="uid://dlat14ajr2vum" path="res://Textures/Masks/tex_mask_06.png" id="15_3memq"]
+[ext_resource type="Texture2D" uid="uid://ciyb51ks35pvx" path="res://Textures/Masks/tex_mask_04.png" id="16_rh87t"]
+[ext_resource type="Texture2D" uid="uid://cdnc1guy3xplj" path="res://Textures/Masks/tex_mask_05.png" id="17_dkdwx"]
+[ext_resource type="AudioStream" uid="uid://chxicsci1ywc1" path="res://Sounds/sound_creak01.wav" id="18_s5odb"]
+[ext_resource type="AudioStream" uid="uid://dwgxdi2j5xl6l" path="res://Sounds/sound_slideWhistleHop01.wav" id="20_lfl5j"]
+[ext_resource type="AudioStream" uid="uid://dpv8uitedg7wf" path="res://Sounds/sound_zipZipZwee01.wav" id="21_mga5i"]
+[ext_resource type="AudioStream" uid="uid://dxag8b7gcby4f" path="res://Sounds/sound_slideWhistleDown01.wav" id="22_44ugs"]
+[ext_resource type="AudioStream" uid="uid://buha53ayh0l2b" path="res://Sounds/sound_creak01.ogg" id="22_xa14s"]
+[ext_resource type="AudioStream" uid="uid://cbsxtae4orvd7" path="res://Sounds/sound_shatter01.ogg" id="23_n1l2f"]
+[ext_resource type="AudioStream" uid="uid://dje7gp3uuttoe" path="res://Sounds/sound_slideWhistleHop01.ogg" id="24_umyvn"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_027ie"]
+viewport_path = NodePath("MaskAlpha")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r2k1u"]
+shader = ExtResource("3_gy870")
+shader_parameter/cutoff_point = 1.0
+shader_parameter/mask = ExtResource("4_35j85")
+
+[sub_resource type="Animation" id="Animation_p6fqs"]
+resource_name = "Open_Fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ikvf5"]
+resource_name = "Open_Mask1"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_35j85")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_klnle"]
+resource_name = "Open_Mask2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("11_0jcao")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_x0uih"]
+resource_name = "Open_Pop"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("12_lfcnh")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_epcib"]
+resource_name = "Open_SlideBottom"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_rplga")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_fovcc"]
+resource_name = "Open_SlideLeft"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_rplga")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_y4805"]
+resource_name = "Open_SlideRight"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_rplga")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_mlev7"]
+resource_name = "Open_SlideTop"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -648), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_rplga")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_lr3ue"]
+resource_name = "Open_SpiralIn"
+length = 1.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1152, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BakedAlphaMask/QPageOffset:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/General1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("14_j2w8g")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:pivot_offset")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 324)]
+}
+
+[sub_resource type="Animation" id="Animation_snpbt"]
+resource_name = "Open_Zoom"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sounds/General1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("13_rplga")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="Animation" id="Animation_ujp1b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:pivot_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 324)]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_35j85")]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ly1ss"]
+_data = {
+"Open_Fade": SubResource("Animation_p6fqs"),
+"Open_Mask1": SubResource("Animation_ikvf5"),
+"Open_Mask2": SubResource("Animation_klnle"),
+"Open_Pop": SubResource("Animation_x0uih"),
+"Open_SlideBottom": SubResource("Animation_epcib"),
+"Open_SlideLeft": SubResource("Animation_fovcc"),
+"Open_SlideRight": SubResource("Animation_y4805"),
+"Open_SlideTop": SubResource("Animation_mlev7"),
+"Open_SpiralIn": SubResource("Animation_lr3ue"),
+"Open_Zoom": SubResource("Animation_snpbt"),
+"RESET": SubResource("Animation_ujp1b")
+}
+
+[sub_resource type="Animation" id="Animation_0yh2c"]
+resource_name = "Close_Checkerboard"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("15_3memq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4v0ba"]
+resource_name = "Close_Dissolve"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_rh87t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5aw2n"]
+resource_name = "Close_FFDeath"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("17_dkdwx")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_xne6c"]
+resource_name = "Close_SwingDrop"
+length = 1.9
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.91986, 0.349066, 1.39626]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:pivot_offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.139002, 5.36361, 800, -0.06, -192.058, 0.25, 0),
+"times": PackedFloat32Array(0, 0.450998, 0.85)
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/General1")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("22_xa14s")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_n1l2f")
+}],
+"times": PackedFloat32Array(0, 0.85)
+}
+tracks/4/use_blend = true
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/General2")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_umyvn")
+}],
+"times": PackedFloat32Array(0.46)
+}
+tracks/5/use_blend = true
+
+[sub_resource type="Animation" id="Animation_yblu6"]
+resource_name = "Close_Zoom"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jmdjw"]
+_data = {
+"Close_Checkerboard": SubResource("Animation_0yh2c"),
+"Close_Dissolve": SubResource("Animation_4v0ba"),
+"Close_FFDeath": SubResource("Animation_5aw2n"),
+"Close_SwingDrop": SubResource("Animation_xne6c"),
+"Close_Zoom": SubResource("Animation_yblu6"),
+"RESET": SubResource("Animation_ujp1b")
+}
+
+[node name="GameplayScene" type="Control" node_paths=PackedStringArray("page_transform", "player_opens", "player_closes", "block_mouse_rect", "bg_cover_rect")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hglrf")
+page_transform = NodePath("BakedAlphaMask/QPageOffset/QPageTransform")
+player_opens = NodePath("PageOpens")
+player_closes = NodePath("PageCloses")
+block_mouse_rect = NodePath("BlockMouse")
+bg_cover_rect = NodePath("BGCover")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 112
+
+[node name="BlockMouse" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="BakedAlphaMask" type="TextureRect" parent="."]
+clip_children = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("ViewportTexture_027ie")
+
+[node name="QPageOffset" type="Control" parent="BakedAlphaMask"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+mouse_filter = 2
+
+[node name="QPageTransform" type="Control" parent="BakedAlphaMask/QPageOffset"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(576, 324)
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="BakedAlphaMask"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_afesu")
+stretch_mode = 1
+
+[node name="MaskAlpha" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(1152, 648)
+
+[node name="MaskTransition" type="TextureRect" parent="MaskAlpha"]
+material = SubResource("ShaderMaterial_r2k1u")
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("4_35j85")
+script = ExtResource("5_jje70")
+cutoff = 1.0
+
+[node name="MusicInfoPlayer" parent="." instance=ExtResource("6_wlhtn")]
+layout_mode = 1
+tracks = Array[ExtResource("7_jqql7")]([ExtResource("8_ddhvj"), ExtResource("9_hablf"), ExtResource("10_iu0yh")])
+
+[node name="BGCover" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.501961, 0.501961, 0.501961)
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="General1" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"SoundEffects"
+
+[node name="General2" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"SoundEffects"
+
+[node name="General3" type="AudioStreamPlayer" parent="Sounds"]
+bus = &"SoundEffects"
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_rplga")
+bus = &"SoundEffects"
+
+[node name="ZipZwee" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_mga5i")
+bus = &"SoundEffects"
+
+[node name="Drumroll" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_j2w8g")
+bus = &"SoundEffects"
+
+[node name="SlideWDown" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("22_44ugs")
+bus = &"SoundEffects"
+
+[node name="SlideWUp" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("22_44ugs")
+bus = &"SoundEffects"
+
+[node name="Creak" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("18_s5odb")
+bus = &"SoundEffects"
+
+[node name="SlideWHop" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("20_lfl5j")
+bus = &"SoundEffects"
+
+[node name="PageOpens" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ly1ss")
+}
+
+[node name="PageCloses" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jmdjw")
+}

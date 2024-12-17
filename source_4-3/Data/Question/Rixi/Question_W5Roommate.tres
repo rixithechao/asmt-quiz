@@ -8,6 +8,7 @@ script = ExtResource("2_oqa4b")
 right_answers = Array[String](["Rachie"])
 wrong_answers = Array[String](["Yvonne", "Othello", "Sir Pennypants", "Famous Communist Grouchy Mark"])
 minimum_right_answers = 1
+answer_sizes = {}
 author = "Rixitic"
 text = "Which of Coatlyn's \"roommates\" is with her in world 5 of A2XT Episode 2?"
 page_scene = ExtResource("1_l2rwi")
