@@ -19,7 +19,7 @@ lose_close_label = NodePath("MarginContainer/VBoxContainer/Rating/Lose_Close")
 lose_strong_label = NodePath("MarginContainer/VBoxContainer/Rating/Lose_Strong")
 reveal_timer = NodePath("RevealTimer")
 reveal_nodes = [NodePath("MarginContainer/VBoxContainer/Header"), NodePath("MarginContainer/VBoxContainer/Score"), NodePath("MarginContainer/VBoxContainer/Rating"), NodePath("MarginContainer/VBoxContainer/BackToTitle")]
-reveal_times = Array[float]([0.5, 0.5, 1.0, 2.0])
+reveal_times = Array[float]([1.0, 1.0, 2.0, 2.0])
 free_mode_dialog = NodePath("FreeModeDialog")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -35,7 +35,7 @@ theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 16
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer"]
-modulate = Color(1, 1, 1, 0.25098)
+modulate = Color(1, 1, 1, 0.12549)
 layout_mode = 2
 texture = ExtResource("2_pj0a4")
 expand_mode = 3
@@ -70,6 +70,7 @@ text = "X/20"
 horizontal_alignment = 1
 
 [node name="Rating" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 0
 
@@ -115,6 +116,7 @@ custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 40
 text = "Back 
 to Title"

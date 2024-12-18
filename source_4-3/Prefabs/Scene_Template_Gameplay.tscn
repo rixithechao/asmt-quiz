@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b7mitgwofqhwk"]
+[gd_scene load_steps=46 format=3 uid="uid://b7mitgwofqhwk"]
 
 [ext_resource type="Script" path="res://Scripts/GameplayScene.gd" id="1_hglrf"]
 [ext_resource type="Texture2D" uid="uid://rnind06g1ddj" path="res://Textures/tex_musicNote.png" id="2_afesu"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cdnc1guy3xplj" path="res://Textures/Masks/tex_mask_05.png" id="17_dkdwx"]
 [ext_resource type="AudioStream" uid="uid://chxicsci1ywc1" path="res://Sounds/sound_creak01.wav" id="18_s5odb"]
 [ext_resource type="AudioStream" uid="uid://dwgxdi2j5xl6l" path="res://Sounds/sound_slideWhistleHop01.wav" id="20_lfl5j"]
+[ext_resource type="AudioStream" uid="uid://be3ou1i1mguml" path="res://Sounds/transitions/sound_transition_checkerboard.wav" id="20_w1np4"]
 [ext_resource type="AudioStream" uid="uid://dpv8uitedg7wf" path="res://Sounds/sound_zipZipZwee01.wav" id="21_mga5i"]
 [ext_resource type="AudioStream" uid="uid://dxag8b7gcby4f" path="res://Sounds/sound_slideWhistleDown01.wav" id="22_44ugs"]
 [ext_resource type="AudioStream" uid="uid://buha53ayh0l2b" path="res://Sounds/sound_creak01.ogg" id="22_xa14s"]
@@ -685,6 +686,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [1.0, 0.0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_w1np4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_4v0ba"]
 resource_name = "Close_Dissolve"

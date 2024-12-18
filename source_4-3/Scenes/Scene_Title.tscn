@@ -593,6 +593,7 @@ tracks = Array[ExtResource("6_360qy")]([ExtResource("7_a7iyb"), ExtResource("8_c
 [connection signal="toggled" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/GridContainer/FullscreenCheckButton" to="Settings" method="_on_fullscreen_check_button_toggled"]
 [connection signal="item_selected" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer3/GridContainer/RecordingCheckDropdown" to="Settings" method="_on_recording_check_dropdown_item_selected"]
 [connection signal="toggled" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer3/GridContainer/RecordingCheckButton" to="Settings" method="_on_recording_check_button_toggled"]
+[connection signal="pressed" from="Settings/VBoxContainer/MarginContainer/HBoxContainer/Reset" to="Settings" method="_on_reset_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/MarginContainer/HBoxContainer/Close" to="." method="_on_settings_close_pressed"]
 [connection signal="canceled" from="About" to="." method="_on_about_canceled"]
 [connection signal="confirmed" from="About" to="." method="_on_about_confirmed"]
