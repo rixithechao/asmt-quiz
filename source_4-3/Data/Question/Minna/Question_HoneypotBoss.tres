@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://c4jm41lnwr7oy"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_j40co"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="1_n46ga"]
+
+[resource]
+script = ExtResource("1_n46ga")
+right_answers = Array[String](["Snailington"])
+wrong_answers = Array[String](["Beekeeper", "Snailsworth", "McSnail", "Schnell", "Rockesheller"])
+minimum_right_answers = 1
+answer_sizes = {}
+author = "Minna"
+text = "What's this guy's name?"
+page_scene = ExtResource("1_j40co")
+seconds = 0
+pause_music = false
+specific_answer_images = {}
