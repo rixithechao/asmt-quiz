@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://e3g11l4ri7fd"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_qng1o"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_wui58"]
+
+[resource]
+script = ExtResource("2_wui58")
+right_answers = Array[String](["Cryokinesis"])
+wrong_answers = Array[String](["Electrical Engineering", "Necromancy", "Lasers"])
+minimum_right_answers = 2
+answer_sizes = {}
+author = "Rixitic"
+text = "Which of these is NOT a skill or power possessed by Pandamona?"
+page_scene = ExtResource("1_qng1o")
+seconds = 0
+highlight_all_correct = true
+pause_music = false
+specific_answer_images = {}

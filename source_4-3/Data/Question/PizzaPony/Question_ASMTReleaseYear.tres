@@ -9,6 +9,7 @@ right_answers = Array[String](["2010"])
 wrong_answers = Array[String](["2008", "2009", "2011"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "Pizza Pony"
 text = "What year did ASMT come out?"
 page_scene = ExtResource("1_fciii")

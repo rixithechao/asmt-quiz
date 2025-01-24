@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "What was the last name of the actor who played King Frog Bandito in A2XT Episode 1?"
 page_scene = ExtResource("1_j3jhi")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

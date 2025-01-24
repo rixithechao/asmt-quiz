@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://cqc87ckils5ft"]
+
+[ext_resource type="PackedScene" uid="uid://73w2rrecmx20" path="res://Prefabs/Prefab_QuestionPage_MyDrink.tscn" id="1_oxivx"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_8ixhv"]
+
+[resource]
+script = ExtResource("2_8ixhv")
+right_answers = Array[String](["Yeah, sure", "Alright", "Can do", "Leave it to me"])
+wrong_answers = Array[String](["a", "b", "c", "d"])
+minimum_right_answers = 4
+answer_sizes = {}
+highlight_all_correct = true
+author = "camwoodstock & Tori"
+text = "Can you hold this drink for me real quick?"
+page_scene = ExtResource("1_oxivx")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

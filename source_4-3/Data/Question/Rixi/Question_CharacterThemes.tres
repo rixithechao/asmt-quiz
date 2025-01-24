@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "Which of the following characters doesn't have their own theme music?"
 page_scene = ExtResource("1_gryfq")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

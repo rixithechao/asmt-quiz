@@ -9,6 +9,7 @@ right_answers = Array[String](["Super Mario Infinity"])
 wrong_answers = Array[String](["Drama Mistery", "Mushroom Kingdom Meltdown", "The Second Reality Project", "Hyper V", "Lakitu's Adventure 2", "Super Challenge World", "VIP 3", "Chaos Complexx", "Kamek's Revenge", "Rise to the Challenge", "SMWCP"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "Rixitic"
 text = "What romhack did Black Plague originate from?"
 page_scene = ExtResource("1_1l8qq")

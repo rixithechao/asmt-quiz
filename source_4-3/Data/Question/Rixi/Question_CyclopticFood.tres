@@ -9,6 +9,7 @@ right_answers = Array[String](["Cycloptic Honey"])
 wrong_answers = Array[String](["Cycloptic Candy", "Cycloptic Chili", "Cycloptic Chutney", "Cycloptic Gravy", "Cycloptic Jelly"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "Rixitic"
 text = "What type of food was the original ABCD race known for producing, according to Pily?"
 page_scene = ExtResource("1_k2i14")

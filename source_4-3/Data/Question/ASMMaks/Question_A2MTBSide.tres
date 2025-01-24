@@ -9,6 +9,7 @@ right_answers = Array[String](["6 sections", "6+3 sections"])
 wrong_answers = Array[String](["4 sections", "5+3 sections", "3 sections", "7 sections", "3+2 sections"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "ASMagician Maks"
 text = "How many gameplay sections does the A2MT level B-Side have?"
 page_scene = ExtResource("1_3ryrk")

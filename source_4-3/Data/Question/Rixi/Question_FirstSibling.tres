@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "Who was the first of the Siblings to appear in the series?"
 page_scene = ExtResource("1_whyu2")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

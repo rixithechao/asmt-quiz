@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "What was the first game to use the lullaby raocow sang during his ASMT playthrough as a melody in its music?"
 page_scene = ExtResource("1_t3vlo")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

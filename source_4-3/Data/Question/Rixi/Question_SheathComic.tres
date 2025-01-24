@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "What is the webcomic by raocow and AOD that Sheath, Feed, and their former companions originated from?"
 page_scene = ExtResource("1_imjwi")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

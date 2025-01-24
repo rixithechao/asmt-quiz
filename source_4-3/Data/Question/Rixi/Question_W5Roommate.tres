@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "Which of Coatlyn's \"roommates\" is with her in world 5 of A2XT Episode 2?"
 page_scene = ExtResource("1_l2rwi")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

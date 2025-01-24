@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://c4v2w2preu1vc"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="2_3i2ba"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="3_g1pbt"]
+
+[resource]
+script = ExtResource("3_g1pbt")
+right_answers = Array[String](["whatever"])
+wrong_answers = Array[String](["betrayal rock", "further over there", "murder place death zone"])
+minimum_right_answers = 1
+answer_sizes = {}
+highlight_all_correct = true
+author = "Minna"
+text = "Which of these is NOT a level by raocow?"
+page_scene = ExtResource("2_3i2ba")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "What was Catnip's species called before it was changed to Catllama?"
 page_scene = ExtResource("1_lrjj4")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

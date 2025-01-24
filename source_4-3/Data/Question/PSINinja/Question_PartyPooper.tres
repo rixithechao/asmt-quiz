@@ -9,6 +9,7 @@ right_answers = Array[String](["Raocow", "Science", "Sheath"])
 wrong_answers = Array[String](["Demo", "Calleoca", "Iris", "Kood", "Mishi", "Nevada", "Pandamona", "Pily", "Pal", "Serac"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "PSI Ninja"
 text = "Who didn't attend Demo and Iris' \"Chrimsly and Defeated King Pineapples Again\" party in The Whole Game Is Postgame?"
 page_scene = ExtResource("1_skbs7")

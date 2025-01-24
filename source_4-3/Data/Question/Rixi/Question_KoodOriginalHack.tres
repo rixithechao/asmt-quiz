@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "What romhack did Kood originate from?"
 page_scene = ExtResource("1_xntmx")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

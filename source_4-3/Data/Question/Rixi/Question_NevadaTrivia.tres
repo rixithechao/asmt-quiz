@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://bs4kl3qkgjjqm"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_4qt38"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_kgi4h"]
+
+[resource]
+script = ExtResource("2_kgi4h")
+right_answers = Array[String](["The Emerald Winston Bar and Restaurant"])
+wrong_answers = Array[String](["Rachel's Rebate Rotorcraft", "Tim Horton's", "Temporal House", "A Nighttime Hike Up the Mountain", "Lost Souls Dorms"])
+minimum_right_answers = 1
+answer_sizes = {}
+author = "Rixitic"
+text = "Where does Nevada host trivia nights in And Another Thing?"
+page_scene = ExtResource("1_4qt38")
+seconds = 0
+highlight_all_correct = true
+pause_music = false
+specific_answer_images = {}

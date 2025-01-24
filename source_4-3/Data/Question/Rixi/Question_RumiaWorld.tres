@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://hcj5dj4jgk8e"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_5rkry"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_8sc8m"]
+
+[resource]
+script = ExtResource("2_8sc8m")
+right_answers = Array[String](["Cave"])
+wrong_answers = Array[String](["Ice", "Sky", "Forest", "Desert", "Volcano", "Ocean", "Grassland"])
+minimum_right_answers = 1
+answer_sizes = {}
+author = "Rixitic"
+text = "Calleoca disguised as Rumia was the boss of which world in ASMT?"
+page_scene = ExtResource("1_5rkry")
+seconds = 0
+highlight_all_correct = true
+pause_music = false
+specific_answer_images = {}

@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "Which was the first animation by Roo to feature the captial R on Raocow's shirt?"
 page_scene = ExtResource("1_c6ct8")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

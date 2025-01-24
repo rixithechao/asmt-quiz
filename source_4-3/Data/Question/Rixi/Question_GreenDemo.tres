@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "Which of these is NOT a name Uncle Broadsword has mistakenly called Iris?"
 page_scene = ExtResource("1_kgevo")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

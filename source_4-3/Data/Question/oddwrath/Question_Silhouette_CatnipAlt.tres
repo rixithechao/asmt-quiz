@@ -15,6 +15,7 @@ right_answers = Array[String](["Green Catnip!", "Red Catnip!", "Blue Catnip!", "
 wrong_answers = Array[String](["Pal!", "Horse!", "Con!"])
 minimum_right_answers = 4
 answer_sizes = {}
+highlight_all_correct = false
 author = "oddwrath"
 text = "Who is this character?"
 page_scene = ExtResource("3_aaeef")

@@ -9,6 +9,7 @@ right_answers = Array[String](["16", "sixteen", "XVI", "8*2"])
 wrong_answers = Array[String](["a", "b", "c", "d"])
 minimum_right_answers = 4
 answer_sizes = {}
+highlight_all_correct = true
 author = "MonkeyShrapnel"
 text = "How old is Sheath?"
 page_scene = ExtResource("1_oaold")

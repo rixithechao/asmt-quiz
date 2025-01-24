@@ -9,6 +9,7 @@ right_answers = Array[String](["Demo, Iris, Raocow, Kood, Sheath, Pily, Uncle Br
 wrong_answers = Array[String](["Demo, Iris, Kood, Raocow, Sheath, Uncle Broadsword, Pily", "Demo, Iris, Raocow, Sheath, Kood, Pily, Uncle Broadsword", "Mario, Demo, Iris, Raocow, Kood, Sheath, Pily, Uncle Broadsword"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "oddwrath"
 text = "Sort the following characters from most playable to least."
 page_scene = ExtResource("1_tylh3")

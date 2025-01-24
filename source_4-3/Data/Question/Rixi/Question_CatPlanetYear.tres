@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "What year was Cat Planet released?"
 page_scene = ExtResource("1_knqbt")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

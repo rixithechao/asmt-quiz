@@ -9,6 +9,7 @@ right_answers = Array[String](["A Cartridge of \"What the Hell\""])
 wrong_answers = Array[String](["A Flock of Winged Strawberries", "A Hollywood Contract", "The Ultimate Chattery Teeth", "Everlasting Peace", "SUSHI 100", "A Remote-Controled Owl", "A Get Out of 100%ing Crash 4 Free card"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "MilkandRaspberry"
 text = "What gift did Calleoca give Raocow during A2XT Gaiden?"
 page_scene = ExtResource("1_wtjj4")

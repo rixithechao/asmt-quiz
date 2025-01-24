@@ -13,5 +13,6 @@ author = "Rixitic"
 text = "Which game featured the level \"Noah's ARGH!\"?"
 page_scene = ExtResource("1_2x00o")
 seconds = 0
+highlight_all_correct = true
 pause_music = false
 specific_answer_images = {}

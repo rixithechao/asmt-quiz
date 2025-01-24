@@ -9,6 +9,7 @@ right_answers = Array[String](["Beanbean Kingdom", "Boggly Woods"])
 wrong_answers = Array[String](["Mushroom Kingdom", "Brooklyn", "Flipswitch Galaxy", "Isle Delfino", "Flowery Field", "North Edmonton Mall", "Radical Highway", "Dinosaur World"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "FusionWarrior"
 text = "In what realm did Mario learn how to Spin Jump?"
 page_scene = ExtResource("1_f0lvb")

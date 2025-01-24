@@ -9,6 +9,7 @@ right_answers = Array[String](["An Apple"])
 wrong_answers = Array[String](["A Turnip", "A Cactus", "A Cheeseburger", "A Leek"])
 minimum_right_answers = 1
 answer_sizes = {}
+highlight_all_correct = true
 author = "MilkandRaspberry"
 text = "What's the first thing Demo puts in her shopping cart on the ASMT title screen?"
 page_scene = ExtResource("1_5ubav")
