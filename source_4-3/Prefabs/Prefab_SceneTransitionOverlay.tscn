@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbo4hfy0ymnpg"]
+
+[ext_resource type="Shader" uid="uid://cgkxl3rx4w6te" path="res://Shaders/shader_cutout.tres" id="1_5crgt"]
+[ext_resource type="Script" path="res://Scripts/SceneTransitionOverlay.gd" id="1_ng8ws"]
+[ext_resource type="Texture2D" uid="uid://ds118s7e7pnv8" path="res://Textures/Masks/tex_mask_98.png" id="3_k704k"]
+[ext_resource type="Texture2D" uid="uid://wbpccdqy48f8" path="res://Textures/Masks/tex_mask_99.png" id="4_req0d"]
+[ext_resource type="AudioStream" uid="uid://bdvihspymqi0p" path="res://Sounds/transitions/sound_scenetransition_out_01.ogg" id="5_jtop5"]
+[ext_resource type="AudioStream" uid="uid://cqdl1selvp7eq" path="res://Sounds/transitions/sound_scenetransition_in_01.ogg" id="6_q4cct"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38val"]
+shader = ExtResource("1_5crgt")
+shader_parameter/cutoff_point = 1.0
+shader_parameter/mask = ExtResource("3_k704k")
+
+[node name="SceneTransitionOverlay" type="ColorRect" node_paths=PackedStringArray("sound_in", "sound_out")]
+material = SubResource("ShaderMaterial_38val")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_ng8ws")
+mask_in = ExtResource("3_k704k")
+mask_out = ExtResource("4_req0d")
+sound_in = NodePath("InSound")
+sound_out = NodePath("OutSound")
+
+[node name="OutSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jtop5")
+bus = &"SoundEffects"
+
+[node name="InSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q4cct")
+bus = &"SoundEffects"

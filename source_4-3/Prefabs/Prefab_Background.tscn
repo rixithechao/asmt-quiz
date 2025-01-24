@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://51xjve6q0o2j"]
+
+[ext_resource type="Shader" path="res://Shaders/shader_slidingBG.gdshader" id="1_qh5u0"]
+[ext_resource type="Texture2D" uid="uid://bkaeeg56enpgo" path="res://Textures/BGArt/tex_bg_sprites.png" id="2_64l3f"]
+
+[sub_resource type="Gradient" id="Gradient_8dqvr"]
+offsets = PackedFloat32Array(0.24933, 0.552279, 0.906166, 1)
+colors = PackedColorArray(0.131307, 0.1248, 0.32, 1, 0.1978, 0.27907, 0.43, 1, 0.1978, 0.27907, 0.43, 1, 0.131307, 0.1248, 0.32, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n7l18"]
+gradient = SubResource("Gradient_8dqvr")
+fill_from = Vector2(0.337607, 1)
+fill_to = Vector2(0.653846, 0)
+metadata/_snap_count = 20
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mv3sg"]
+shader = ExtResource("1_qh5u0")
+shader_parameter/rate = Vector2(0.05, 0.025)
+
+[node name="Background" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_n7l18")
+
+[node name="BGTiledPattern" type="TextureRect" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_mv3sg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -864.0
+offset_bottom = -486.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(4, 4)
+texture = ExtResource("2_64l3f")
+stretch_mode = 1

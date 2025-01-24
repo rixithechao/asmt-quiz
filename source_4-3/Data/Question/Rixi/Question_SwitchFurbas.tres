@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://ceiwh2ugdhtop"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_h5go4"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_a03vp"]
+
+[resource]
+script = ExtResource("2_a03vp")
+right_answers = Array[String](["The Village People"])
+wrong_answers = Array[String](["The Beatles", "Queen", "ABBA", "Weezer", "The Teenage Mutant Ninja Turtles"])
+minimum_right_answers = 1
+answer_sizes = {}
+author = "Rixitic"
+text = "What group did the Switch Furba enemies reference in A2XT Episode 1?"
+page_scene = ExtResource("1_h5go4")
+seconds = 0
+pause_music = false
+specific_answer_images = {}

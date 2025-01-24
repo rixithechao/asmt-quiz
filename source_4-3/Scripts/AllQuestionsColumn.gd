@@ -12,10 +12,10 @@ extends MarginContainer
 func add_button(number_text: String, q: Question):
 	var new_b = button_prefab.instantiate() as QuestionButton_SelectMode
 	buttons_parent.add_child(new_b)
-	if  q.author != "Rixitic":
-		new_b.text = number_text + " (" + q.author + ")"
-	else:
-		new_b.text = number_text
+	#if  q.author != "Rixitic":
+	new_b.text = number_text + " (" + q.author + ")"
+	#else:
+	#	new_b.text = number_text
 	new_b.question = q
 	new_b.set_icon()
 	new_b.disable_after_click = false

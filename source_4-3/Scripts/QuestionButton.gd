@@ -31,3 +31,4 @@ func _on_pressed() -> void:
 	QuestionManager.open_question(question, points)
 	if  disable_after_click:
 		disabled = true
+		ProjectUISoundController.disconnect_button_hovered(self)

@@ -39,6 +39,9 @@ static func transition_close():
 
 
 func _on_back_button_pressed() -> void:
+	MusicManager.fade_out(0.1)
+	scene_transition_overlay.transition_out()
+	await scene_transition_overlay.finished
 	get_tree().change_scene_to_file("res://Scenes/Scene_Title.tscn")
 
 

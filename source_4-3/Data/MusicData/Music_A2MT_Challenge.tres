@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://cgehsmqv0mypw"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_fcoeq"]
+[ext_resource type="AudioStream" uid="uid://l7llqqe76sxt" path="res://Music/level-a2mt-challenge.ogg" id="2_bldaf"]
+
+[resource]
+script = ExtResource("1_fcoeq")
+stream = ExtResource("2_bldaf")
+name = "Challenge Chiptune"
+author = "Wyatt Croucher"
+album = "A2MT OST"

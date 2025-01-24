@@ -9,9 +9,6 @@
 script = ExtResource("2_umeg0")
 choice_buttons = [NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceA"), NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceB"), NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceC"), NodePath("MarginContainer/InfoAndButtons/HungryBoxContainer/ChoiceD")]
 
-[node name="ShakerComponent2D" parent="Node2D" index="0"]
-is_playing = false
-
 [node name="HungryBoxContainer" type="HBoxContainer" parent="MarginContainer/InfoAndButtons" index="10"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
@@ -21,6 +18,7 @@ theme_override_constants/separation = 24
 [node name="ChoiceA" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="0"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme = ExtResource("3_jpp1h")
 theme_override_font_sizes/font_size = 32
 text = "A"
@@ -36,6 +34,7 @@ is_configured = true
 [node name="ChoiceB" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="1"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme = ExtResource("3_jpp1h")
 theme_override_font_sizes/font_size = 32
 text = "B"
@@ -51,6 +50,7 @@ is_configured = true
 [node name="ChoiceC" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="2"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme = ExtResource("3_jpp1h")
 theme_override_font_sizes/font_size = 32
 text = "C"
@@ -66,6 +66,7 @@ is_configured = true
 [node name="ChoiceD" type="Button" parent="MarginContainer/InfoAndButtons/HungryBoxContainer" index="3"]
 layout_mode = 2
 size_flags_horizontal = 3
+focus_mode = 0
 theme = ExtResource("3_jpp1h")
 theme_override_font_sizes/font_size = 32
 text = "D"

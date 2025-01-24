@@ -8,6 +8,12 @@ extends PanelContainer
 @export var recording_check_dropdown: OptionButton
 @export var recording_check_button: CheckButton
 
+@export var delete_data_progress: ProgressBar
+@export var delete_rev_sound: AudioStreamPlayer
+
+var delete_data_percent: float = 0
+var delete_data_state: int = 0
+var performing_deletion: bool = false
 
 
 func reset_controls():
@@ -21,6 +27,17 @@ func reset_controls():
 
 func _ready() -> void:
 	reset_controls()
+
+func _process(delta: float) -> void:
+	delete_data_progress.visible = (delete_data_state != 0)
+	if  delete_data_state == 1:
+		delete_data_percent += delta
+		delete_data_progress.value = delete_data_percent
+		if  delete_data_percent >= delete_data_progress.max_value:
+			delete_data_state = 2
+			SaveManager.progress = Save_Progress.new()
+			SaveManager.progress.save()
+			TitleScreen.quit_game()
 
 
 func _on_reset_pressed() -> void:
@@ -56,3 +73,15 @@ func _on_recording_check_dropdown_item_selected(index: int) -> void:
 func _on_recording_check_button_toggled(toggled_on: bool) -> void:
 	SaveManager.settings.recording_check = (0 if toggled_on else 2)
 	SaveManager.settings.save()
+
+
+func _on_delete_data_button_button_down() -> void:
+	delete_data_state = 1
+	delete_rev_sound.play(0)
+
+
+func _on_delete_data_button_button_up() -> void:
+	if  delete_data_state <= 1:
+		delete_data_state = 0
+		delete_data_percent = 0
+		delete_rev_sound.stop()

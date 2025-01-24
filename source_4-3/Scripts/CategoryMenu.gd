@@ -37,6 +37,9 @@ func _on_exit_pressed() -> void:
 
 func _on_exit_confirm_confirmed() -> void:
 	remaining_questions = 0
+	MusicManager.fade_out(0.1)
+	scene_transition_overlay.transition_out()
+	await scene_transition_overlay.finished
 	get_tree().change_scene_to_file("res://Scenes/Scene_Title.tscn")
 
 func _on_exit_confirm_canceled() -> void:

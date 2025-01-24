@@ -1,22 +1,15 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=11 format=3 uid="uid://d3q2cm81sw0ff"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=8 format=3 uid="uid://d3q2cm81sw0ff"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_hpqns"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_rfx4a"]
 [ext_resource type="Resource" uid="uid://baga7acnqw2e6" path="res://Data/Question/PSINinja/Question_AATHoliday.tres" id="2_vuhdg"]
-[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="3_4bj2e"]
 [ext_resource type="Resource" uid="uid://cqqctsn5r0l05" path="res://Data/Question/MilkAndRaspberry/Question_RaocowGift.tres" id="3_5yi46"]
-[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="4_ics10"]
 [ext_resource type="Resource" uid="uid://bau23y6amw33e" path="res://Data/Question/MonkeyShrapnel/Question_CookForSerac.tres" id="4_u2b2t"]
 [ext_resource type="Resource" uid="uid://bbpqkkqcf8mth" path="res://Data/Question/Rixi/Question_ABCDStands.tres" id="5_6k3y1"]
 [ext_resource type="Resource" uid="uid://bcfoaigta3qc4" path="res://Data/Question/PSINinja/Question_PartyPooper.tres" id="5_k702m"]
-
-[sub_resource type="Resource" id="Resource_0sxx6"]
-resource_name = "Vars - Lore Buffers"
-script = ExtResource("3_4bj2e")
-variants = Array[ExtResource("4_ics10")]([ExtResource("5_6k3y1")])
 
 [resource]
 script = ExtResource("1_hpqns")
 name = "This is an exposition thing, isn't it?"
 name_size = 1.0
-questions = Array[ExtResource("1_rfx4a")]([ExtResource("2_vuhdg"), SubResource("Resource_0sxx6"), ExtResource("5_k702m"), ExtResource("3_5yi46"), ExtResource("4_u2b2t")])
+questions = Array[ExtResource("1_rfx4a")]([ExtResource("2_vuhdg"), ExtResource("5_6k3y1"), ExtResource("5_k702m"), ExtResource("3_5yi46"), ExtResource("4_u2b2t")])

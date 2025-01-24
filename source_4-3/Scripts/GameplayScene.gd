@@ -9,6 +9,7 @@ static var instance: GameplayScene
 @export var player_closes: AnimationPlayer
 @export var block_mouse_rect: ColorRect
 @export var bg_cover_rect: ColorRect
+@export var scene_transition_overlay: SceneTransitionOverlay
 
 
 func _ready() -> void:

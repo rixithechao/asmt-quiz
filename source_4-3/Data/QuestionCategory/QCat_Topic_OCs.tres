@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=13 format=3 uid="uid://bihr5k1ikdt7b"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_1vvrx"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="2_o57v1"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="3_g4vn6"]
+[ext_resource type="Resource" uid="uid://da6w8mmdowv1r" path="res://Data/Question/MilkAndRaspberry/Question_IrisStank.tres" id="3_poy1f"]
+[ext_resource type="Resource" uid="uid://chmc1cx6bj3n3" path="res://Data/Question/oddwrath/Question_Silhouette_Catnip.tres" id="4_0iyu6"]
+[ext_resource type="Resource" uid="uid://d7uyqs4oh8pt" path="res://Data/Question/PSINinja/Question_IrisMiddleName.tres" id="4_n234c"]
+[ext_resource type="Resource" uid="uid://dsb5ncro5xscc" path="res://Data/Question/ASMMaks/Question_FirstIris.tres" id="5_cm2oc"]
+[ext_resource type="Resource" uid="uid://crjxjqwk8p6uf" path="res://Data/Question/oddwrath/Question_Silhouette_CatnipAlt.tres" id="5_ircpn"]
+[ext_resource type="Resource" uid="uid://cgo04ud21q4mb" path="res://Data/Question/OwenLee/Question_SeracRelation.tres" id="6_gnxrp"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="7_e75op"]
+[ext_resource type="Resource" uid="uid://c4jm41lnwr7oy" path="res://Data/Question/Minna/Question_HoneypotBoss.tres" id="10_kswcs"]
+
+[sub_resource type="Resource" id="Resource_5sh1m"]
+resource_name = "Vars - Catnip Silhouette"
+script = ExtResource("2_o57v1")
+variants = Array[ExtResource("3_g4vn6")]([ExtResource("4_0iyu6"), ExtResource("5_ircpn")])
+
+[resource]
+script = ExtResource("7_e75op")
+name = "ABCDs & OCs"
+name_size = 1.0
+questions = Array[ExtResource("1_1vvrx")]([SubResource("Resource_5sh1m"), ExtResource("3_poy1f"), ExtResource("5_cm2oc"), ExtResource("4_n234c"), ExtResource("10_kswcs"), ExtResource("6_gnxrp")])

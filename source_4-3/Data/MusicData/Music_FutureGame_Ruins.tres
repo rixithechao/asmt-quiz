@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://kmhyncv6q1g0"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_hg7lu"]
+[ext_resource type="AudioStream" uid="uid://dwfcphlmk0y6a" path="res://Music/level-futuregame-ruins.ogg" id="2_42xe8"]
+
+[resource]
+script = ExtResource("1_hg7lu")
+stream = ExtResource("2_42xe8")
+name = "Ruins, Mayhaps?"
+author = "Rixitic"
+album = "a future thing...?"

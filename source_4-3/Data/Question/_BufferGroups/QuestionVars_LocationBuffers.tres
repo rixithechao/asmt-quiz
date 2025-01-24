@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestionVariantSet" load_steps=9 format=3 uid="uid://ddqap7he6lovo"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="1_a70kn"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="2_aty86"]
+[ext_resource type="Resource" uid="uid://cilr3kyhyygls" path="res://Data/Question/Rixi/Question_AATWorldName.tres" id="3_grsdv"]
+[ext_resource type="Resource" uid="uid://cxksdjkm6fjno" path="res://Data/Question/Rixi/Question_DemoWare.tres" id="4_b5f6u"]
+[ext_resource type="Resource" uid="uid://cenk1c5iosq6i" path="res://Data/Question/Rixi/Question_WhichGameLevel.tres" id="5_5g0wq"]
+[ext_resource type="Resource" uid="uid://dycd30yh0rn1u" path="res://Data/Question/Rixi/Question_WhichGameLevelAlt1.tres" id="6_fvg4t"]
+[ext_resource type="Resource" uid="uid://jfdiwku0omfh" path="res://Data/Question/Rixi/Question_WhichGameLevelAlt2.tres" id="7_e2lw4"]
+[ext_resource type="Resource" uid="uid://cdpycv0841iqb" path="res://Data/Question/Rixi/Question_WhichGameLevelAlt3.tres" id="8_nnwph"]
+
+[resource]
+resource_name = "Vars - Location Buffers"
+script = ExtResource("1_a70kn")
+variants = Array[ExtResource("2_aty86")]([ExtResource("3_grsdv"), ExtResource("4_b5f6u"), ExtResource("5_5g0wq"), ExtResource("6_fvg4t"), ExtResource("7_e2lw4"), ExtResource("8_nnwph")])

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Question_MultipleChoice" load_steps=3 format=3 uid="uid://f5guxro484im"]
+
+[ext_resource type="PackedScene" uid="uid://36wh7awy2msy" path="res://Prefabs/Prefab_QuestionPage_MChoice.tscn" id="1_lhxgv"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question_MultipleChoice.gd" id="2_ld171"]
+
+[resource]
+script = ExtResource("2_ld171")
+right_answers = Array[String](["Thwomp", "ABCD"])
+wrong_answers = Array[String](["Fishing Fish Guy", "Rocket"])
+minimum_right_answers = 2
+answer_sizes = {}
+author = "Rixitic"
+text = "Which of the following forms did Calleoca first take during her fight in A2XT Episode 1?"
+page_scene = ExtResource("1_lhxgv")
+seconds = 0
+highlight_all_correct = true
+pause_music = false
+specific_answer_images = {}

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionVariantSet" load_steps=7 format=3 uid="uid://b2ma1o4tq8w22"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="1_ks8ym"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="2_15xk2"]
+[ext_resource type="Resource" uid="uid://dxhpwo20o7fru" path="res://Data/Question/Rixi/Question_BroadswordName.tres" id="3_bmbao"]
+[ext_resource type="Resource" uid="uid://byu33npf55j8n" path="res://Data/Question/Rixi/Question_RShirt.tres" id="4_bumy8"]
+[ext_resource type="Resource" uid="uid://cu5ohxala5v04" path="res://Data/Question/Rixi/Question_TheArtist.tres" id="5_vfuci"]
+[ext_resource type="Resource" uid="uid://bk3qlfnhfc5bv" path="res://Data/Question/Rixi/Question_CatllamaName.tres" id="6_u0oe7"]
+
+[resource]
+resource_name = "Vars - Dev Buffers"
+script = ExtResource("1_ks8ym")
+variants = Array[ExtResource("2_15xk2")]([ExtResource("3_bmbao"), ExtResource("4_bumy8"), ExtResource("5_vfuci"), ExtResource("6_u0oe7")])

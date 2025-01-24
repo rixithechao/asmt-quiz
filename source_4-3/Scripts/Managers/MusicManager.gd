@@ -12,6 +12,9 @@ var queue: Array[MusicData] = [
 ]
 var queue_played: Array[MusicData] = []
 
+var volume_fade: float = 1
+var fade_tween: Tween
+
 
 func _ready() -> void:
 	queue.shuffle()
@@ -43,3 +46,16 @@ func pause():
 	player.stream_paused = true
 func unpause():
 	player.stream_paused = false
+
+func abort_fade():
+	if fade_tween != null  and  fade_tween.is_valid()  and  fade_tween.is_running():
+		fade_tween.kill()
+
+func fade(amount: float, duration: float = 1):
+	abort_fade()
+	fade_tween = get_tree().create_tween()
+	fade_tween.tween_property(self, "volume_fade", amount, duration)
+func fade_out(duration: float = 1):
+	fade(0, duration)
+func fade_in(duration: float = 1):
+	fade(0, duration)

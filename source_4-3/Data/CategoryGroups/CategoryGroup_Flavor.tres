@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="CategoryGroup" load_steps=6 format=3 uid="uid://ig1mbd28k4yi"]
+[gd_resource type="Resource" script_class="CategoryGroup" load_steps=5 format=3 uid="uid://ig1mbd28k4yi"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_ku5xc"]
-[ext_resource type="Resource" uid="uid://c1lj1yd0coll1" path="res://Data/QuestionCategory/QCat_Topic_Tunes.tres" id="2_8mwl7"]
 [ext_resource type="Resource" uid="uid://tlc60iqqsow1" path="res://Data/QuestionCategory/QCat_Topic_Food.tres" id="3_ylo83"]
 [ext_resource type="Resource" uid="uid://dwfjegdx1nig5" path="res://Data/QuestionCategory/QCat_Topic_Locations.tres" id="4_sdyin"]
 [ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="5_m6qtk"]
 
 [resource]
 script = ExtResource("5_m6qtk")
-categories = Array[ExtResource("1_ku5xc")]([ExtResource("2_8mwl7"), ExtResource("3_ylo83"), ExtResource("4_sdyin")])
+categories = Array[ExtResource("1_ku5xc")]([ExtResource("3_ylo83"), ExtResource("4_sdyin")])

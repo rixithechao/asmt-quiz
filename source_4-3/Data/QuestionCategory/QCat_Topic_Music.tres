@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=8 format=3 uid="uid://c1lj1yd0coll1"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_ebcmq"]
+[ext_resource type="Resource" uid="uid://byljouxmoxfxc" path="res://Data/Question/OwenLee/Question_BroadswordMusicName.tres" id="3_4ps3u"]
+[ext_resource type="Resource" uid="uid://dtdwc6ulfck5e" path="res://Data/Question/Rixi/Question_CharacterThemes.tres" id="4_lkjll"]
+[ext_resource type="Resource" uid="uid://v1cxpqwltxqf" path="res://Data/Question/Rixi/Question_GuessMusic.tres" id="6_hvlh8"]
+[ext_resource type="Resource" uid="uid://bmc2u4enwhshe" path="res://Data/Question/Rixi/Question_LullabyMotif.tres" id="7_do0n5"]
+[ext_resource type="Resource" uid="uid://bv1nd4bywbcky" path="res://Data/Question/MonkeyShrapnel/Question_JungleCaveComposer.tres" id="9_2b1tu"]
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="12_8fuut"]
+
+[resource]
+script = ExtResource("12_8fuut")
+name = "Type 'Music' to Go There Now"
+name_size = 1.0
+questions = Array[ExtResource("1_ebcmq")]([ExtResource("7_do0n5"), ExtResource("3_4ps3u"), ExtResource("4_lkjll"), ExtResource("9_2b1tu"), ExtResource("6_hvlh8")])

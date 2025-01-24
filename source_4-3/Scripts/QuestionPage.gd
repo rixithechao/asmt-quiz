@@ -19,6 +19,7 @@ extends PanelContainer
 @export var info_and_buttons_container: VBoxContainer
 @export var correct_sound: AudioStreamPlayer
 @export var wrong_sound: AudioStreamPlayer
+@export var confetti_emitters: Array[GPUParticles2D]
 
 var question: Question
 var points: int
@@ -68,6 +69,9 @@ func give_answer(_answer: Variant):
 
 
 func show_results(was_correct: bool):
+	if  GameplayScene.instance is CategoryMenu  and  CategoryMenu.remaining_questions <= 0:
+		MusicManager.fade_out()
+	
 	if  was_correct:
 		SaveManager.progress.questions_seen[question.resource_path] = true
 		SaveManager.progress.save()
@@ -77,6 +81,9 @@ func show_results(was_correct: bool):
 		image_rect.texture = question.image_answered
 	
 	if  was_correct:
+		if  randf() <= 0.4:
+			for em:GPUParticles2D in confetti_emitters:
+				em.emitting = true
 		correct_sound.play()
 		correct_node.visible = true
 		if  GameplayScene.instance is CategoryMenu:
@@ -95,6 +102,8 @@ func close():
 		MusicManager.unpause()
 
 	if  GameplayScene.instance is CategoryMenu  and  CategoryMenu.remaining_questions <= 0:
+		GameplayScene.instance.scene_transition_overlay.transition_out()
+		await GameplayScene.instance.scene_transition_overlay.finished
 		get_tree().change_scene_to_file("res://Scenes/Scene_Results.tscn")
 	else:
 		GameplayScene.instance.transition_close()

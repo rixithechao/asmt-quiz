@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuestionVariantSet" load_steps=4 format=3 uid="uid://dy48cwt84d4em"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="1_cf2rg"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="2_ywbxc"]
+[ext_resource type="Resource" uid="uid://c6cyr2c0xk2bm" path="res://Data/Question/Rixi/Question_A2XT2Minigames.tres" id="3_j7ctx"]
+
+[resource]
+resource_name = "Vars - Everything Buffers"
+script = ExtResource("1_cf2rg")
+variants = Array[ExtResource("2_ywbxc")]([ExtResource("3_j7ctx")])

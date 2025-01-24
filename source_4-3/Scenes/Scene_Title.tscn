@@ -1,21 +1,23 @@
-[gd_scene load_steps=14 format=3 uid="uid://jrtmy6ey2ycv"]
+[gd_scene load_steps=18 format=3 uid="uid://jrtmy6ey2ycv"]
 
 [ext_resource type="Script" path="res://Scripts/TitleScreen.gd" id="1_327dm"]
 [ext_resource type="Texture2D" uid="uid://h7anyg1edt8f" path="res://Textures/tex_title.png" id="1_d0jck"]
+[ext_resource type="PackedScene" uid="uid://51xjve6q0o2j" path="res://Prefabs/Prefab_Background.tscn" id="2_meq02"]
 [ext_resource type="Script" path="res://Scripts/SettingsPanel.gd" id="3_1yy86"]
 [ext_resource type="Script" path="res://addons/GameGUI/GGButton.gd" id="3_8ntgj"]
 [ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="3_j88s1"]
 [ext_resource type="AudioStream" uid="uid://oi0fv4xn80sb" path="res://Sounds/sound_duck1.ogg" id="4_tfudw"]
 [ext_resource type="PackedScene" uid="uid://cie018fp7hfjk" path="res://Prefabs/Prefab_MusicPlayer.tscn" id="5_otdj4"]
 [ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="6_360qy"]
+[ext_resource type="AudioStream" uid="uid://wgi3fckguqtm" path="res://Sounds/sound_revUp_01.ogg" id="6_rrrlw"]
+[ext_resource type="StyleBox" uid="uid://xglql83gsc82" path="res://Style_FakeWindow.tres" id="6_wycx5"]
 [ext_resource type="Resource" uid="uid://c25dkbu02745d" path="res://Data/MusicData/Music_A2XT_DemoDance.tres" id="7_a7iyb"]
 [ext_resource type="Resource" uid="uid://hnv4sb18sbgc" path="res://Data/MusicData/Music_A2MT_Title.tres" id="8_c4hth"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h88ta"]
-bg_color = Color(0.176471, 0.176471, 0.176471, 1)
+[ext_resource type="Resource" uid="uid://dp185xxywo53s" path="res://Data/MusicData/Music_A2XT2_IdyllicShop.tres" id="11_20pfj"]
+[ext_resource type="PackedScene" uid="uid://bbo4hfy0ymnpg" path="res://Prefabs/Prefab_SceneTransitionOverlay.tscn" id="12_hrie8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlcon"]
-bg_color = Color(0.29219, 0.29219, 0.29219, 1)
+bg_color = Color(0, 0.135333, 0.29, 1)
 border_color = Color(0.290196, 0.290196, 0.290196, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -23,7 +25,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1b0bn"]
-bg_color = Color(0.29219, 0.29219, 0.29219, 1)
+bg_color = Color(0, 0.135333, 0.29, 1)
 border_color = Color(0.290196, 0.290196, 0.290196, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -32,7 +34,7 @@ corner_radius_bottom_left = 4
 expand_margin_left = 8.0
 expand_margin_right = 8.0
 
-[node name="Title" type="Control" node_paths=PackedStringArray("title_tex", "bg_cover", "about_popup", "settings_popup", "question_select", "version_label")]
+[node name="Title" type="Control" node_paths=PackedStringArray("title_tex", "bg_cover", "about_popup", "settings_popup", "question_select", "version_label", "duck_sound", "transition_overlay")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +48,11 @@ about_popup = NodePath("About")
 settings_popup = NodePath("Settings")
 question_select = NodePath("MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/QuestionSelect")
 version_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Label")
+duck_sound = NodePath("Duck")
+transition_overlay = NodePath("SceneTransitionOverlay")
+
+[node name="Background" parent="." instance=ExtResource("2_meq02")]
+layout_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -170,7 +177,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.501961, 0.501961, 0.501961, 0.501961)
 
-[node name="Settings" type="PanelContainer" parent="." node_paths=PackedStringArray("music_volume_slider", "sound_volume_slider", "fullscreen_button", "recording_check_dropdown", "recording_check_button")]
+[node name="Settings" type="PanelContainer" parent="." node_paths=PackedStringArray("music_volume_slider", "sound_volume_slider", "fullscreen_button", "recording_check_dropdown", "recording_check_button", "delete_data_progress", "delete_rev_sound")]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -183,13 +190,16 @@ offset_bottom = -128.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(300, 200)
-theme_override_styles/panel = SubResource("StyleBoxFlat_h88ta")
+theme = ExtResource("3_j88s1")
+theme_override_styles/panel = ExtResource("6_wycx5")
 script = ExtResource("3_1yy86")
 music_volume_slider = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/GridContainer/MusicVolumeSlider")
 sound_volume_slider = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer/GridContainer/SoundVolumeSlider")
 fullscreen_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/GridContainer/FullscreenCheckButton")
 recording_check_dropdown = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer3/GridContainer/RecordingCheckDropdown")
 recording_check_button = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer3/GridContainer/RecordingCheckButton")
+delete_data_progress = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DeleteDataButton/ProgressBar")
+delete_rev_sound = NodePath("VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DeleteDataButton/AudioStreamPlayer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
 layout_mode = 2
@@ -210,6 +220,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(290, 0)
+theme = ExtResource("3_j88s1")
 theme_override_styles/panel = SubResource("StyleBoxFlat_hlcon")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Settings/VBoxContainer"]
@@ -247,6 +258,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_j88s1")
 theme_override_styles/panel = SubResource("StyleBoxFlat_1b0bn")
 
 [node name="MarginContainer" type="MarginContainer" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -270,6 +282,7 @@ text = "Music"
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme = ExtResource("3_j88s1")
 max_value = 1.0
 step = 0.05
 value = 0.7
@@ -284,6 +297,7 @@ text = "Sound Effects"
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme = ExtResource("3_j88s1")
 max_value = 1.0
 step = 0.05
 value = 0.7
@@ -304,6 +318,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_j88s1")
 theme_override_styles/panel = SubResource("StyleBoxFlat_1b0bn")
 
 [node name="MarginContainer2" type="MarginContainer" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -329,6 +344,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 focus_mode = 0
+theme = ExtResource("3_j88s1")
 
 [node name="StartupHeader" type="Label" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -345,6 +361,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_j88s1")
 theme_override_styles/panel = SubResource("StyleBoxFlat_1b0bn")
 
 [node name="MarginContainer3" type="MarginContainer" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -369,6 +386,7 @@ visible = false
 layout_mode = 2
 size_flags_horizontal = 6
 focus_mode = 0
+theme = ExtResource("3_j88s1")
 selected = 0
 item_count = 3
 popup/item_0/text = "Always"
@@ -381,9 +399,9 @@ popup/item_2/id = 2
 layout_mode = 2
 size_flags_horizontal = 6
 focus_mode = 0
+theme = ExtResource("3_j88s1")
 
 [node name="DataHeader" type="Label" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_j88s1")
@@ -398,17 +416,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_j88s1")
 theme_override_styles/panel = SubResource("StyleBoxFlat_1b0bn")
 
 [node name="DeleteDataButton" type="Button" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_mode = 0
 theme = ExtResource("3_j88s1")
-text = "Delete seen
-question data"
+text = "Delete save data (Closes the game!)"
+
+[node name="ProgressBar" type="ProgressBar" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DeleteDataButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 3.0
+step = 0.001
+show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DeleteDataButton"]
+stream = ExtResource("6_rrrlw")
+bus = &"SoundEffects"
 
 [node name="Control" type="Control" parent="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 10)
@@ -480,9 +512,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 20
-text = "Welcome to the latest entry in the \"Rixi Makes an ASMT-Themed Game Based On Some Trend or Hyperfixation From That Year\" series!  (We're workshopping the title.)
+text = "Welcome to the latest entry in the \"Rixi Makes an ASMT-Themed Game Based On Some Trending Game or Hyperfixation From That Year\" series!  (We're workshopping the title.)
 
-How well do you know the ASMT/Superb Demo series?  I got into watching ZaneGames' Powerpoint board games and game shows earlier this year, so I threw together a single-player Jeopardy game and asked folks in the talkhaus, spotzone, and ASMT server to come up with questions for it.  Hope you enjoy it!
+How well do you know the ASMT/Superb Demo series?  I got into watching ZaneGames' Powerpoint board games and game shows earlier in 2024, and in the fall I found myself needing a small, simple project to work through some rough stuff.  So I threw together a single-player Jeopardy game and made a collab out of it by asking folks in the talkhaus, spotzone, and ASMT server to come up with questions for it.
+
+...As always, it ended up getting a bit bigger and fancier than I initially planned!  The scope crept a bit as more questions got submitted and the Advent event was repeatedly delayed.  Here's hoping you enjoy the end result!
  "
 autowrap_mode = 3
 
@@ -502,13 +536,15 @@ bbcode_enabled = true
 text = "[center]
 [b]CREDITS:[/b]
 
-[b]Main developer:[/b]
+[b]Main developer, logo & background illustration(s):[/b]
 Rixitic
 
 [b]Questions by:[/b]
+ASMagician Maks
 camwoodstock & Tori
 FusionWarrior
 MilkandRaspberry
+Minna
 MonkeyShrapnel
 Neniu
 oddwrath
@@ -519,8 +555,22 @@ Rixitic
 SAJewers
 SiFi270
 
+[b]Sprites (A2XT2 devkit/talkhaus):[/b]
+Chaoxys
+flareblade26
+Rixitic
+Terry von Feleday
+
+[b]Voice clips (A2XT2 devkit):[/b]
+Duker
+raocow
+
 [b]Fonts:[/b]
+Arial
 Tsunagi Gothic (by mokuzai)
+
+[b]Art sources (Openclipart.org):[/b]
+Spilled Cola (by oksmith and j4p4n)
 
 [b]Sound effect sources (Freesound.org):[/b]
 Slide Whistle (by sheepfilms)
@@ -532,14 +582,19 @@ tongue click.wav (by MichellePamelaLyons)
 Auto Cannon 1 (by SamsterBirdies)
 whack02.mp3 (by Qat)
 spanish party noisemaker (by beerre)
+Buzzer sounds (Wrong answer / Error) (by Breviceps)
+nope ok.wav (by itinerantmonk108)
+Bowling Strike (by SieuAmThanh)
+Scratch Ah yeah! 2 - 1 bar - 96 BPM (swing).WAV (by Bronxio)
+B0.ogg (by TEDAgame)
+Yeah 3 (by unfa)
+UIClick_clay plop various positive UI_Funky Audio_FASS.wav (by Funky_Audio)
+LASRGun_Warp Rifle Energy Blast_Funky Audio_Sonic Spices (by Funky_Audio)
+heap sort.mp3 (by Falfa)
 
 [b]Sound effect sources (other):[/b]
 Soniss GDC Audio Bundles
 Kenney's UI Audio pack
-
-[b]Voice clips:[/b]
-raocow
-Tinsin
 
 [b]Plugins used:[/b]
 Kenney UI Audio (by Calinou)
@@ -548,18 +603,30 @@ GameGUI (by brombres)
 Extra GUI Controls - Drag and Drop, Radial Menus, Containers, Utilities (by don-tnowe)
 Shaker (by Eneskp3441)
 
-[b]Playtester(s):[/b]
+[b]Shaders used (Godotshaders.com):[/b]
+Glitch Effect Shader (by Yui Kinomoto @arlez80)
+
+[b]Playtesters:[/b]
+DogInDaGrass
+MonkeyShrapnel
+oddwrath
+Pizza Pony
 Your name(s) here
 
 [b]Special thanks:[/b]
 raocow
 
 [b]Shout-outs:[/b]
-ZaneGames
-Microsoft Powerpoint and Windows Movie Maker
-Cassette Beasts
+OG Powerpoint and Windows Movie Maker
+ZaneGames' Powerpoint jeopardy videos
 raocow again
+Cassette Beasts
+Codeberg.org
+Hatsune Miku
+cheap bootlego birds
 
+[b]Absolutely no thanks to:[/b]
+Microsoft, for poisoning everything they make and buy with generative AI and just generally being butts
 
 
 In loving memory of Sadie Erickson,
@@ -575,11 +642,15 @@ drag_and_drop_selection_enabled = false
 
 [node name="Duck" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_tfudw")
-autoplay = true
+bus = &"SoundEffects"
 
 [node name="MusicInfoPlayer" parent="." instance=ExtResource("5_otdj4")]
 layout_mode = 1
-tracks = Array[ExtResource("6_360qy")]([ExtResource("7_a7iyb"), ExtResource("8_c4hth")])
+tracks = Array[ExtResource("6_360qy")]([ExtResource("7_a7iyb"), ExtResource("8_c4hth"), ExtResource("11_20pfj")])
+
+[node name="SceneTransitionOverlay" parent="." instance=ExtResource("12_hrie8")]
+layout_mode = 1
+auto_start = false
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/QuestionSelect" to="." method="_on_question_select_pressed"]
@@ -593,6 +664,8 @@ tracks = Array[ExtResource("6_360qy")]([ExtResource("7_a7iyb"), ExtResource("8_c
 [connection signal="toggled" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer2/GridContainer/FullscreenCheckButton" to="Settings" method="_on_fullscreen_check_button_toggled"]
 [connection signal="item_selected" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer3/GridContainer/RecordingCheckDropdown" to="Settings" method="_on_recording_check_dropdown_item_selected"]
 [connection signal="toggled" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MarginContainer3/GridContainer/RecordingCheckButton" to="Settings" method="_on_recording_check_button_toggled"]
+[connection signal="button_down" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DeleteDataButton" to="Settings" method="_on_delete_data_button_button_down"]
+[connection signal="button_up" from="Settings/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DeleteDataButton" to="Settings" method="_on_delete_data_button_button_up"]
 [connection signal="pressed" from="Settings/VBoxContainer/MarginContainer/HBoxContainer/Reset" to="Settings" method="_on_reset_pressed"]
 [connection signal="pressed" from="Settings/VBoxContainer/MarginContainer/HBoxContainer/Close" to="." method="_on_settings_close_pressed"]
 [connection signal="canceled" from="About" to="." method="_on_about_canceled"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://6o6m1o8cnc4"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_pysq8"]
+[ext_resource type="AudioStream" uid="uid://tdrgkyplfo8p" path="res://Music/level-a2xt2-diner.ogg" id="2_qje3o"]
+
+[resource]
+script = ExtResource("1_pysq8")
+stream = ExtResource("2_qje3o")
+name = "Chronologically-Displaced Shop"
+author = "Rixitic"
+album = "A2XT Episode 2 OST"

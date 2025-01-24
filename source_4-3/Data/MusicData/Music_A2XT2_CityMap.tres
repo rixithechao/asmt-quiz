@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://cyrww33t8iewt"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_o236h"]
-[ext_resource type="AudioStream" uid="uid://bj55cnluqskm2" path="res://Music/ow-a2xt-city.ogg" id="2_sssk6"]
+[ext_resource type="AudioStream" uid="uid://bj55cnluqskm2" path="res://Music/ow-a2xt2-city.ogg" id="2_sssk6"]
 
 [resource]
 script = ExtResource("1_o236h")
 stream = ExtResource("2_sssk6")
 name = "Gentrified Funktown"
-author = "Rixithechao"
+author = "Rixitic"
 album = "A2XT Episode 2 OST"

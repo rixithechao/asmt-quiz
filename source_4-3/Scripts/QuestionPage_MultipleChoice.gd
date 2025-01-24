@@ -65,8 +65,9 @@ func show_results(was_correct: bool):
 	for i in NUMBER_CHOICES:
 		var btn = choice_buttons[i]
 		btn.disabled = true
+		ProjectUISoundController.disconnect_button_hovered(btn)
 
-		if  correctness[i]:
+		if  correctness[i]  and  (i == selected  or  question.highlight_all_correct):
 			btn.add_theme_stylebox_override ("disabled", style_correct)
 		elif  not was_correct  and  (i == selected  or  time_expired):
 			btn.add_theme_stylebox_override ("disabled", style_wrong)

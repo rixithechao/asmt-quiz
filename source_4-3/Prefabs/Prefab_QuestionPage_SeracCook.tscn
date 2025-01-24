@@ -13,22 +13,36 @@ shader_parameter/shake_color_rate = 0.01
 
 [node name="QuestionPage_SeracCook" instance=ExtResource("1_22edm")]
 
-[node name="Node2D" parent="." index="0"]
+[node name="Node2D" parent="." index="1"]
 position = Vector2(36.5957, 55.8422)
 
 [node name="Question" parent="MarginContainer/InfoAndButtons/Prompt" index="0"]
 text = "What does Iris use to defeat cook a delicious meal for Serac in Zebraspace?"
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/InfoAndButtons/Prompt/Question" index="0"]
+z_index = 1
 material = SubResource("ShaderMaterial_1nirt")
 layout_mode = 0
 offset_left = 318.0
-offset_top = 1.0
+offset_top = 8.0
 offset_right = 412.0
-offset_bottom = 41.0
+offset_bottom = 26.0
 
 [node name="TimerRow" parent="MarginContainer/InfoAndButtons" index="4"]
 visible = false
 
 [node name="Label" parent="MarginContainer/InfoAndButtons/TimerRow" index="0"]
 text = ""
+
+[node name="Bar" parent="MarginContainer/InfoAndButtons/TimerRow" index="1"]
+theme = null
+
+[node name="Sound" parent="MarginContainer/InfoAndButtons/HBoxContainer" index="1"]
+focus_mode = 2
+
+[node name="CorrectSound" parent="." index="4"]
+bus = &"Master"
+
+[node name="WrongSound" parent="." index="5"]
+stream = null
+bus = &"Master"

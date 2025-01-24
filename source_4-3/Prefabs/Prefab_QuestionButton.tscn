@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+focus_mode = 0
 theme = ExtResource("1_2pqk3")
 theme_override_font_sizes/font_size = 32
 text = "1"

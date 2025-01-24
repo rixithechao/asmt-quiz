@@ -6,3 +6,4 @@ extends Question
 @export var minimum_right_answers: int = 1
 
 @export var answer_sizes: Dictionary
+@export var highlight_all_correct: bool = true

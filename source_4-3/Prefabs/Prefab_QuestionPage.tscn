@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://4nr3o7fmwodt"]
+[gd_scene load_steps=45 format=3 uid="uid://4nr3o7fmwodt"]
 
 [ext_resource type="Script" path="res://Scripts/QuestionPage.gd" id="1_j8gf5"]
 [ext_resource type="Script" path="res://Scripts/RandomizedLabel.gd" id="2_cln3n"]
 [ext_resource type="Script" path="res://addons/shaker/src/Vector2/shaker_component2D.gd" id="2_s64nf"]
 [ext_resource type="Texture2D" uid="uid://ldanyrvalkkf" path="res://icon.svg" id="2_uo3k0"]
+[ext_resource type="PackedScene" uid="uid://51xjve6q0o2j" path="res://Prefabs/Prefab_Background.tscn" id="2_xej10"]
 [ext_resource type="Texture2D" uid="uid://dbshyrkj5bvr4" path="res://Textures/tex_playButton.png" id="3_8bjmg"]
 [ext_resource type="Script" path="res://addons/shaker/data/Vector2/BaseShakerType2D.gd" id="3_333iw"]
 [ext_resource type="Script" path="res://Scripts/SoundButton.gd" id="3_d3o2h"]
@@ -18,9 +19,16 @@
 [ext_resource type="AudioStream" uid="uid://dlnj02roywhpa" path="res://Sounds/results/sound_correct02.ogg" id="16_r2b8a"]
 [ext_resource type="AudioStream" uid="uid://ddw5b35odfv57" path="res://Sounds/results/sound_correct03.ogg" id="17_41b7u"]
 [ext_resource type="AudioStream" uid="uid://bshejikstr2pu" path="res://Sounds/results/sound_correct04.ogg" id="18_uua8w"]
+[ext_resource type="AudioStream" uid="uid://d0k4aqnfsdw3k" path="res://Sounds/results/sound_correct07.ogg" id="19_53kw8"]
+[ext_resource type="AudioStream" uid="uid://dfs85kvdb0va7" path="res://Sounds/results/sound_correct05.ogg" id="20_pf3uy"]
+[ext_resource type="AudioStream" uid="uid://ogrldf0f60k" path="res://Sounds/results/sound_correct06.ogg" id="21_wkie5"]
+[ext_resource type="AudioStream" uid="uid://wka3jko7r7w3" path="res://Sounds/results/sound_wrong01b.ogg" id="22_sjibo"]
+[ext_resource type="AudioStream" uid="uid://by2m1xxepth6m" path="res://Sounds/results/sound_wrong02.ogg" id="23_4jo1w"]
+[ext_resource type="AudioStream" uid="uid://dm14fdgwohnsr" path="res://Sounds/results/sound_wrong03.ogg" id="24_uqm22"]
+[ext_resource type="AudioStream" uid="uid://c560r4ong3st8" path="res://Sounds/results/sound_wrong04.ogg" id="25_w3mv2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ir0x"]
-bg_color = Color(0.298039, 0.298039, 0.298039, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qe13"]
+bg_color = Color(0.152941, 0.215686, 0.329412, 1)
 
 [sub_resource type="Resource" id="Resource_sag1o"]
 script = ExtResource("4_heobn")
@@ -257,13 +265,78 @@ _data = {
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_a7ora"]
-streams_count = 4
+streams_count = 7
 stream_0/stream = ExtResource("15_4illi")
 stream_1/stream = ExtResource("16_r2b8a")
 stream_2/stream = ExtResource("17_41b7u")
 stream_3/stream = ExtResource("18_uua8w")
+stream_4/stream = ExtResource("19_53kw8")
+stream_5/stream = ExtResource("20_pf3uy")
+stream_6/stream = ExtResource("21_wkie5")
+stream_6/weight = 0.5
 
-[node name="QuestionPage" type="PanelContainer" node_paths=PackedStringArray("question_label", "author_label", "prompt_node", "correct_node", "time_up_node", "wrong_node", "back_button", "image_rect", "sound_button", "timer_row", "timer_node", "timer_bar", "timer_animation", "info_and_buttons_container", "correct_sound", "wrong_sound")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_jeqwy"]
+streams_count = 4
+stream_0/stream = ExtResource("22_sjibo")
+stream_1/stream = ExtResource("23_4jo1w")
+stream_2/stream = ExtResource("24_uqm22")
+stream_2/weight = 0.5
+stream_3/stream = ExtResource("25_w3mv2")
+stream_3/weight = 0.5
+
+[sub_resource type="Curve" id="Curve_xo6y2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.747967, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -10.7985, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5d5t8"]
+curve = SubResource("Curve_xo6y2")
+
+[sub_resource type="Gradient" id="Gradient_qvaxb"]
+offsets = PackedFloat32Array(0, 0.0821114, 0.193548, 0.328446, 0.439883, 0.58651, 0.718475, 0.86217, 1)
+colors = PackedColorArray(1, 0.452416, 0.383959, 1, 1, 0.783333, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0.916667, 1, 0.526079, 0.676035, 1, 1, 0.829382, 0.538653, 1, 1, 1, 0, 0.916667, 1, 1, 0.452416, 0.383959, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cygqj"]
+gradient = SubResource("Gradient_qvaxb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_daejc"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 720.0
+direction = Vector3(1, -0.5, 0)
+spread = 30.0
+initial_velocity_min = 500.0
+initial_velocity_max = 2000.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+gravity = Vector3(0, 392, 0)
+damping_min = 50.0
+damping_max = 100.0
+scale_min = 2.0
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_cygqj")
+alpha_curve = SubResource("CurveTexture_5d5t8")
+turbulence_enabled = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a42ii"]
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 720.0
+direction = Vector3(-1, -0.5, 0)
+spread = 30.0
+initial_velocity_min = 500.0
+initial_velocity_max = 2000.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+gravity = Vector3(0, 392, 0)
+damping_min = 50.0
+damping_max = 100.0
+scale_min = 2.0
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_cygqj")
+alpha_curve = SubResource("CurveTexture_5d5t8")
+turbulence_enabled = true
+
+[node name="QuestionPage" type="PanelContainer" node_paths=PackedStringArray("question_label", "author_label", "prompt_node", "correct_node", "time_up_node", "wrong_node", "back_button", "image_rect", "sound_button", "timer_row", "timer_node", "timer_bar", "timer_animation", "info_and_buttons_container", "correct_sound", "wrong_sound", "confetti_emitters")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -271,7 +344,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_4ir0x")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7qe13")
 script = ExtResource("1_j8gf5")
 question_label = NodePath("MarginContainer/InfoAndButtons/Prompt/Question")
 author_label = NodePath("MarginContainer/InfoAndButtons/Prompt/Author")
@@ -289,6 +362,10 @@ timer_animation = NodePath("TimerAnimation")
 info_and_buttons_container = NodePath("MarginContainer/InfoAndButtons")
 correct_sound = NodePath("CorrectSound")
 wrong_sound = NodePath("WrongSound")
+confetti_emitters = [NodePath("LeftConfetti"), NodePath("RightConfetti")]
+
+[node name="Background" parent="." instance=ExtResource("2_xej10")]
+layout_mode = 2
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -418,6 +495,7 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+theme = ExtResource("3_li4dp")
 max_value = 4.0
 value = 4.0
 show_percentage = false
@@ -448,6 +526,7 @@ custom_minimum_size = Vector2(160, 160)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+focus_mode = 0
 theme_override_styles/focus = SubResource("StyleBoxFlat_b0vqe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_i8th2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vepqk")
@@ -491,6 +570,7 @@ size_flags_stretch_ratio = 0.2
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
+focus_mode = 0
 theme = ExtResource("3_li4dp")
 theme_override_font_sizes/font_size = 36
 text = "Back"
@@ -502,8 +582,31 @@ libraries = {
 
 [node name="CorrectSound" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_a7ora")
+bus = &"SoundEffects"
 
 [node name="WrongSound" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_jeqwy")
+bus = &"SoundEffects"
+
+[node name="LeftConfetti" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(-48, 329)
+emitting = false
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_daejc")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+
+[node name="RightConfetti" type="GPUParticles2D" parent="."]
+texture_filter = 1
+position = Vector2(1200, 329)
+emitting = false
+amount = 24
+process_material = SubResource("ParticleProcessMaterial_a42ii")
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
 
 [connection signal="timeout" from="MarginContainer/InfoAndButtons/TimerRow/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="MarginContainer/InfoAndButtons/HBoxContainer/Sound" to="MarginContainer/InfoAndButtons/HBoxContainer/Sound" method="_on_pressed"]

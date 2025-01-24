@@ -4,12 +4,12 @@
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_ohcmi"]
 [ext_resource type="Resource" uid="uid://da6w8mmdowv1r" path="res://Data/Question/MilkAndRaspberry/Question_IrisStank.tres" id="2_72min"]
 [ext_resource type="Resource" uid="uid://d7uyqs4oh8pt" path="res://Data/Question/PSINinja/Question_IrisMiddleName.tres" id="3_6rsq8"]
-[ext_resource type="Resource" uid="uid://f5guxro484im" path="res://Data/Question/neniu/Question_CalleForms.tres" id="4_0ifp0"]
 [ext_resource type="Resource" uid="uid://bway3dnuxvfsa" path="res://Data/Question/Rixi/Question_BillionCharlies.tres" id="4_ssh4x"]
+[ext_resource type="Resource" uid="uid://dsb5ncro5xscc" path="res://Data/Question/ASMMaks/Question_FirstIris.tres" id="6_0md56"]
 [ext_resource type="Resource" uid="uid://cgo04ud21q4mb" path="res://Data/Question/OwenLee/Question_SeracRelation.tres" id="6_v1sua"]
 
 [resource]
 script = ExtResource("1_ohcmi")
 name = "Space Demons 101"
 name_size = 1.0
-questions = Array[ExtResource("1_ildp4")]([ExtResource("4_ssh4x"), ExtResource("2_72min"), ExtResource("4_0ifp0"), ExtResource("3_6rsq8"), ExtResource("6_v1sua")])
+questions = Array[ExtResource("1_ildp4")]([ExtResource("4_ssh4x"), ExtResource("2_72min"), ExtResource("3_6rsq8"), ExtResource("6_0md56"), ExtResource("6_v1sua")])

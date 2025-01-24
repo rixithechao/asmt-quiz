@@ -21,15 +21,20 @@ func get_time_string(secs: float) -> String:
 
 
 func _ready() -> void:
+	tracks.shuffle()
 	MusicManager.player = player
 	MusicManager.info = self
 	MusicManager.queue = tracks
 	MusicManager.queue_played.clear()
 	MusicManager.next()
 
+	MusicManager.abort_fade()
+	MusicManager.volume_fade = 1
+
 
 func _process(_delta: float) -> void:
 	player = MusicManager.player
+	player.volume_db = linear_to_db(MusicManager.volume_fade)
 
 	if  player.playing:
 		var stream = player.stream

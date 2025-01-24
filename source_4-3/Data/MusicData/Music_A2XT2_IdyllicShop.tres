@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=3 format=3 uid="uid://dp185xxywo53s"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_stgxt"]
+[ext_resource type="AudioStream" uid="uid://gscfdesetx3k" path="res://Music/level-a2xt2-shop-idyllic.ogg" id="2_21kph"]
+
+[resource]
+script = ExtResource("1_stgxt")
+stream = ExtResource("2_21kph")
+name = "Idyllic Shop"
+author = "Rixitic"
+album = "A2XT Episode 2 OST"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestionVariantSet" load_steps=9 format=3 uid="uid://m47tvb2m2s61"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="1_7jsk7"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="2_gfl8p"]
+[ext_resource type="Resource" uid="uid://brwn30o3s4xhk" path="res://Data/Question/Rixi/Question_Wart.tres" id="3_7kmq3"]
+[ext_resource type="Resource" uid="uid://tubw0fbdoc3h" path="res://Data/Question/Rixi/Question_3FPSpecial.tres" id="3_sb6vb"]
+[ext_resource type="Resource" uid="uid://5bp2ryo1saci" path="res://Data/Question/Rixi/Question_SheathComic.tres" id="5_gluly"]
+[ext_resource type="Resource" uid="uid://w0pp0pmw4pfy" path="res://Data/Question/Rixi/Question_CatPlanetYear.tres" id="6_oo7dn"]
+[ext_resource type="Resource" uid="uid://bhor4iusa324x" path="res://Data/Question/Rixi/Question_BPOriginalHack.tres" id="7_0sjhp"]
+[ext_resource type="Resource" uid="uid://bgyn7xknal13" path="res://Data/Question/Rixi/Question_KoodOriginalHack.tres" id="8_quq5p"]
+
+[resource]
+resource_name = "Vars - Crossover Buffers"
+script = ExtResource("1_7jsk7")
+variants = Array[ExtResource("2_gfl8p")]([ExtResource("3_7kmq3"), ExtResource("3_sb6vb"), ExtResource("5_gluly"), ExtResource("6_oo7dn"), ExtResource("7_0sjhp"), ExtResource("8_quq5p")])

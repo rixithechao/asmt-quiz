@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionVariantSet" load_steps=7 format=3 uid="uid://747t8xv3cy0p"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="1_0iyiq"]
+[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="2_vwuqa"]
+[ext_resource type="Resource" uid="uid://bkipgg5dxyuug" path="res://Data/Question/Rixi/Question_FirstSibling.tres" id="3_ffuj1"]
+[ext_resource type="Resource" uid="uid://0cnnvfbt0ka6" path="res://Data/Question/Rixi/Question_GreenDemo.tres" id="4_h0nvl"]
+[ext_resource type="Resource" uid="uid://f5guxro484im" path="res://Data/Question/Rixi/Question_CalleForms.tres" id="5_gq4to"]
+[ext_resource type="Resource" uid="uid://e3g11l4ri7fd" path="res://Data/Question/Rixi/Question_PandaPowers.tres" id="6_id8ub"]
+
+[resource]
+resource_name = "Vars - ABCD Buffers"
+script = ExtResource("1_0iyiq")
+variants = Array[ExtResource("2_vwuqa")]([ExtResource("3_ffuj1"), ExtResource("4_h0nvl"), ExtResource("5_gq4to"), ExtResource("6_id8ub")])

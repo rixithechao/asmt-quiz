@@ -128,6 +128,12 @@ func _connect_stream_player(node : Node, stream_player : AudioStreamPlayer, sign
 	if stream_player != null and not node.is_connected(signal_name, callable.bind(stream_player)):
 		node.connect(signal_name, callable.bind(stream_player))
 
+func _disconnect_stream_player(node : Node, stream_player : AudioStreamPlayer, signal_name : StringName, callable : Callable) -> void:
+	node.disconnect(signal_name, callable.bind(stream_player))
+
+func disconnect_button_hovered(node : Node):
+	_disconnect_stream_player(node, button_hovered_player, &"mouse_entered", _play_stream)
+
 func connect_ui_sounds(node: Node) -> void:
 	if node is Button:
 		_connect_stream_player(node, button_hovered_player, &"mouse_entered", _play_stream)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MusicData" load_steps=2 format=3 uid="uid://b50xrj6dk5p0b"]
+
+[ext_resource type="Script" path="res://Scripts/Resources/MusicData.gd" id="1_dwt6n"]
+
+[resource]
+script = ExtResource("1_dwt6n")
+name = "I Dare Say, My Good Fellow, We're In for a Bit of a Scrimmage!"
+author = "Rixitic"
+album = "a future thing...?"

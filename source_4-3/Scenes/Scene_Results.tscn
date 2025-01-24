@@ -1,10 +1,188 @@
-[gd_scene load_steps=4 format=3 uid="uid://lta0cn43f4q5"]
+[gd_scene load_steps=18 format=3 uid="uid://lta0cn43f4q5"]
 
 [ext_resource type="Script" path="res://Scripts/ResultsScreen.gd" id="1_e67gb"]
 [ext_resource type="Texture2D" uid="uid://scei5bdbxyvc" path="res://Textures/BGArt/tex_bg_calleoca.png" id="2_pj0a4"]
 [ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="3_fyydn"]
+[ext_resource type="AudioStream" uid="uid://c7v8hs8xvojvk" path="res://Sounds/results/sound_finalresult_impact02.ogg" id="3_ss6t1"]
+[ext_resource type="AudioStream" uid="uid://c4g5m1fgstvhd" path="res://Sounds/results/sound_finalresult_impact01.ogg" id="4_j1pb6"]
+[ext_resource type="AudioStream" uid="uid://7bd0kf31mbby" path="res://Sounds/sound_pop01.ogg" id="4_wdh4a"]
+[ext_resource type="AudioStream" uid="uid://b3geam5xpdmaw" path="res://Sounds/results/sound_finalresult_good01.ogg" id="5_h5k15"]
+[ext_resource type="AudioStream" uid="uid://c0kbr5eijwgnw" path="res://Sounds/results/sound_finalresult_bad01.ogg" id="6_a74y0"]
+[ext_resource type="AudioStream" uid="uid://dc71n78nshr4i" path="res://Sounds/sound_unlock01.ogg" id="6_ckvol"]
+[ext_resource type="StyleBox" uid="uid://xglql83gsc82" path="res://Style_FakeWindow.tres" id="9_ikr7x"]
+[ext_resource type="PackedScene" uid="uid://bbo4hfy0ymnpg" path="res://Prefabs/Prefab_SceneTransitionOverlay.tscn" id="11_c1yoa"]
 
-[node name="Results" type="Control" node_paths=PackedStringArray("score_label", "win_close_label", "win_strong_label", "lose_close_label", "lose_strong_label", "reveal_timer", "reveal_nodes", "free_mode_dialog")]
+[sub_resource type="Gradient" id="Gradient_8dqvr"]
+offsets = PackedFloat32Array(0.24933, 0.552279, 0.906166, 1)
+colors = PackedColorArray(0.131307, 0.1248, 0.32, 1, 0.1978, 0.27907, 0.43, 1, 0.1978, 0.27907, 0.43, 1, 0.131307, 0.1248, 0.32, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n7l18"]
+gradient = SubResource("Gradient_8dqvr")
+fill_from = Vector2(0.337607, 1)
+fill_to = Vector2(0.653846, 0)
+metadata/_snap_count = 20
+
+[sub_resource type="Animation" id="Animation_pxvc0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer/Header:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Score:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Rating:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_2c7k1"]
+resource_name = "ResultsSequence"
+length = 7.0
+step = 0.25
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.25, 2.25, 4.25, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [0, false],
+"method": &"tween_item"
+}, {
+"args": [1, false],
+"method": &"tween_item"
+}, {
+"args": [2, true],
+"method": &"tween_item"
+}, {
+"args": [],
+"method": &"popup_or_end"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/VBoxContainer/Header:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/VBoxContainer/Score:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/VBoxContainer/Rating:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ImpactSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_j1pb6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ss6t1")
+}],
+"times": PackedFloat32Array(1.25, 2.25)
+}
+tracks/4/use_blend = true
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_win_or_lose_sound"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_gfrpt"]
+resource_name = "ResultsSequence2"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_return_button"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_65wab"]
+_data = {
+"RESET": SubResource("Animation_pxvc0"),
+"ResultsSequence": SubResource("Animation_2c7k1"),
+"ResultsSequence2": SubResource("Animation_gfrpt")
+}
+
+[node name="Results" type="Control" node_paths=PackedStringArray("score_label", "win_close_label", "win_strong_label", "lose_close_label", "lose_strong_label", "reveal_nodes", "win_sound_player", "lose_sound_player", "popup_sound_player", "return_button_sound_player", "return_button", "bg_cover", "free_mode_popup", "sequence_animplayer", "scene_transition_overlay")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,10 +195,24 @@ win_close_label = NodePath("MarginContainer/VBoxContainer/Rating/Win_Close")
 win_strong_label = NodePath("MarginContainer/VBoxContainer/Rating/Win_Strong")
 lose_close_label = NodePath("MarginContainer/VBoxContainer/Rating/Lose_Close")
 lose_strong_label = NodePath("MarginContainer/VBoxContainer/Rating/Lose_Strong")
-reveal_timer = NodePath("RevealTimer")
-reveal_nodes = [NodePath("MarginContainer/VBoxContainer/Header"), NodePath("MarginContainer/VBoxContainer/Score"), NodePath("MarginContainer/VBoxContainer/Rating"), NodePath("MarginContainer/VBoxContainer/BackToTitle")]
-reveal_times = Array[float]([1.0, 1.0, 2.0, 2.0])
-free_mode_dialog = NodePath("FreeModeDialog")
+reveal_nodes = [NodePath("MarginContainer/VBoxContainer/Header"), NodePath("MarginContainer/VBoxContainer/Score"), NodePath("MarginContainer/VBoxContainer/Rating")]
+win_sound_player = NodePath("WinSound")
+lose_sound_player = NodePath("LoseSound")
+popup_sound_player = NodePath("PopupSound")
+return_button_sound_player = NodePath("ReturnSound")
+return_button = NodePath("MarginContainer/VBoxContainer/BackToTitle")
+bg_cover = NodePath("BGCover")
+free_mode_popup = NodePath("FreeModePopup")
+sequence_animplayer = NodePath("AAAAAAAA")
+scene_transition_overlay = NodePath("SceneTransitionOverlay")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_n7l18")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -53,7 +245,23 @@ size_flags_stretch_ratio = 0.25
 
 [node name="Header" type="Label" parent="MarginContainer/VBoxContainer"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
+theme_override_font_sizes/font_size = 48
+text = "FINAL SCORE:"
+horizontal_alignment = 1
+
+[node name="ActualHeader" type="Label" parent="MarginContainer/VBoxContainer/Header"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(544, 24.5)
 size_flags_vertical = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
@@ -62,7 +270,23 @@ horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="MarginContainer/VBoxContainer"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
+theme_override_font_sizes/font_size = 80
+text = "X/20"
+horizontal_alignment = 1
+
+[node name="ActualScore" type="Label" parent="MarginContainer/VBoxContainer/Score"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1, 0.1)
+pivot_offset = Vector2(544, 40.5)
 size_flags_vertical = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 80
@@ -76,7 +300,22 @@ size_flags_vertical = 0
 
 [node name="Win_Close" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
+theme_override_font_sizes/font_size = 48
+text = "You did it!  You beat the game!!"
+horizontal_alignment = 1
+
+[node name="ActualWin_Close" type="Label" parent="MarginContainer/VBoxContainer/Rating/Win_Close"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(544, 24.5)
 size_flags_vertical = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
@@ -85,7 +324,22 @@ horizontal_alignment = 1
 
 [node name="Win_Strong" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
+theme_override_font_sizes/font_size = 48
+text = "Dang, you really know your stuff!"
+horizontal_alignment = 1
+
+[node name="ActualWin_Strong" type="Label" parent="MarginContainer/VBoxContainer/Rating/Win_Strong"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(544, 24.5)
 size_flags_vertical = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
@@ -94,7 +348,22 @@ horizontal_alignment = 1
 
 [node name="Lose_Close" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
+theme_override_font_sizes/font_size = 48
+text = "Oof, so close!"
+horizontal_alignment = 1
+
+[node name="ActualLose_Close" type="Label" parent="MarginContainer/VBoxContainer/Rating/Lose_Close"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(544, 24.5)
 size_flags_vertical = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
@@ -103,7 +372,22 @@ horizontal_alignment = 1
 
 [node name="Lose_Strong" type="Label" parent="MarginContainer/VBoxContainer/Rating"]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("3_fyydn")
+theme_override_font_sizes/font_size = 48
+text = "Oh no!  Better study up!"
+horizontal_alignment = 1
+
+[node name="ActualLose_Strong" type="Label" parent="MarginContainer/VBoxContainer/Rating/Lose_Strong"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(544, 24.5)
 size_flags_vertical = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 48
@@ -116,20 +400,49 @@ custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+focus_mode = 0
 theme = ExtResource("3_fyydn")
 theme_override_font_sizes/font_size = 40
 text = "Back 
 to Title"
 
-[node name="RevealTimer" type="Timer" parent="."]
+[node name="BGCover" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.501961, 0.501961, 0.501961, 0.501961)
 
-[node name="FreeModeDialog" type="AcceptDialog" parent="."]
-title = "This is not a drill!"
-initial_position = 1
-size = Vector2i(380, 262)
+[node name="FreeModePopup" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(380, 262)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("3_fyydn")
-ok_button_text = "Cool beans"
-dialog_text = "You've unlocked Flash Card mode!
+theme_override_styles/panel = ExtResource("9_ikr7x")
+
+[node name="MarginContainer" type="MarginContainer" parent="FreeModePopup"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FreeModePopup/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FreeModePopup/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "You've unlocked Flash Card mode!
 Or Question Select!
 Or whatever name I end up settling on.
 
@@ -139,4 +452,40 @@ score or anything like that!
 
 "
 
+[node name="Button" type="Button" parent="FreeModePopup/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_mode = 0
+theme = ExtResource("3_fyydn")
+text = "Cool beans!"
+
+[node name="ImpactSound" type="AudioStreamPlayer" parent="."]
+bus = &"SoundEffects"
+
+[node name="WinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_h5k15")
+bus = &"SoundEffects"
+
+[node name="LoseSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a74y0")
+bus = &"SoundEffects"
+
+[node name="PopupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ckvol")
+bus = &"SoundEffects"
+
+[node name="ReturnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wdh4a")
+bus = &"SoundEffects"
+
+[node name="SceneTransitionOverlay" parent="." instance=ExtResource("11_c1yoa")]
+layout_mode = 1
+
+[node name="AAAAAAAA" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_65wab")
+}
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackToTitle" to="." method="_on_back_to_title_pressed"]
+[connection signal="pressed" from="FreeModePopup/MarginContainer/VBoxContainer/Button" to="." method="_on_popup_button_pressed"]

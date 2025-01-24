@@ -1,24 +1,17 @@
-[gd_resource type="Resource" script_class="QuestionCategory" load_steps=13 format=3 uid="uid://buicjjipkhak"]
+[gd_resource type="Resource" script_class="QuestionCategory" load_steps=10 format=3 uid="uid://buicjjipkhak"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionSlotResource.gd" id="1_k88c5"]
 [ext_resource type="Resource" uid="uid://c3adxxvma4ap5" path="res://Data/Question/cam&Tori/Question_ClerkDesign.tres" id="2_foen6"]
 [ext_resource type="Resource" uid="uid://b427xjlu4e1y" path="res://Data/Question/cam&Tori/Question_RAOCOWRating.tres" id="3_obipv"]
-[ext_resource type="Script" path="res://Scripts/Resources/QuestionVariantSet.gd" id="4_au47g"]
-[ext_resource type="Script" path="res://Scripts/Resources/Question.gd" id="5_5kcxa"]
 [ext_resource type="Resource" uid="uid://cdgwk0o13kbul" path="res://Data/Question/SAJewers/Question_FirstASMBXTPlayed.tres" id="5_h8p2c"]
-[ext_resource type="Resource" uid="uid://dxhpwo20o7fru" path="res://Data/Question/Rixi/Question_BroadswordName.tres" id="6_1ews1"]
-[ext_resource type="Resource" uid="uid://bk3qlfnhfc5bv" path="res://Data/Question/Rixi/Question_CatllamaName.tres" id="7_kvkuk"]
-[ext_resource type="Resource" uid="uid://byu33npf55j8n" path="res://Data/Question/Rixi/Question_RShirt.tres" id="9_ar8td"]
+[ext_resource type="Resource" uid="uid://c4v2w2preu1vc" path="res://Data/Question/Minna/Question_NotraoLevel.tres" id="5_s2hil"]
+[ext_resource type="Resource" uid="uid://bh6cpjjh4ha3c" path="res://Data/Question/ASMMaks/Question_GhostName.tres" id="6_487ug"]
+[ext_resource type="Resource" uid="uid://dxqt8fyxrsfdg" path="res://Data/Question/PizzaPony/Question_FourthDemo.tres" id="7_7dryf"]
+[ext_resource type="Resource" uid="uid://cyjhr0w171h2f" path="res://Data/Question/PizzaPony/Question_ASMTReleaseYear.tres" id="7_8kq76"]
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="9_hjm5v"]
-[ext_resource type="Resource" uid="uid://cu5ohxala5v04" path="res://Data/Question/Rixi/Question_TheArtist.tres" id="10_tdngy"]
-
-[sub_resource type="Resource" id="Resource_338qo"]
-resource_name = "Vars - Dev Buffers"
-script = ExtResource("4_au47g")
-variants = Array[ExtResource("5_5kcxa")]([ExtResource("6_1ews1"), ExtResource("9_ar8td"), ExtResource("10_tdngy")])
 
 [resource]
 script = ExtResource("9_hjm5v")
 name = "The Devroom & Beyond"
 name_size = 1.0
-questions = Array[ExtResource("1_k88c5")]([ExtResource("2_foen6"), ExtResource("3_obipv"), ExtResource("7_kvkuk"), ExtResource("5_h8p2c"), SubResource("Resource_338qo")])
+questions = Array[ExtResource("1_k88c5")]([ExtResource("7_8kq76"), ExtResource("5_h8p2c"), ExtResource("5_s2hil"), ExtResource("6_487ug"), ExtResource("3_obipv"), ExtResource("7_7dryf"), ExtResource("2_foen6")])

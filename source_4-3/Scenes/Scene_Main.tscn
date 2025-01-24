@@ -105,6 +105,7 @@ size_flags_vertical = 3
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
+focus_mode = 0
 theme_override_font_sizes/font_size = 18
 text = "Settings"
 
@@ -112,6 +113,7 @@ text = "Settings"
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 8
+focus_mode = 0
 theme = ExtResource("3_one4i")
 theme_override_font_sizes/font_size = 18
 text = "DEBUG
@@ -122,12 +124,13 @@ QUESTION"
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 size_flags_vertical = 8
+focus_mode = 0
 theme = ExtResource("3_one4i")
 theme_override_font_sizes/font_size = 18
 text = "Back to
 Title"
 
-[node name="BakedAlphaMask" parent="." index="2"]
+[node name="BakedAlphaMask" parent="." index="3"]
 texture = SubResource("ViewportTexture_ll5sk")
 
 [node name="ExitConfirm" type="ConfirmationDialog" parent="." index="6"]
@@ -135,12 +138,13 @@ auto_translate_mode = 1
 title = "Are you sure?"
 initial_position = 2
 size = Vector2i(308, 158)
+theme = ExtResource("3_one4i")
 
 [node name="Text" type="Label" parent="ExitConfirm" index="3"]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 300.0
-offset_bottom = 109.0
+offset_bottom = 115.0
 text = "
 Do you really want to quit to the title?
 Your progress won't be saved!

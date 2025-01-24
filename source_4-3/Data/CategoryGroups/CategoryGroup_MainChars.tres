@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="CategoryGroup" load_steps=4 format=3 uid="uid://mvixmrfcg8di"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/QuestionCategory.gd" id="1_t0m1t"]
-[ext_resource type="Resource" uid="uid://bc0274nd8y1wj" path="res://Data/QuestionCategory/QCat_Topic_ABCDs.tres" id="2_2eg6t"]
+[ext_resource type="Resource" uid="uid://bihr5k1ikdt7b" path="res://Data/QuestionCategory/QCat_Topic_OCs.tres" id="2_qqtjc"]
 [ext_resource type="Script" path="res://Scripts/Resources/CategoryGroup.gd" id="3_8pygq"]
 
 [resource]
 script = ExtResource("3_8pygq")
-categories = Array[ExtResource("1_t0m1t")]([ExtResource("2_2eg6t")])
+categories = Array[ExtResource("1_t0m1t")]([ExtResource("2_qqtjc")])
