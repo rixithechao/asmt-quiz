@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cb27tfn65nht4"]
+[gd_scene load_steps=19 format=3 uid="uid://cb27tfn65nht4"]
 
 [ext_resource type="Script" path="res://Scripts/SplashScreens.gd" id="1_lni8s"]
 [ext_resource type="Script" path="res://addons/tnowe_extra_controls/elements/radial_container.gd" id="1_sfw72"]
@@ -7,11 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://f7o5qcky36pv" path="res://Textures/Splashes/tex_logo_spotzone.png" id="3_qxi0y"]
 [ext_resource type="Texture2D" uid="uid://cee7rnd601xw2" path="res://Textures/Splashes/tex_logo_asmtserver.png" id="4_rtvxm"]
 [ext_resource type="Script" path="res://addons/GameGUI/GGTextureRect.gd" id="5_ao1ud"]
-[ext_resource type="AudioStream" uid="uid://tsluh8mfgrus" path="res://Sounds/splashes/sound_splash_whoosh.ogg" id="6_txut0"]
-[ext_resource type="AudioStream" uid="uid://dg4ff5c4b67u5" path="res://Sounds/splashes/sound_splash_swirl.ogg" id="7_5uo3y"]
+[ext_resource type="AudioStream" uid="uid://tsluh8mfgrus" path="res://Sounds/sound_whoosh2.ogg" id="6_txut0"]
+[ext_resource type="AudioStream" uid="uid://dg4ff5c4b67u5" path="res://Sounds/sound_splashesSwirl.ogg" id="7_5uo3y"]
 [ext_resource type="Theme" uid="uid://cplubs4nweb4l" path="res://Theme_Main.tres" id="8_etneq"]
-[ext_resource type="Texture2D" uid="uid://c23un0lmdwxq2" path="res://Textures/Splashes/tex_logo_godot.svg" id="9_gnbc8"]
-[ext_resource type="AudioStream" uid="uid://4l1fm20id8cs" path="res://Sounds/splashes/sound_splash_godot.ogg" id="12_wlaq4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yy6bd"]
 atlas = ExtResource("2_prha8")
@@ -87,7 +85,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_qd3gs"]
 resource_name = "Intro_2"
-length = 8.0
+length = 6.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -96,10 +94,10 @@ tracks/0/path = NodePath("MarginContainer/RadialContainer:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 2.5, 4, 4.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 2, 2.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -108,9 +106,9 @@ tracks/1/path = NodePath("MarginContainer/RadialContainer:progress_offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.5, -0.25, 0, 0.1, 1.19607, 1.29278, -0.350968, -0.0808718, 0.160681, 0.037025, 1.4, -0.172652, -0.0384562, 0.368662, 0.082115, 3.5, -0.161378, -0.686434, 0.25, 0),
-"times": PackedFloat32Array(0, 2, 3, 4, 4.75)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-0.5, -0.25, 0, 0.1, 1.19607, 1.29278, -0.350968, -0.0808718, 0.160681, 0.037025, 1.4, -0.172652, -0.0384562, 0.368662, 0.082115, 3.5, -0.161378, -0.686434, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 2.75)
 }
 tracks/2/type = "method"
 tracks/2/imported = false
@@ -119,7 +117,7 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(8),
+"times": PackedFloat32Array(6),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -138,7 +136,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("7_5uo3y")
 }],
-"times": PackedFloat32Array(2)
+"times": PackedFloat32Array(0)
 }
 tracks/3/use_blend = true
 tracks/4/type = "value"
@@ -148,7 +146,7 @@ tracks/4/path = NodePath("MarginContainer/Loading:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 6, 6.6),
+"times": PackedFloat32Array(0, 4, 4.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -160,71 +158,10 @@ tracks/5/path = NodePath("MarginContainer/Loading:visible")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 6),
+"times": PackedFloat32Array(0, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/GodotLogo:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.8, 2.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("MarginContainer/GodotLogo:position:x")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 2, 0),
-"points": PackedFloat32Array(-600, -0.25, 0, 0.3, 612.172, 100, -0.8, -25.0594, 0.701034, 21.9593, 900, -0.2, -716.641, 0.25, 0),
-"times": PackedFloat32Array(0, 1.2, 2.3)
-}
-tracks/8/type = "audio"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("AudioStreamPlayer2")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("12_wlaq4")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/8/use_blend = true
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("MadeWithLabel:position:x")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0, 2, 0),
-"points": PackedFloat32Array(1000, -0.25, 0, 0, -824.678, 0, -0.9, 54.9688, 0.803628, -49.0828, -1000, -0.0999999, 875.643, 0.25, 0),
-"times": PackedFloat32Array(0, 1.2, 2.3)
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("MadeWithLabel:modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat32Array(0, 0.7, 1.8, 2.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_xpjlr"]
@@ -300,52 +237,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("MarginContainer/GodotLogo:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("MarginContainer/GodotLogo:position:x")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("MadeWithLabel:position:x")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("MadeWithLabel:modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_so8yr"]
 _data = {
@@ -373,22 +264,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-
-[node name="MadeWithLabel" type="Label" parent="."]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 70.0
-offset_bottom = -510.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("8_etneq")
-theme_override_font_sizes/font_size = 36
-text = "Made with"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -452,13 +327,6 @@ texture = ExtResource("4_rtvxm")
 script = ExtResource("5_ao1ud")
 is_configured = true
 
-[node name="GodotLogo" type="TextureRect" parent="MarginContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-texture = ExtResource("9_gnbc8")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="RecordButton" type="Button" parent="."]
 custom_minimum_size = Vector2(640, 328)
 layout_mode = 1
@@ -489,10 +357,8 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"SoundEffects"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-bus = &"SoundEffects"
 
 [connection signal="mouse_entered" from="RecordButton" to="." method="_on_record_button_mouse_entered"]
 [connection signal="pressed" from="RecordButton" to="." method="_on_record_button_pressed"]

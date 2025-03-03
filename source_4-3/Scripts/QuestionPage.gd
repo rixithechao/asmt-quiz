@@ -20,6 +20,7 @@ extends PanelContainer
 @export var correct_sound: AudioStreamPlayer
 @export var wrong_sound: AudioStreamPlayer
 @export var confetti_emitters: Array[GPUParticles2D]
+@export var time_challenge_music: AudioStreamPlayer
 
 var question: Question
 var points: int
@@ -56,6 +57,7 @@ func setup(q: Question):
 	await CategoryMenu.instance.player_opens.animation_finished
 
 	if  question.seconds > 0:
+		MusicManager.pause()
 		timer_started = true
 		timer_animation.play("TimerStart")
 
@@ -69,6 +71,9 @@ func give_answer(_answer: Variant):
 
 
 func show_results(was_correct: bool):
+	if  question.seconds > 0:
+		time_challenge_music.stop()
+
 	if  GameplayScene.instance is CategoryMenu  and  CategoryMenu.remaining_questions <= 0:
 		MusicManager.fade_out()
 	
@@ -98,7 +103,7 @@ func show_results(was_correct: bool):
 
 
 func close():
-	if  question.sound != null:
+	if  question.sound != null  or  question.seconds > 0:
 		MusicManager.unpause()
 
 	if  GameplayScene.instance is CategoryMenu  and  CategoryMenu.remaining_questions <= 0:

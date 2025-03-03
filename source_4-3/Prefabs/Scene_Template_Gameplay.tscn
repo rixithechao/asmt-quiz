@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://b7mitgwofqhwk"]
+[gd_scene load_steps=83 format=3 uid="uid://b7mitgwofqhwk"]
 
 [ext_resource type="Script" path="res://Scripts/GameplayScene.gd" id="1_hglrf"]
 [ext_resource type="Texture2D" uid="uid://rnind06g1ddj" path="res://Textures/tex_musicNote.png" id="2_afesu"]
@@ -21,24 +21,33 @@
 [ext_resource type="Texture2D" uid="uid://dlat14ajr2vum" path="res://Textures/Masks/tex_mask_06.png" id="15_3memq"]
 [ext_resource type="Texture2D" uid="uid://ciyb51ks35pvx" path="res://Textures/Masks/tex_mask_04.png" id="16_rh87t"]
 [ext_resource type="Texture2D" uid="uid://cdnc1guy3xplj" path="res://Textures/Masks/tex_mask_05.png" id="17_dkdwx"]
+[ext_resource type="AudioStream" uid="uid://bjjv0epi8chg1" path="res://Sounds/transitions/sound_transition_circle01.ogg" id="19_1x2eq"]
+[ext_resource type="AudioStream" uid="uid://cjbxq17lv4mp8" path="res://Sounds/transitions/sound_transition_fade01.ogg" id="19_62v4y"]
 [ext_resource type="Texture2D" uid="uid://dggx4hc0id4no" path="res://Textures/Masks/tex_mask_03.png" id="20_lysl7"]
-[ext_resource type="AudioStream" uid="uid://be3ou1i1mguml" path="res://Sounds/transitions/sound_transition_checkerboard.wav" id="20_w1np4"]
 [ext_resource type="AudioStream" uid="uid://cy4knqds0jcr1" path="res://Sounds/transitions/sound_transition_machine02.ogg" id="21_4ttf5"]
 [ext_resource type="Texture2D" uid="uid://ckqbwqmcx4vb8" path="res://Textures/Masks/tex_mask_07.png" id="21_g8438"]
 [ext_resource type="AudioStream" uid="uid://bj63vawal2j76" path="res://Sounds/transitions/sound_transition_sort01.ogg" id="21_vyxea"]
 [ext_resource type="Texture2D" uid="uid://0wve7k8nwa10" path="res://Textures/Masks/tex_mask_08.png" id="22_sued7"]
 [ext_resource type="AudioStream" uid="uid://buha53ayh0l2b" path="res://Sounds/transitions/sound_transition_swingDrop01.ogg" id="22_xa14s"]
 [ext_resource type="Texture2D" uid="uid://dqhd01i6igfxj" path="res://Textures/Masks/tex_mask_09.png" id="23_5kcog"]
+[ext_resource type="AudioStream" uid="uid://bevttfset87lw" path="res://Sounds/transitions/sound_transition_scrapeCloth01.ogg" id="23_btgi4"]
 [ext_resource type="AudioStream" uid="uid://cbsxtae4orvd7" path="res://Sounds/transitions/sound_transition_swingDrop03.ogg" id="23_n1l2f"]
 [ext_resource type="Texture2D" uid="uid://028wl3l6ot8i" path="res://Textures/Masks/tex_mask_10.png" id="24_ivomk"]
 [ext_resource type="AudioStream" uid="uid://dje7gp3uuttoe" path="res://Sounds/transitions/sound_transition_swingDrop02.ogg" id="24_umyvn"]
 [ext_resource type="AudioStream" uid="uid://dxsmcx300n7ea" path="res://Sounds/transitions/sound_transition_pocketmin.wav" id="24_xd4b5"]
+[ext_resource type="AudioStream" uid="uid://mx8jadauerkw" path="res://Sounds/transitions/sound_transition_jail01.ogg" id="24_xniu0"]
 [ext_resource type="Texture2D" uid="uid://cjsmsxp27j83a" path="res://Textures/Masks/tex_mask_12.png" id="25_4q44o"]
+[ext_resource type="AudioStream" uid="uid://bra3rrm1t73sx" path="res://Sounds/transitions/sound_transition_screentone01.ogg" id="28_01ic6"]
+[ext_resource type="AudioStream" uid="uid://dieq4nj8036pl" path="res://Sounds/transitions/sound_transition_rect01.ogg" id="30_7rwu3"]
 [ext_resource type="AudioStream" uid="uid://bbn3s01uyvtff" path="res://Sounds/transitions/sound_transition_pie01.ogg" id="30_brvvd"]
 [ext_resource type="AudioStream" uid="uid://o5g0buarqcf4" path="res://Sounds/transitions/sound_transition_whoosh01.ogg" id="30_lhbiw"]
 [ext_resource type="AudioStream" uid="uid://c7fe3emsnwp8h" path="res://Sounds/transitions/sound_transition_dissolve03.ogg" id="34_vivph"]
 [ext_resource type="PackedScene" uid="uid://bbo4hfy0ymnpg" path="res://Prefabs/Prefab_SceneTransitionOverlay.tscn" id="36_c2e80"]
 [ext_resource type="AudioStream" uid="uid://dvdoj8e3ilyiy" path="res://Sounds/transitions/sound_transition_dissolve02.ogg" id="36_vnpl6"]
+[ext_resource type="AudioStream" uid="uid://b8nnhp8tt73nr" path="res://Sounds/transitions/sound_transition_checkerboard.ogg" id="37_40dgw"]
+[ext_resource type="AudioStream" uid="uid://co1xmflakir0n" path="res://Sounds/transitions/sound_transition_shimmer02.ogg" id="45_qe54s"]
+[ext_resource type="AudioStream" uid="uid://bfi5jsigvqucg" path="res://Sounds/transitions/sound_transition_pie02.ogg" id="46_451r7"]
+[ext_resource type="AudioStream" uid="uid://3pv4jcgvwtfn" path="res://Sounds/transitions/sound_transition_concrete01.ogg" id="47_lvy8v"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_027ie"]
 viewport_path = NodePath("MaskAlpha")
@@ -93,7 +102,6 @@ tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_mi2ge"]
 resource_name = "Open_Circle"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -118,10 +126,24 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("19_1x2eq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_p6fqs"]
 resource_name = "Open_Fade"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -129,11 +151,26 @@ tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds/General1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("19_62v4y")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_g20va"]
 resource_name = "Open_GB"
@@ -180,7 +217,7 @@ tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_klnle"]
 resource_name = "Open_Jail"
-length = 0.5
+length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -200,11 +237,26 @@ tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("24_xniu0")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ikvf5"]
 resource_name = "Open_Pie"
@@ -251,7 +303,7 @@ tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7ymwq"]
 resource_name = "Open_Pinwheel"
-length = 0.5
+length = 0.35
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -271,11 +323,26 @@ tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_btgi4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_x0uih"]
 resource_name = "Open_Pop"
@@ -335,7 +402,6 @@ tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_vgyf4"]
 resource_name = "Open_Rect"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -355,11 +421,26 @@ tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_7rwu3")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_2sygb"]
 resource_name = "Open_Screentone"
@@ -388,6 +469,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.0, 1.0]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("28_01ic6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_epcib"]
 resource_name = "Open_SlideBottom"
@@ -707,7 +803,7 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id="Animation_comuw"]
 resource_name = "Open_Wipers"
-length = 0.5
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -971,11 +1067,15 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "clips": [{
-"end_offset": 0.0,
+"end_offset": 0.77633,
 "start_offset": 0.0,
-"stream": ExtResource("20_w1np4")
+"stream": ExtResource("37_40dgw")
+}, {
+"end_offset": 0.405485,
+"start_offset": 0.250626,
+"stream": ExtResource("37_40dgw")
 }],
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0, 0.33)
 }
 tracks/2/use_blend = true
 
@@ -1065,6 +1165,317 @@ tracks/2/keys = {
 }
 tracks/2/use_blend = true
 
+[sub_resource type="Animation" id="Animation_81ro0"]
+resource_name = "Close_Pie"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_35j85")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("46_451r7")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_gbt16"]
+resource_name = "Close_Rect"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaskAlpha/MaskTransition:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_g8438")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaskAlpha/MaskTransition:cutoff")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sounds/General1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("47_lvy8v")
+}],
+"times": PackedFloat32Array(0.00594471)
+}
+tracks/2/use_blend = true
+
+[sub_resource type="Animation" id="Animation_dvnyu"]
+resource_name = "Close_SlideBottom"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds/General1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_lhbiw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 648)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_xdpa2"]
+resource_name = "Close_SlideLeft"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds/General1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_lhbiw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1152, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_dx8rn"]
+resource_name = "Close_SlideRight"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds/General1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_lhbiw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1152, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ko7ki"]
+resource_name = "Close_SlideTop"
+length = 0.25
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds/General1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("30_lhbiw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -648)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
 [sub_resource type="Animation" id="Animation_xne6c"]
 resource_name = "Close_SwingDrop"
 length = 1.9
@@ -1152,7 +1563,7 @@ tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_yblu6"]
 resource_name = "Close_Zoom"
-length = 0.5
+length = 0.25
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1161,7 +1572,7 @@ tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0, 0)]
@@ -1182,13 +1593,64 @@ tracks/1/keys = {
 }
 tracks/1/use_blend = true
 
+[sub_resource type="Animation" id="Animation_rgu02"]
+resource_name = "Close_ZoomSpin"
+length = 0.75
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sounds/General1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("45_qe54s")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BakedAlphaMask/QPageOffset/QPageTransform:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jmdjw"]
 _data = {
 "Close_Checkerboard": SubResource("Animation_0yh2c"),
 "Close_Dissolve": SubResource("Animation_4v0ba"),
 "Close_FFDeath": SubResource("Animation_5aw2n"),
+"Close_Pie": SubResource("Animation_81ro0"),
+"Close_Rect": SubResource("Animation_gbt16"),
+"Close_SlideBottom": SubResource("Animation_dvnyu"),
+"Close_SlideLeft": SubResource("Animation_xdpa2"),
+"Close_SlideRight": SubResource("Animation_dx8rn"),
+"Close_SlideTop": SubResource("Animation_ko7ki"),
 "Close_SwingDrop": SubResource("Animation_xne6c"),
 "Close_Zoom": SubResource("Animation_yblu6"),
+"Close_ZoomSpin": SubResource("Animation_rgu02"),
 "RESET": SubResource("Animation_ujp1b")
 }
 

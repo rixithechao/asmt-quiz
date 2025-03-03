@@ -1,0 +1,32 @@
+V checkerboard          c_checkerboard
+V circle01              o_circle
+- dissolve01
+v dissolve02            c_ffdeath
+V dissolve03            c_dissolve
+V drumroll01            o_spiralIn
+V fade01                o_fade
+V jail01                o_jail
+- machine01
+V machine02             o_wipers
+V pie01                 o_pie
+V pocketmin             o_GB
+V rect01                o_rect
+V scrapecloth01         o_pinwheel
+V screentone01          o_screentone
+  shimmer01
+V sort01                o_barcodeV
+V swingdrop01           c_swingdrop
+V swingdrop02           c_swingdrop
+V swingdrop03           c_swingdrop
+V tubeThup01            o_pop
+V whoosh01              o_slideX, o_zoom
+
+
+V pop                   scene_results
+  slidewhistledown01    
+V spillDrink            scene_q_holdMyDrink
+V unlock01              scene_results
+  zipZipZwee01
+
+
+c_zoom

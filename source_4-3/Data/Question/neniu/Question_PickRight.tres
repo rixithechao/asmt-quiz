@@ -13,6 +13,6 @@ highlight_all_correct = true
 author = "Neniu"
 text = "Pick the right answer."
 page_scene = ExtResource("1_yrc4m")
-seconds = 2
+seconds = 3
 pause_music = false
 specific_answer_images = {}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://4nr3o7fmwodt"]
+[gd_scene load_steps=47 format=3 uid="uid://4nr3o7fmwodt"]
 
 [ext_resource type="Script" path="res://Scripts/QuestionPage.gd" id="1_j8gf5"]
 [ext_resource type="Script" path="res://Scripts/RandomizedLabel.gd" id="2_cln3n"]
@@ -26,6 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://by2m1xxepth6m" path="res://Sounds/results/sound_wrong02.ogg" id="23_4jo1w"]
 [ext_resource type="AudioStream" uid="uid://dm14fdgwohnsr" path="res://Sounds/results/sound_wrong03.ogg" id="24_uqm22"]
 [ext_resource type="AudioStream" uid="uid://c560r4ong3st8" path="res://Sounds/results/sound_wrong04.ogg" id="25_w3mv2"]
+[ext_resource type="AudioStream" uid="uid://uenavc8fmpr2" path="res://Sounds/sound_timeChallenge.wav" id="27_bm1ss"]
+[ext_resource type="AudioStream" uid="uid://om53irgwc48b" path="res://Music/scene-smarter-timechallenge.ogg" id="28_dq6fm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qe13"]
 bg_color = Color(0.152941, 0.215686, 0.329412, 1)
@@ -257,6 +259,48 @@ tracks/5/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("TimeChallengeSound2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("TimeChallengeSound")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("TimeChallengeMusic")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y6srx"]
 _data = {
@@ -336,7 +380,7 @@ color_initial_ramp = SubResource("GradientTexture1D_cygqj")
 alpha_curve = SubResource("CurveTexture_5d5t8")
 turbulence_enabled = true
 
-[node name="QuestionPage" type="PanelContainer" node_paths=PackedStringArray("question_label", "author_label", "prompt_node", "correct_node", "time_up_node", "wrong_node", "back_button", "image_rect", "sound_button", "timer_row", "timer_node", "timer_bar", "timer_animation", "info_and_buttons_container", "correct_sound", "wrong_sound", "confetti_emitters")]
+[node name="QuestionPage" type="PanelContainer" node_paths=PackedStringArray("question_label", "author_label", "prompt_node", "correct_node", "time_up_node", "wrong_node", "back_button", "image_rect", "sound_button", "timer_row", "timer_node", "timer_bar", "timer_animation", "info_and_buttons_container", "correct_sound", "wrong_sound", "confetti_emitters", "time_challenge_music")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -363,6 +407,7 @@ info_and_buttons_container = NodePath("MarginContainer/InfoAndButtons")
 correct_sound = NodePath("CorrectSound")
 wrong_sound = NodePath("WrongSound")
 confetti_emitters = [NodePath("LeftConfetti"), NodePath("RightConfetti")]
+time_challenge_music = NodePath("TimeChallengeMusic")
 
 [node name="Background" parent="." instance=ExtResource("2_xej10")]
 layout_mode = 2
@@ -607,6 +652,18 @@ process_material = SubResource("ParticleProcessMaterial_a42ii")
 lifetime = 3.0
 one_shot = true
 explosiveness = 1.0
+
+[node name="TimeChallengeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_bm1ss")
+bus = &"SoundEffects"
+
+[node name="TimeChallengeSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_64jr4")
+bus = &"SoundEffects"
+
+[node name="TimeChallengeMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_dq6fm")
+bus = &"Music"
 
 [connection signal="timeout" from="MarginContainer/InfoAndButtons/TimerRow/Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="MarginContainer/InfoAndButtons/HBoxContainer/Sound" to="MarginContainer/InfoAndButtons/HBoxContainer/Sound" method="_on_pressed"]
